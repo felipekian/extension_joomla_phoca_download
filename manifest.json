@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "name": "joomla! control",
+  "author": "Felipe Derkian de Sousa Freitas",
+  "version": "0.0.1",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadfile&layout=edit"
+      ],
+      "css": [
+        "./css/index.css"
+      ],
+      "js": [
+        "./scripts/inputs_display_none.js",
+        "./scripts/description_controler.js",
+        "./scripts/date_start_publish_controler.js"
+      ]
+    }
+  ],
+  "browser_action": {
+    "default_icon": "./logo/logo.png"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ]
+}
