@@ -14,7 +14,8 @@
       "js": [
         "./scripts/inputs_display_none.js",
         "./scripts/description_controler.js",
-        "./scripts/date_start_publish_controler.js"
+        "./scripts/date_start_publish_controler.js",
+        "./scripts/form_complete.js"
       ]
     }
   ],
