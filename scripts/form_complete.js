@@ -15,7 +15,7 @@ function dataAtual() {
 function setCategoria(categoria) {
   let category_input = document.querySelector('#jform_catid');
 
-  category_input.style.display = "block";
+  // category_input.style.display = "block";
 
   let options_category = [...category_input.options];
 
