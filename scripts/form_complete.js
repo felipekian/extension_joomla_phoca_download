@@ -95,8 +95,7 @@ function __editalEdital(title) {
 
   let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
 
-  let filename = `csl/editaisetermos_${ano}/EDITAL DE LICITACAO-PERP-${numero_documento}-${ano}.pdf
-  `;
+  let filename = `csl/editaisetermos_${ano}/EDITAL DE LICITACAO-PERP-${numero_documento}-${ano}.pdf`;
 
   setCategoria(categoria);
   setFileName(filename);
@@ -112,8 +111,7 @@ function __editalMinuta(title) {
 
   let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
 
-  let filename = `csl/editaisetermos_${ano}/MINUTA DE CONTRATO DE LICITACAO-PERP-${numero_documento}-${ano}.pdf
-  `;
+  let filename = `csl/editaisetermos_${ano}/MINUTA DE CONTRATO DE LICITACAO-PERP-${numero_documento}-${ano}.pdf`;
 
   setCategoria(categoria);
   setFileName(filename);
@@ -129,8 +127,7 @@ function __editalPlanilhaEstimativa(title) {
 
   let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
 
-  let filename = `csl/editaisetermos_${ano}/PLANILHA ESTIMATIVA DE LICITACAO-PERP-${numero_documento}-${ano}.pdf
-  `;
+  let filename = `csl/editaisetermos_${ano}/PLANILHA ESTIMATIVA DE LICITACAO-PERP-${numero_documento}-${ano}.pdf`;
 
   setCategoria(categoria);
   setFileName(filename);
@@ -146,8 +143,7 @@ function __editalTermoDeReferência(title) {
 
   let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
 
-  let filename = `csl/editaisetermos_${ano}/TERMO DE REFERENCIA DE LICITACAO-PERP-${numero_documento}-${ano}.pdf
-  `;
+  let filename = `csl/editaisetermos_${ano}/TERMO DE REFERENCIA DE LICITACAO-PERP-${numero_documento}-${ano}.pdf`;
 
   setCategoria(categoria);
   setFileName(filename);
