@@ -12,10 +12,18 @@
         "./css/index.css"
       ],
       "js": [
-        "./scripts/inputs_display_none.js",
-        "./scripts/description_controler.js",
-        "./scripts/date_start_publish_controler.js",
-        "./scripts/form_complete.js"
+        "./scripts/phoca/inputs_display_none.js",
+        "./scripts/phoca/description_controler.js",
+        "./scripts/phoca/date_start_publish_controler.js",
+        "./scripts/phoca/form_complete.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://saude.rr.gov.br/administrator/index.php?option=com_content&view=article&layout=edit"
+      ],
+      "js": [
+        "./scripts/articles/form_control.js"
       ]
     }
   ],
