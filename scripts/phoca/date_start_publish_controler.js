@@ -1,8 +1,11 @@
 "use strict"
 
 function setDateStartPublishInput(data, date) {
-  if (date == getDateNow())
-    document.querySelector('#jform_publish_up').value = data;
+  if (date === getDateNow()) {
+    let elemento = document.querySelector('#jform_publish_up');
+    elemento.click();
+    elemento.value = data;
+  }
 }
 
 function getDateNow() {
