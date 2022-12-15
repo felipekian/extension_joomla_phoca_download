@@ -1,10 +1,12 @@
 "use strict"
 
-function setDateStartPublishInput(data, date) {
-  if (date === getDateNow()) {
-    let elemento = document.querySelector('#jform_publish_up');
-    elemento.click();
-    elemento.value = data;
+function setDateStartPublishInput(data_publish, date_old_publish) {
+  if (date_old_publish === getDateNow()) {
+    let input_date_publish = document.querySelector('#jform_publish_up');
+    input_date_publish.dataset.altValue = ""+data_publish;
+    input_date_publish.dataset.localValue = ""+data_publish;
+    input_date_publish.value = ""+data_publish;
+    input_date_publish.click();
   }
 }
 
