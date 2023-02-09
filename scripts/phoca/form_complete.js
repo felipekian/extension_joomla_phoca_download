@@ -32,6 +32,7 @@ function setCategoria(categoria) {
 }
 
 function setFileName(filename) {
+  filename_input_phoca.value = '';
   filename_input_phoca.value = filename;
 }
 
@@ -186,6 +187,80 @@ function __coronaVirus(title) {
   abrirSelectFileName();
 }
 
+function __credenciamento(title) {
+
+  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
+  let tam_split_title = split_title.length;
+
+  let numero_documento = split_title[tam_split_title - 2];
+  let ano = split_title[tam_split_title - 1];
+
+  let categoria = `:: CSL - :: Credenciamento - :: Credenciamento ${ano}`;
+  
+  setCategoria(categoria);
+
+  if (split_title[1].toLowerCase() === 'aviso') {
+    abrirSelectFileName();
+  }
+
+  if (split_title[1].toLowerCase() === 'edital') {
+    let filename = `csl/credenciamento${ano}/edital_credenciamento-${numero_documento}-${ano}.pdf`;
+    setFileName(filename);
+  }
+
+  if (split_title[1].toLowerCase() === 'minuta') {
+    let filename = `csl/credenciamento${ano}/minuta_credenciamento-${numero_documento}-${ano}.pdf`;
+    setFileName(filename);
+  }
+
+  if (split_title[1].toLowerCase() === 'termo') {
+    let filename = `csl/credenciamento${ano}/termo_referencia_credenciamento-${numero_documento}-${ano}.pdf`;
+    setFileName(filename);
+  }
+
+  if (split_title[1].toLowerCase() === 'projeto') {
+    let filename = `csl/credenciamento${ano}/projeto_basico_credenciamento-${numero_documento}-${ano}.pdf`;
+    setFileName(filename);
+  }
+
+  if (split_title[1].toLowerCase() === 'errata') {
+    let filename = `csl/credenciamento${ano}/errata_credenciamento-${numero_documento}-${ano}.pdf`;
+    setFileName(filename);
+  }
+
+}
+function __chamamento(title) {
+
+  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
+  let tam_split_title = split_title.length;
+
+  let numero_documento = split_title[tam_split_title - 2];
+  let ano = split_title[tam_split_title - 1];
+
+  let categoria = `:: CSL - :: Chamamento - :: Chamamento Público ${ano}`;
+  
+  setCategoria(categoria);
+
+  if (split_title[1].toLowerCase() === 'aviso') {
+    abrirSelectFileName();
+  }
+
+  if (split_title[1].toLowerCase() === 'edital') {
+    let filename = `chamamentos/CHAMAMENTO_PUBLICO_EDITAL-${numero_documento}-${ano}.pdf`;
+    setFileName(filename);
+  }
+
+  if (split_title[1].toLowerCase() === 'minuta') {
+    let filename = `chamamentos/CHAMAMENTO_PUBLICO_MINUTA-${numero_documento}-${ano}.pdf`;
+    setFileName(filename);
+  }
+
+  if (split_title[1].toLowerCase() === 'termo') {
+    let filename = `chamamentos/CHAMAMENTO_PUBLICO_TERMO_DE_REFERENCIA-${numero_documento}-${ano}.pdf`;
+    setFileName(filename);
+  }
+}
+
 function controller(title) {
 
   /* comunicado e proposta de cotação */
@@ -247,6 +322,18 @@ function controller(title) {
   else if (
     title.toLowerCase().indexOf(("Boletim Epidemiologico - Coronavírus").toLowerCase()) > 0) {
     __coronaVirus(title);
+  }
+  /* Credenciamento */
+  else if (
+    title.toLowerCase().indexOf(("CREDENCIAMENTO PÚBLICO").toLowerCase()) > 0
+  ) {
+    __credenciamento(title);
+  }
+  /* Chamamento */
+  else if (
+    title.toLowerCase().indexOf(("CHAMAMENTO PÚBLICO").toLowerCase()) > 0
+  ) {
+    __chamamento(title);
   }
 }
 
