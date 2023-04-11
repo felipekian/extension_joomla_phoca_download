@@ -135,7 +135,7 @@ function __editalPlanilhaEstimativa(title) {
   setFileName(filename);
 }
 
-function __editalTermoDeReferência(title) {
+function __editalTermoDeReferencia(title) {
 
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
@@ -150,6 +150,90 @@ function __editalTermoDeReferência(title) {
   setCategoria(categoria);
   setFileName(filename);
 }
+
+
+
+function __editalEditalReabertura(title) {
+
+  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
+  let tam_split_title = split_title.length;
+
+  let numero_documento = split_title[tam_split_title - 2];
+  let ano = split_title[tam_split_title - 1];
+
+  let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
+
+  let filename = `csl/editaisetermos_${ano}/EDITAL DE LICITACAO REABERTURA-PERP-${numero_documento}-${ano}.pdf`;
+
+  setCategoria(categoria);
+  setFileName(filename);
+}
+
+function __editalMinutaReabertura(title) {
+
+  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
+  let tam_split_title = split_title.length;
+
+  let numero_documento = split_title[tam_split_title - 2];
+  let ano = split_title[tam_split_title - 1];
+
+  let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
+
+  let filename = `csl/editaisetermos_${ano}/MINUTA DE CONTRATO DE LICITACAO REABERTURA-PERP-${numero_documento}-${ano}.pdf`;
+
+  setCategoria(categoria);
+  setFileName(filename);
+}
+
+function __editalPlanilhaEstimativaReabertura(title) {
+
+  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
+  let tam_split_title = split_title.length;
+
+  let numero_documento = split_title[tam_split_title - 2];
+  let ano = split_title[tam_split_title - 1];
+
+  let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
+
+  let filename = `csl/editaisetermos_${ano}/PLANILHA ESTIMATIVA DE LICITACAO REABERTURA-PERP-${numero_documento}-${ano}.pdf`;
+
+  setCategoria(categoria);
+  setFileName(filename);
+}
+
+function __editalTermoDeReferenciaReabertura(title) {
+
+  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
+  let tam_split_title = split_title.length;
+
+  let numero_documento = split_title[tam_split_title - 2];
+  let ano = split_title[tam_split_title - 1];
+
+  let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
+
+  let filename = `csl/editaisetermos_${ano}/TERMO DE REFERENCIA DE LICITACAO REABERTURA-PERP-${numero_documento}-${ano}.pdf`;
+
+  setCategoria(categoria);
+  setFileName(filename);
+}
+
+function __editalNotaExplicativaReabertura(title) {
+
+  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
+  let tam_split_title = split_title.length;
+
+  let numero_documento = split_title[tam_split_title - 2];
+  let ano = split_title[tam_split_title - 1];
+
+  let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
+
+  let filename = `csl/editaisetermos_${ano}/NOTA EXPLICATIVA REABERTURA-PERP-${numero_documento}-${ano}.pdf`;
+
+  setCategoria(categoria);
+  setFileName(filename);
+}
+
+
 
 function __resultadoLicitacao(title) {
 
@@ -271,6 +355,25 @@ function controller(title) {
   else if (title.toLowerCase().indexOf(("Modelo de Proposta de Cotação").toLowerCase()) > 0) {
     __modeloPropostaCotacao(title);
   }
+  /* Editais Reabertura */
+  else if (title.toLowerCase().indexOf(("Aviso de Licitação - REABERTURA").toLowerCase()) > 0) {
+    __editalAviso(title);
+  }
+  else if (title.toLowerCase().indexOf(("Edital de Licitação - REABERTURA").toLowerCase()) > 0) {
+    __editalEditalReabertura(title);
+  }
+  else if (title.toLowerCase().indexOf(("Minuta de Contrato de Licitação - REABERTURA").toLowerCase()) > 0) {
+    __editalMinutaReabertura(title);
+  }
+  else if (title.toLowerCase().indexOf(("Planilha Estimativa de Licitação - REABERTURA").toLowerCase()) > 0) {
+    __editalPlanilhaEstimativaReabertura(title);
+  }
+  else if (title.toLowerCase().indexOf(("Termo de Referência de Licitação - REABERTURA").toLowerCase()) > 0) {
+    __editalTermoDeReferenciaReabertura(title);
+  }
+  else if (title.toLowerCase().indexOf(("Nota Explicativa de Licitação - REABERTURA").toLowerCase()) > 0) {
+    __editalNotaExplicativaReabertura(title);
+  }
   /* Editais */
   else if (title.toLowerCase().indexOf(("Aviso de Licitação").toLowerCase()) > 0) {
     __editalAviso(title);
@@ -285,7 +388,7 @@ function controller(title) {
     __editalPlanilhaEstimativa(title);
   }
   else if (title.toLowerCase().indexOf(("Termo de Referência de Licitação").toLowerCase()) > 0) {
-    __editalTermoDeReferência(title);
+    __editalTermoDeReferencia(title);
   }
   /* Resultados */
   else if (
