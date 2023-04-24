@@ -151,6 +151,22 @@ function __editalTermoDeReferencia(title) {
   setFileName(filename);
 }
 
+function __editalNotaExplicativa(title) {
+
+  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
+  let tam_split_title = split_title.length;
+
+  let numero_documento = split_title[tam_split_title - 2];
+  let ano = split_title[tam_split_title - 1];
+
+  let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
+
+  let filename = `csl/editaisetermos_${ano}/NOTA EXPLICATIVA DE LICITACAO-PERP-${numero_documento}-${ano}.pdf`;
+
+  setCategoria(categoria);
+  setFileName(filename);
+}
+
 
 
 function __editalEditalReabertura(title) {
@@ -389,6 +405,9 @@ function controller(title) {
   }
   else if (title.toLowerCase().indexOf(("Termo de Referência de Licitação").toLowerCase()) > 0) {
     __editalTermoDeReferencia(title);
+  }
+  else if (title.toLowerCase().indexOf(("Nota Explicativa de Licitação").toLowerCase()) > 0) {
+    __editalNotaExplicativa(title);
   }
   /* Resultados */
   else if (
