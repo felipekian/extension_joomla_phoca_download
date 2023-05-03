@@ -184,7 +184,7 @@ function __editalEsclarecimentos(title) {
 }
 
 
-
+/* Reabertura */
 function __editalEditalReabertura(title) {
 
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
@@ -378,6 +378,57 @@ function __chamamento(title) {
   }
 }
 
+
+/* Dispensas */
+function __avisoDispensa(title) {
+
+  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
+  let tam_split_title = split_title.length;
+
+  let numero_documento = split_title[tam_split_title - 2];
+  let ano = split_title[tam_split_title - 1];
+
+  let categoria = `:: CSL - :: Dispensa de Licitação - :: Dispensa Licitação ${ano}`;
+
+  setCategoria(categoria);
+
+  abrirSelectFileName();
+}
+
+function __projetoBasicoDispensa(title) {
+
+  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
+  let tam_split_title = split_title.length;
+
+  let numero_documento = split_title[tam_split_title - 2];
+  let ano = split_title[tam_split_title - 1];
+
+  let categoria = `:: CSL - :: Dispensa de Licitação - :: Dispensa Licitação ${ano}`;
+
+  let filename = `csl/dispensa${ano}/PROJETO BASICO DE DISPENSA-PE-${numero_documento}-${ano}.pdf`;
+
+  setCategoria(categoria);
+  setFileName(filename);
+}
+
+function __termoReferenciaDispensa(title) {
+
+  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
+  let tam_split_title = split_title.length;
+
+  let numero_documento = split_title[tam_split_title - 2];
+  let ano = split_title[tam_split_title - 1];
+
+  let categoria = `:: CSL - :: Dispensa de Licitação - :: Dispensa Licitação ${ano}`;
+
+  let filename = `csl/dispensa${ano}/TERMO DE REFERENCIA DE DISPENSA-PE-${numero_documento}-${ano}.pdf`;
+
+  setCategoria(categoria);
+  setFileName(filename);
+}
+
+
+
 function controller(title) {
 
   /* comunicado e proposta de cotação */
@@ -427,6 +478,16 @@ function controller(title) {
   }
   else if (title.toLowerCase().indexOf(("Esclarecimentos de Licitação").toLowerCase()) > 0) {
     __editalEsclarecimentos(title);
+  }
+  /* Dispensas */
+  else if (title.toLowerCase().indexOf(("AVISO DE DISPENSA").toLowerCase()) > 0) {
+    __avisoDispensa(title);
+  }
+  else if (title.toLowerCase().indexOf(("PROJETO BÁSICO DE DISPENSA").toLowerCase()) > 0) {
+    __projetoBasicoDispensa(title);
+  }
+  else if (title.toLowerCase().indexOf(("TERMO DE REFERÊNCIA DE DISPENSA").toLowerCase()) > 0) {
+    __termoReferenciaDispensa(title);
   }
   /* Resultados */
   else if (
