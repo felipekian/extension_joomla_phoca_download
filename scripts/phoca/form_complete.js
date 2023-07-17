@@ -405,7 +405,7 @@ function __projetoBasicoDispensa(title) {
 
   let categoria = `:: CSL - :: Dispensa de Licitação - :: Dispensa Licitação ${ano}`;
 
-  let filename = `csl/dispensa${ano}/PROJETO BASICO DE DISPENSA-PE-${numero_documento}-${ano}.pdf`;
+  let filename = `csl/dispensa${ano}/PROJETO BASICO DE DISPENSA DE LICITACAO-${numero_documento}-${ano}.pdf`;
 
   setCategoria(categoria);
   setFileName(filename);
@@ -421,7 +421,7 @@ function __termoReferenciaDispensa(title) {
 
   let categoria = `:: CSL - :: Dispensa de Licitação - :: Dispensa Licitação ${ano}`;
 
-  let filename = `csl/dispensa${ano}/TERMO DE REFERENCIA DE DISPENSA-PE-${numero_documento}-${ano}.pdf`;
+  let filename = `csl/dispensa${ano}/TERMO DE REFERENCIA DE DISPENSA DE LICITACAO-${numero_documento}-${ano}.pdf`;
 
   setCategoria(categoria);
   setFileName(filename);
