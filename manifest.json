@@ -4,28 +4,33 @@
   "author": "Felipe Derkian de Sousa Freitas",
   "version": "1.0.12",
   "content_scripts": [
+    /* pagina de cadastro phoca download */
     {
       "matches": [
-        "https://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadfile&layout=edit*"
+        "https://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadfile&layout=edit"
       ],
       "css": [
         "./css/index.css"
       ],
       "js": [
-        "./scripts/phoca/inputs_display_none.js",
+        // "./scripts/phoca/inputs_display_none.js", //já esta sendo importado em baixo
         "./scripts/phoca/date_start_publish_controler.js",
         "./scripts/phoca/form_complete.js",
-        "./scripts/phoca/shortcuts.js"
-      ]
-    },
-    {
-      "matches": [
-        "https://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadfile&layout=edit"
-      ],
-      "js": [
+        // "./scripts/phoca/shortcuts.js", // ja esta sendo importado em baixo
         "./scripts/phoca/description_controller.js"
       ]
     },
+    /* pagina de editar phoca download */
+    {
+      "matches": [
+        "https://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadfile&layout=edit*"
+      ],
+      "js": [
+        "./scripts/phoca/inputs_display_none.js",
+        "./scripts/phoca/shortcuts.js"
+      ]
+    },
+    /* pagina de listagem do phoca downloads */
     {
       "matches": [
         "https://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadfiles"
@@ -34,6 +39,7 @@
         "./scripts/phoca/shortcut_phoca_listagem.js"
       ]
     },
+    /* pagina de cadastro de noticias */
     {
       "matches": [
         "https://saude.rr.gov.br/administrator/index.php?option=com_content&view=article&layout=edit"
