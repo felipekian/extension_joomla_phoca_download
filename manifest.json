@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "joomla! control",
   "author": "Felipe Derkian de Sousa Freitas",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "content_scripts": [
     {
       "matches": [
@@ -16,6 +16,14 @@
         "./scripts/phoca/date_start_publish_controler.js",
         "./scripts/phoca/form_complete.js",
         "./scripts/phoca/shortcuts.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadfile&layout=edit"
+      ],
+      "js": [
+        "./scripts/phoca/description_controller.js"
       ]
     },
     {
