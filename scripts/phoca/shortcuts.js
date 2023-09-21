@@ -1,26 +1,17 @@
 "use strict"
 
-/************************* 
-Salvar e Sair
-*************************/
-
-document.addEventListener("keydown", function(event) {
-  if (event.altKey && (event.key === 's' || event.key === 'S'))
-  {
-      document.querySelector('#toolbar-save > button').click();        
-      event.preventDefault();
+document.addEventListener("keydown", function (event) {
+  /************************* 
+    Salvar e Sair
+  *************************/
+  if (event.altKey && (event.key === 's' || event.key === 'S')) {
+    document.querySelector('#toolbar-save > button').click();
   }
-});
 
-
-/************************* 
-Cancelar
-*************************/
-
-document.addEventListener("keydown", function(event) {
-  if (event.altKey && (event.key === 'c' || event.key === 'C'))
-  {
-      document.querySelector('#toolbar-cancel > button').click();        
-      event.preventDefault();
+  /************************* 
+    Cancelar
+  *************************/
+  if (event.altKey && (event.key === 'c' || event.key === 'C')) {
+    document.querySelector('#toolbar-cancel > button').click();
   }
 });
