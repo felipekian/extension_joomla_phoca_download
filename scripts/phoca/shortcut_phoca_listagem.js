@@ -1,7 +1,5 @@
 "use strict"
 
-
-
 document.addEventListener("keydown", function (event) {
   /************************* 
     Botão new
@@ -17,3 +15,9 @@ document.addEventListener("keydown", function (event) {
     document.querySelector('#toolbar-multiple > button').click();
   }
 });
+
+/* 
+  Add titulo do elemento com o atalho
+*/
+document.querySelector('#toolbar-new > button').title = "(Ctrl + Alt + N)";
+document.querySelector('#toolbar-multiple > button').title = "(Ctrl + Alt + M)";

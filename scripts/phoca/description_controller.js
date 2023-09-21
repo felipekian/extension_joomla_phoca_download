@@ -59,7 +59,7 @@ setDescriptionAutomaticIfExists();
 */
 let botao_descricao_adicionar = document.createElement('button');
 botao_descricao_adicionar.innerHTML = 'Adicionar';
-botao_descricao_adicionar.title = "Adicionar descrição automatica";
+botao_descricao_adicionar.title = "Adicionar descrição automatica (Ctrl + Alt + D)";
 botao_descricao_adicionar.classList.add('btn');
 botao_descricao_adicionar.classList.add('btn-small');
 botao_descricao_adicionar.addEventListener('click', () => {
@@ -72,7 +72,7 @@ let botao_descricao_remover = document.createElement('button');
 botao_descricao_remover.innerHTML = 'Remover';
 botao_descricao_remover.classList.add('btn');
 botao_descricao_remover.classList.add('btn-small');
-botao_descricao_remover.title = 'Remover descrição automatica';
+botao_descricao_remover.title = 'Remover descrição automatica (Ctrl + Alt + R)';
 botao_descricao_remover.addEventListener('click', () => {
 
   remover_descricao();
