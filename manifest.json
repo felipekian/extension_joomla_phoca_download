@@ -28,6 +28,14 @@
     },
     {
       "matches": [
+        "https://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadfiles"
+      ],
+      "js": [
+        "./scripts/phoca/shortcut_phoca_listagem.js"
+      ]
+    },
+    {
+      "matches": [
         "https://saude.rr.gov.br/administrator/index.php?option=com_content&view=article&layout=edit"
       ],
       "js": [
