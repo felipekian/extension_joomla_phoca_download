@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "joomla! control",
   "author": "Felipe Derkian de Sousa Freitas",
-  "version": "0.0.1",
+  "version": "1.0.11",
   "content_scripts": [
     {
       "matches": [
@@ -13,9 +13,9 @@
       ],
       "js": [
         "./scripts/phoca/inputs_display_none.js",
-        "./scripts/phoca/description_controler.js",
         "./scripts/phoca/date_start_publish_controler.js",
-        "./scripts/phoca/form_complete.js"
+        "./scripts/phoca/form_complete.js",
+        "./scripts/phoca/shortcuts.js"
       ]
     },
     {
