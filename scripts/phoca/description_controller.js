@@ -67,7 +67,13 @@ document.addEventListener("keydown", function (event) {
 ************************************************/
 function setDescriptionAutomaticIfExists() {
 
-  if (!localStorage.getItem('textarea_description') || localStorage.getItem('textarea_description').length < 1) {
+  /* set textarea-description caso não tenha */
+  if(!localStorage.getItem('textarea_description')) {
+    localStorage.setItem('textarea_description', '');
+  }
+
+  if (localStorage.getItem('textarea_description').length < 1) 
+  {
     adicionar_descricao();
   }
 
