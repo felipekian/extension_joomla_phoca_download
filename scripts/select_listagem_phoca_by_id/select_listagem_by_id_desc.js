@@ -1,0 +1,35 @@
+"use strict"
+
+
+function select_listagem_by_id_desc() {
+  let select_options_order = document.querySelector('#list_fullordering');
+  let select_fake = document.querySelector('#list_fullordering_chzn > a > span');
+
+  let OPTION = "ID descending";
+
+  // select_options_order.style.display = "block";
+
+  let options_categories = [...select_options_order.options];
+
+  let refresh_page = false;
+
+  /* changer selected */
+  for (let i = 0; i < options_categories.length; i++) {
+    
+    /* refresh caso esteja outra option selecionada */
+    if (options_categories[i].selected && options_categories[i].innerText != OPTION) {
+      refresh_page = true;
+    }
+
+    if (options_categories[i].innerText == OPTION) {
+      options_categories[i].selected = true;
+      break;
+    }
+  }
+
+  if (refresh_page)
+    document.querySelector('#adminForm').submit();
+}
+
+select_listagem_by_id_desc();
+
