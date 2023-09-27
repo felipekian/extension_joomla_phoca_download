@@ -1,13 +1,20 @@
 "use strict"
 
-let SECONDS = 120;
+let SECONDS = 60;
+let COUNT = SECONDS;
 
-setTimeout(() => {
-  
+let ELEMENTO = document.querySelector('#divInfraBarraSuperior > label');
+let TEXT = document.querySelector('#divInfraBarraSuperior > label').innerHTML;
+
+setTimeout(() => {  
   setMessageReloadPage();  
-  location.reload();
-  
+  location.reload();  
 }, 1000 * SECONDS);
+
+
+setInterval(() => {
+  ELEMENTO.innerHTML = `<span style="color:white;font-wight:bold;">${COUNT--}s</span> :: ${TEXT}`; 
+}, 1000);
 
 
 function setMessageReloadPage() {
