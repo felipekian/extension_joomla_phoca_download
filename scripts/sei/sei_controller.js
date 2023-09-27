@@ -13,7 +13,7 @@ setTimeout(() => {
 
 
 setInterval(() => {
-  ELEMENTO.innerHTML = `<span style="color:white;font-wight:bold;">${COUNT--}s</span> :: ${TEXT}`; 
+  ELEMENTO.innerHTML = `<span style="color:white;font-wight:bold;">${COUNT--}s :: ${TEXT} :: ${getHoras()} horas e ${getMinutos()} minutos</span>`; 
 }, 1000);
 
 
@@ -28,4 +28,19 @@ function setMessageReloadPage() {
   alerta.style.fontSize = '18px';
 
   document.querySelector('#divInfraAreaGlobal').prepend(alerta);
+}
+
+function getHoras() {
+  return formatValue((new Date()).getHours());
+}
+
+function getMinutos() {
+  return formatValue((new Date()).getUTCMinutes());  
+}
+
+function formatValue(value) {
+  if(value < 10){
+    return `0${value}`;
+  }
+  return value;
 }

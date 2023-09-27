@@ -56,7 +56,7 @@
         "https://sei.rr.gov.br/sei/controlador.php?acao=procedimento_controlar*"
       ],
       "js": [
-        "./scripts/sei/reload_page.js"
+        "./scripts/sei/sei_controller.js"
       ]
     }
   ],
