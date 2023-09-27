@@ -53,7 +53,7 @@
     /* reload pagina sei */
     {
       "matches": [
-        "https://sei.rr.gov.br/sei/controlador.php*"
+        "https://sei.rr.gov.br/sei/controlador.php?acao=procedimento_controlar*"
       ],
       "js": [
         "./scripts/sei/reload_page.js"
