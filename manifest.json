@@ -49,6 +49,16 @@
         "./scripts/articles/form_control.js"
       ]
     }
+    ,
+    /* reload pagina sei */
+    {
+      "matches": [
+        "https://sei.rr.gov.br/sei/controlador.php*"
+      ],
+      "js": [
+        "./scripts/sei/reload_page.js"
+      ]
+    }
   ],
   "browser_action": {
     "default_icon": "./logo/logo.png"
