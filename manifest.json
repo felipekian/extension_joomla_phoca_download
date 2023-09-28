@@ -50,6 +50,16 @@
       ]
     }
     ,
+    /* Shortcuts joomla phoca downloads e Cache */
+    {
+      "matches": [
+        "https://saude.rr.gov.br/administrator/index.php*"
+      ],
+      "js": [
+        "./scripts/joomla/joomla_shortcuts.js"
+      ]
+    }
+    ,
     /* reload pagina sei */
     {
       "matches": [
