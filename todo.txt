@@ -1,0 +1,3 @@
+* arrumar a data quando apaga o dia para remover o 00:00:00;
+
+* adicionar publicação automatica dos termos e cotação: com opcao de desbilitar funcao caso precise;
