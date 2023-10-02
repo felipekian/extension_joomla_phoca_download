@@ -16,7 +16,7 @@ if (getDateNow() != localStorage.getItem('textarea_description_date')) {
 function adicionar_descricao() {
   let descricao = window.prompt('Descrição:');
 
-  if (!descricao) return;
+  if (descricao === null) return;
 
   localStorage.setItem('textarea_description', descricao);
   localStorage.setItem('textarea_description_date', getDateNow());
@@ -66,16 +66,12 @@ document.addEventListener("keydown", function (event) {
   Popular descricao na página
 ************************************************/
 function setDescriptionAutomaticIfExists() {
-  /* set textarea-description caso não tenha */
-  if (typeof (localStorage.getItem('textarea_description')) == 'undefined') {
-    localStorage.setItem('textarea_description', '');
-  }
-
+ 
   if (localStorage.getItem('textarea_description').length === 0) {
     adicionar_descricao();
   }
 
-  document.querySelector('#jform_description').innerHTML = localStorage.getItem('textarea_description');
+  document.querySelector('#jform_description').textContent = localStorage.getItem('textarea_description');
 
 }
 
