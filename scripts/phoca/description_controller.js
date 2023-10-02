@@ -66,14 +66,12 @@ document.addEventListener("keydown", function (event) {
   Popular descricao na página
 ************************************************/
 function setDescriptionAutomaticIfExists() {
-
   /* set textarea-description caso não tenha */
-  if(!localStorage.getItem('textarea_description')) {
+  if (typeof (localStorage.getItem('textarea_description')) == 'undefined') {
     localStorage.setItem('textarea_description', '');
   }
 
-  if (localStorage.getItem('textarea_description').length < 1) 
-  {
+  if (localStorage.getItem('textarea_description').length === 0) {
     adicionar_descricao();
   }
 
