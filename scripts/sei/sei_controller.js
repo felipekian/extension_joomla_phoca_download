@@ -1,6 +1,6 @@
 "use strict"
 
-let SECONDS = 60;
+let SECONDS = 5;
 let COUNT = SECONDS;
 
 let ELEMENTO = document.querySelector('#divInfraBarraSuperior > label');
@@ -21,9 +21,9 @@ function setMessageReloadPage() {
   let alerta = document.createElement('div');
   
   alerta.innerHTML = "Recarregando página....";
-  alerta.style.border = '1px solid red';
-  alerta.style.background = 'red';
-  alerta.style.padding = '20px';
+  alerta.style.border = '1px solid #025b7a';
+  alerta.style.background = '#025b7a';
+  alerta.style.padding = '10px';
   alerta.style.color = 'white';
   alerta.style.fontSize = '18px';
 
