@@ -6,10 +6,18 @@ let btn_salvar_e_sair = document.querySelector('#toolbar-save > button');
 let title_input_phoca_publish_automatic = document.querySelector('#jform_title');
 let LAST_PUBLISHER_KEY = "LAST_PUBLISHER_KEY";
 let LAST_PUBLISHER_ACTIVED_TOGGLE = "LAST_PUBLISHER_ACTIVED_TOGGLE";
-const TIME_PUBLISH = 1000 * 10;
+const TIME_PUBLISH = 10;
+let tempo_restante = TIME_PUBLISH;
 
 function save_last_publisher() {
   localStorage.setItem(LAST_PUBLISHER_KEY, title_input_phoca_publish_automatic.value);
+}
+
+function show_time_publish_countdown() {
+  setInterval(() => {
+    document.querySelector('body > header > div.container-title > h1').innerHTML = `File :: ${tempo_restante}seg`;
+    tempo_restante--;
+  }, 1000);
 }
 
 /* Gatilhos */
@@ -27,9 +35,12 @@ function title_save_and_new(title) {
   title_input_phoca_publish_automatic.value = title;
   title_input_phoca_publish_automatic.focus();
   title_input_phoca_publish_automatic.blur();
+
+  show_time_publish_countdown();
+
   setTimeout(() => {
     btn_salvar_e_novo.click();
-  }, TIME_PUBLISH);
+  }, 1000 * TIME_PUBLISH);
 }
 
 function title_save_and_close(title) {
@@ -38,6 +49,9 @@ function title_save_and_close(title) {
   title_input_phoca_publish_automatic.blur();
   localStorage.setItem('textarea_description', '');
   localStorage.setItem(LAST_PUBLISHER_KEY, '');
+  
+  show_time_publish_countdown();
+  
   setTimeout(() => {
     btn_salvar_e_sair.click();
   }, TIME_PUBLISH);
