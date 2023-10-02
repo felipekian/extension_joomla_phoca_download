@@ -1,6 +1,6 @@
 "use strict"
 
-let SECONDS = 5;
+let SECONDS = 60;
 let COUNT = SECONDS;
 
 let ELEMENTO = document.querySelector('#divInfraBarraSuperior > label');
