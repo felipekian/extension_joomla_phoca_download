@@ -5,6 +5,7 @@ let btn_salvar_e_novo = document.querySelector('#toolbar-new > button');
 let btn_salvar_e_sair = document.querySelector('#toolbar-save > button');
 let title_input_phoca_publish_automatic = document.querySelector('#jform_title');
 let LAST_PUBLISHER_KEY = "LAST_PUBLISHER_KEY";
+let LAST_PUBLISHER_ACTIVED_TOGGLE = "LAST_PUBLISHER_ACTIVED_TOGGLE";
 const TIME_PUBLISH = 1000 * 10;
 
 function save_last_publisher() {
@@ -101,4 +102,20 @@ function set_last_publisher() {
   }
 }
 
-set_last_publisher();
+if (localStorage.getItem(LAST_PUBLISHER_ACTIVED_TOGGLE) == 1) {
+  set_last_publisher();
+}
+
+/* Show botão toggle publicacao automatica */
+let botao_toggle_pub_auto = document.createElement('button');
+botao_toggle_pub_auto.innerHTML = localStorage.getItem(LAST_PUBLISHER_ACTIVED_TOGGLE) == 1 ? 'Desativar' : 'Ativar';
+botao_toggle_pub_auto.classList.add('btn');
+botao_toggle_pub_auto.classList.add('btn-small');
+botao_toggle_pub_auto.title = 'Toggle publicação automatica';
+botao_toggle_pub_auto.addEventListener('click', () => {
+  localStorage.setItem(LAST_PUBLISHER_ACTIVED_TOGGLE, (localStorage.getItem(LAST_PUBLISHER_ACTIVED_TOGGLE) == 1 ? 0 : 1));
+  let show_alert_toggle = localStorage.getItem(LAST_PUBLISHER_ACTIVED_TOGGLE) == 1 ? 'Ativado' : 'Desativado';
+  location.reload();
+});
+
+document.querySelector('#toolbar-cancel').append(botao_toggle_pub_auto);
