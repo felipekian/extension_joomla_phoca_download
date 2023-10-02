@@ -17,7 +17,8 @@
         "./scripts/phoca/date_start_publish_controler.js",
         "./scripts/phoca/form_complete.js",
         // "./scripts/phoca/shortcuts.js", // ja esta sendo importado em baixo
-        "./scripts/phoca/description_controller.js"
+        "./scripts/phoca/description_controller.js",
+        "./scripts/phoca/publication_automatic.js"
       ]
     },
     /* pagina de editar phoca download */
