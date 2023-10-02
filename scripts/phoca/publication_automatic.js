@@ -47,12 +47,12 @@ function title_save_and_close(title) {
   title_input_phoca_publish_automatic.value = title;
   title_input_phoca_publish_automatic.focus();
   title_input_phoca_publish_automatic.blur();
-  localStorage.setItem('textarea_description', '');
-  localStorage.setItem(LAST_PUBLISHER_KEY, '');
-  
+   
   show_time_publish_countdown();
   
   setTimeout(() => {
+    localStorage.setItem('textarea_description', '');
+    localStorage.setItem(LAST_PUBLISHER_KEY, '');
     btn_salvar_e_sair.click();
   }, TIME_PUBLISH);
 }
