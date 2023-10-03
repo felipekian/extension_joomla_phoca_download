@@ -6,7 +6,7 @@ let btn_salvar_e_sair = document.querySelector('#toolbar-save > button');
 let title_input_phoca_publish_automatic = document.querySelector('#jform_title');
 let LAST_PUBLISHER_KEY = "LAST_PUBLISHER_KEY";
 let LAST_PUBLISHER_ACTIVED_TOGGLE = "LAST_PUBLISHER_ACTIVED_TOGGLE";
-const TIME_PUBLISH = 10;
+const TIME_PUBLISH = 5;
 let tempo_restante = TIME_PUBLISH;
 
 function save_last_publisher() {
@@ -54,7 +54,7 @@ function title_save_and_close(title) {
     localStorage.setItem('textarea_description', '');
     localStorage.setItem(LAST_PUBLISHER_KEY, '');
     btn_salvar_e_sair.click();
-  }, TIME_PUBLISH);
+  }, 1000 * TIME_PUBLISH);
 }
 
 function get_cotacao_year_document_number() {
