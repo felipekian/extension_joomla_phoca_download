@@ -32,11 +32,14 @@ btn_salvar_e_sair.addEventListener('click', function () {
 });
 
 function title_save_and_new(title) {
+  show_time_publish_countdown();
+
   title_input_phoca_publish_automatic.value = title;
   title_input_phoca_publish_automatic.focus();
-  title_input_phoca_publish_automatic.blur();
 
-  show_time_publish_countdown();
+  setTimeout(() => {
+    title_input_phoca_publish_automatic.blur();    
+  }, 1000);
 
   setTimeout(() => {
     btn_salvar_e_novo.click();
@@ -44,12 +47,15 @@ function title_save_and_new(title) {
 }
 
 function title_save_and_close(title) {
+  show_time_publish_countdown();
+
   title_input_phoca_publish_automatic.value = title;
   title_input_phoca_publish_automatic.focus();
-  title_input_phoca_publish_automatic.blur();
-   
-  show_time_publish_countdown();
-  
+
+  setTimeout(() => {
+    title_input_phoca_publish_automatic.blur();    
+  }, 1000);
+    
   setTimeout(() => {
     localStorage.setItem('textarea_description', '');
     localStorage.setItem(LAST_PUBLISHER_KEY, '');
