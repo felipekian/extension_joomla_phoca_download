@@ -38,7 +38,7 @@ function title_save_and_new(title) {
   title_input_phoca_publish_automatic.focus();
 
   setTimeout(() => {
-    title_input_phoca_publish_automatic.blur();    
+    title_input_phoca_publish_automatic.blur();
   }, 1000);
 
   setTimeout(() => {
@@ -52,10 +52,11 @@ function title_save_and_close(title) {
   title_input_phoca_publish_automatic.value = title;
   title_input_phoca_publish_automatic.focus();
 
+  /* da o blur com 70% do tempo para publicar para esperar o pc processar direito */
   setTimeout(() => {
-    title_input_phoca_publish_automatic.blur();    
-  }, 1000);
-    
+    title_input_phoca_publish_automatic.blur();
+  }, 1000 * TIME_PUBLISH * 0.7);
+
   setTimeout(() => {
     localStorage.setItem('textarea_description', '');
     localStorage.setItem(LAST_PUBLISHER_KEY, '');
