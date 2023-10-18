@@ -60,6 +60,7 @@ function title_save_and_close(title) {
   setTimeout(() => {
     localStorage.setItem('textarea_description', '');
     localStorage.setItem(LAST_PUBLISHER_KEY, '');
+    window.open('https://saude.rr.gov.br/administrator/index.php?option=com_cache', '_blank'); // abre a pagina de limpar o cache
     btn_salvar_e_sair.click();
   }, 1000 * TIME_PUBLISH);
 }

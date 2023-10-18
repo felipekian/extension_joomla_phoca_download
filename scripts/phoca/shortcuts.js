@@ -5,6 +5,7 @@ document.addEventListener("keydown", function (event) {
     Salvar e Sair
   *************************/
   if (event.altKey && (event.key === 's' || event.key === 'S')) {
+    window.open('https://saude.rr.gov.br/administrator/index.php?option=com_cache', '_blank'); // abre a pagina de limpar o cache
     document.querySelector('#toolbar-save > button').click();
   }
 
