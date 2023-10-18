@@ -5,17 +5,29 @@ let COUNT = SECONDS;
 
 let ELEMENTO = document.querySelector('#divInfraBarraSuperior > label');
 let TEXT = document.querySelector('#divInfraBarraSuperior > label').innerHTML;
+let URL_ATUAL = window.location.href;
+let RELOAD_ACTIVE_PAGE = URL_ATUAL.indexOf('https://sei.rr.gov.br/sei/controlador.php?acao=procedimento_controlar') !== -1;
 
-setTimeout(() => {  
-  setMessageReloadPage();  
-  location.reload();  
-}, 1000 * SECONDS);
+if(RELOAD_ACTIVE_PAGE){
+  setTimeout(() => {  
+    setMessageReloadPage();  
+    location.reload();  
+  }, 1000 * SECONDS);
+}
 
 
 setInterval(() => {
-  ELEMENTO.innerHTML = `<a title="Abrir site da sesau" href="https://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadfiles" target="_blank">
-  <span style="color:white;font-wight:bold;">${COUNT--}s :: ${TEXT} :: ${getHoras()} horas e ${getMinutos()} minutos</span>
-  </a>`; 
+  let data_insert = `<a 
+  title="Abrir site da sesau" 
+  href="https://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadfiles" 
+  target="_blank">
+  <span style="color:white;font-wight:bold;">`;
+  if(RELOAD_ACTIVE_PAGE)
+    data_insert += `${COUNT--}s :: ${TEXT} :: ${getHoras()} horas e ${getMinutos()} minutos</span></a>`; 
+  else
+    data_insert += `${TEXT} :: ${getHoras()} horas e ${getMinutos()} minutos</span></a>`; 
+
+  ELEMENTO.innerHTML = data_insert;
 }, 1000);
 
 
