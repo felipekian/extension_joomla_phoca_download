@@ -66,7 +66,7 @@
     /* reload pagina sei */
     {
       "matches": [
-        "https://sei.rr.gov.br/sei/controlador.php?acao=procedimento_controlar*"
+        "https://sei.rr.gov.br/sei/controlador.php*"
       ],
       "js": [
         "./scripts/sei/sei_controller.js"
