@@ -13,7 +13,9 @@ setTimeout(() => {
 
 
 setInterval(() => {
-  ELEMENTO.innerHTML = `<span style="color:white;font-wight:bold;">${COUNT--}s :: ${TEXT} :: ${getHoras()} horas e ${getMinutos()} minutos</span>`; 
+  ELEMENTO.innerHTML = `<a title="Abrir site da sesau" href="https://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadfiles" target="_blank">
+  <span style="color:white;font-wight:bold;">${COUNT--}s :: ${TEXT} :: ${getHoras()} horas e ${getMinutos()} minutos</span>
+  </a>`; 
 }, 1000);
 
 
