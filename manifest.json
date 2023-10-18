@@ -57,7 +57,9 @@
         "https://saude.rr.gov.br/administrator/index.php*"
       ],
       "js": [
-        "./scripts/joomla/joomla_shortcuts.js"
+        "./scripts/joomla/joomla_shortcuts.js",
+        "./scripts/joomla/add_btn_head_clear_cache.js",
+        "./scripts/joomla/add_btn_head_phoca_download.js"
       ]
     }
     ,
