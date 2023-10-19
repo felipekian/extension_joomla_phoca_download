@@ -22,12 +22,15 @@ setInterval(() => {
   href="https://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadfiles" 
   target="_blank">
   <span style="color:white;font-wight:bold;">`;
+
   if(RELOAD_ACTIVE_PAGE)
-    data_insert += `${COUNT--}s :: ${TEXT} :: ${getHoras()} horas e ${getMinutos()} minutos</span></a>`; 
+    data_insert += `${COUNT}s :: ${TEXT} :: ${getHoras()} horas e ${getMinutos()} minutos</span></a>`; 
   else
     data_insert += `${TEXT} :: ${getHoras()} horas e ${getMinutos()} minutos</span></a>`; 
 
   ELEMENTO.innerHTML = data_insert;
+  
+  if(--COUNT && COUNT < 0) COUNT = 0; 
 }, 1000);
 
 
