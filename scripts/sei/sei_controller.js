@@ -10,9 +10,12 @@ let RELOAD_ACTIVE_PAGE = URL_ATUAL.indexOf('https://sei.rr.gov.br/sei/controlado
 
 if(RELOAD_ACTIVE_PAGE){
   setTimeout(() => {  
-    setMessageReloadPage();  
     location.reload();  
-  }, 1000 * SECONDS - 5);
+  }, 1000 * SECONDS);
+
+  setTimeout(() => {  
+    setMessageReloadPage();  
+  }, 1000 * SECONDS * 0.9);
 }
 
 
