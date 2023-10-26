@@ -12,7 +12,7 @@ if(RELOAD_ACTIVE_PAGE){
   setTimeout(() => {  
     setMessageReloadPage();  
     location.reload();  
-  }, 1000 * SECONDS);
+  }, 1000 * SECONDS - 2);
 }
 
 
@@ -35,16 +35,7 @@ setInterval(() => {
 
 
 function setMessageReloadPage() {
-  let alerta = document.createElement('div');
-  
-  alerta.innerHTML = "Recarregando página....";
-  alerta.style.border = '1px solid #025b7a';
-  alerta.style.background = '#025b7a';
-  alerta.style.padding = '10px';
-  alerta.style.color = 'white';
-  alerta.style.fontSize = '18px';
-
-  document.querySelector('#divInfraAreaGlobal').prepend(alerta);
+  document.querySelector('#divInfraBarraSuperior').style.borderBottom = "2px solid red";
 }
 
 function getHoras() {
