@@ -12,7 +12,7 @@ if(RELOAD_ACTIVE_PAGE){
   setTimeout(() => {  
     setMessageReloadPage();  
     location.reload();  
-  }, 1000 * SECONDS - 2);
+  }, 1000 * SECONDS - 5);
 }
 
 
