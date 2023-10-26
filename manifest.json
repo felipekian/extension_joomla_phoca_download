@@ -69,7 +69,8 @@
         "https://sei.rr.gov.br/sei/controlador.php*"
       ],
       "js": [
-        "./scripts/sei/sei_controller.js"
+        "./scripts/sei/sei_controller.js",
+        "./scripts/sei/sei_shortcuts.js"
       ]
     }
   ],
