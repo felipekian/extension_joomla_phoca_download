@@ -66,7 +66,7 @@
     /* reload pagina sei */
     {
       "matches": [
-        "https://sei.rr.gov.br/sei/controlador.php*"
+        "https://sei.rr.gov.br/sei/*"
       ],
       "js": [
         "./scripts/sei/sei_controller.js",
