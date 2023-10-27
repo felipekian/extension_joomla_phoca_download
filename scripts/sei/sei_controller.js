@@ -21,7 +21,8 @@ if(RELOAD_ACTIVE_PAGE){
 
 setInterval(() => {
   let data_insert = `<a 
-  title="Abrir site da sesau" 
+  id="page_joomla"
+  title="Abrir site da sesau (Alt + S)" 
   href="https://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadfiles" 
   target="_blank">
   <span style="color:white;font-wight:bold;">`;
