@@ -28,7 +28,7 @@ setInterval(() => {
   <span style="color:white;font-wight:bold;">`;
 
   if(RELOAD_ACTIVE_PAGE)
-    data_insert += `${COUNT}s :: ${TEXT} :: ${getHoras()} horas e ${getMinutos()} minutos</span></a>`; 
+    data_insert += `${TEXT} :: ${getHoras()} horas e ${getMinutos()} minutos :: ${COUNT}s</span></a>`; 
   else
     data_insert += `${TEXT} :: ${getHoras()} horas e ${getMinutos()} minutos</span></a>`; 
 
