@@ -39,7 +39,7 @@ setInterval(() => {
 
 
 function setMessageReloadPage() {
-  document.querySelector('#divInfraBarraSuperior').style.borderBottom = "2px solid red";
+  document.querySelector('#divInfraBarraSuperior').style.borderBottom = "2px solid #90EE90";
 }
 
 function getHoras() {
