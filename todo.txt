@@ -1,1 +1,0 @@
-* adicionar publicação automatica dos termos e cotação: com opcao de desbilitar funcao caso precise;
