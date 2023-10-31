@@ -4,7 +4,7 @@ let lnkControleProcessos = document.querySelector('#lnkControleProcessos');
 
 lnkControleProcessos.title = "Alt + Q";
 
-document.addEventListener("keydown", function (event) {
+window.addEventListener("keydown", function (event) {
   /************************* 
     clica no botão home
   *************************/
