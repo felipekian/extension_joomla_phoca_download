@@ -73,6 +73,16 @@
         "./scripts/sei/sei_shortcuts.js"
       ]
     }
+    ,
+    /* pagina sei login */
+    {
+      "matches": [
+        "https://sip.rr.gov.br/sip/login.php*"
+      ],
+      "js": [
+        "./scripts/sei/login.styles.js"
+      ]
+    }
   ],
   "browser_action": {
     "default_icon": "./logo/logo.png"
