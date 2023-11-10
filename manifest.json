@@ -63,6 +63,16 @@
       ]
     }
     ,
+    /* Joomla login */
+    {
+      "matches": [
+        "https://saude.rr.gov.br/administrator/index.php"
+      ],
+      "js": [
+        "./scripts/joomla/joomla_login.js"
+      ]
+    }
+    ,
     /* reload pagina sei */
     {
       "matches": [
