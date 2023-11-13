@@ -38,9 +38,7 @@
       ],
       "js": [
         "./scripts/phoca/shortcut_phoca_listagem.js",
-        "./scripts/select_listagem_phoca_by_id/select_listagem_by_id_desc.js",
-        /* Joomla login */
-        "./scripts/joomla/joomla_login.js"
+        "./scripts/select_listagem_phoca_by_id/select_listagem_by_id_desc.js"
       ]
     },
     /* pagina de cadastro de noticias */
@@ -61,9 +59,7 @@
       "js": [
         "./scripts/joomla/joomla_shortcuts.js",
         "./scripts/joomla/add_btn_head_clear_cache.js",
-        "./scripts/joomla/add_btn_head_phoca_download.js",
-        /* Joomla login */
-        "./scripts/joomla/joomla_login.js"
+        "./scripts/joomla/add_btn_head_phoca_download.js"
       ]
     }
     ,
