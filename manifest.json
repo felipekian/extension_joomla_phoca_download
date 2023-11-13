@@ -38,7 +38,7 @@
       ],
       "js": [
         "./scripts/phoca/shortcut_phoca_listagem.js",
-        "./scripts/select_listagem_phoca_by_id/select_listagem_by_id_desc.js"
+        "./scripts/phoca/select_listagem_by_id_desc.js"
       ]
     },
     /* pagina de cadastro de noticias */
