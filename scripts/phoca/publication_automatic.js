@@ -112,12 +112,12 @@ function set_last_publisher() {
     let title = `:: Minuta de Contrato de Licitação - PERP - ${numero_documento}/${ano}`; // 130/2023
     title_save_and_new(title);
   }
-  else if ((localStorage.getItem(LAST_PUBLISHER_KEY)).toLowerCase().indexOf(("Minuta de Contrato de Licitação  - PERP -").toLowerCase()) > 0) {
+  else if ((localStorage.getItem(LAST_PUBLISHER_KEY)).toLowerCase().indexOf(("Minuta de Contrato de Licitação - PERP -").toLowerCase()) > 0) {
     let [ano, numero_documento] = get_editais_year_document_number();
     let title = `:: Planilha Estimativa de Licitação - PERP - ${numero_documento}/${ano}`; // 130/2023
     title_save_and_new(title);
   }
-  else if ((localStorage.getItem(LAST_PUBLISHER_KEY)).toLowerCase().indexOf(("Planilha Estimativa de Licitação  - PERP -").toLowerCase()) > 0) {
+  else if ((localStorage.getItem(LAST_PUBLISHER_KEY)).toLowerCase().indexOf(("Planilha Estimativa de Licitação - PERP -").toLowerCase()) > 0) {
     let [ano, numero_documento] = get_editais_year_document_number();
     let title = `:: Termo de Referência de Licitação - PERP - ${numero_documento}/${ano}`; // 130/2023
     title_save_and_close(title);
