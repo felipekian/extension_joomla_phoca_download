@@ -8,14 +8,17 @@ let TEXT = document.querySelector('#divInfraBarraSuperior > label').innerHTML;
 let URL_ATUAL = window.location.href;
 let RELOAD_ACTIVE_PAGE = URL_ATUAL.indexOf('https://sei.rr.gov.br/sei/controlador.php?acao=procedimento_controlar') !== -1;
 
+/* Add borda verde separacao */
+setMessageReloadPage();
+
 if(RELOAD_ACTIVE_PAGE){
   setTimeout(() => {  
     location.reload();  
   }, 1000 * SECONDS);
 
-  setTimeout(() => {  
-    setMessageReloadPage();  
-  }, 1000 * SECONDS * 0.9);
+  // setTimeout(() => {  
+  //   setMessageReloadPage();  
+  // }, 1000 * SECONDS * 0.9);
 }
 
 
