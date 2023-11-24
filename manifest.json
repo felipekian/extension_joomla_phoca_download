@@ -75,13 +75,13 @@
       ]
     }
     ,
-    /* reload pagina sei */
+    /* sei andamento especial csl */
     {
       "matches": [
-        "https://sei.rr.gov.br/sei/controlador.php?acao=acompanhamento_alterar&acao_origem=acompanhamento_cadastrar*"
+        "https://sei.rr.gov.br/sei/controlador.php?acao=acompanhamento_cadastrar*"
       ],
       "js": [
-        "./scripts/sei/andamento_especial.js"
+        "./scripts/sei/andamento_especial_csl.js"
       ]
     }
     ,
