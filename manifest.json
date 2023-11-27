@@ -78,7 +78,8 @@
     /* sei andamento especial csl */
     {
       "matches": [
-        "https://sei.rr.gov.br/sei/controlador.php?acao=acompanhamento_cadastrar*"
+        "https://sei.rr.gov.br/sei/controlador.php?acao=acompanhamento_cadastrar*",
+        "https://sei.rr.gov.br/sei/controlador.php?acao=acompanhamento_alterar*"
       ],
       "js": [
         "./scripts/sei/andamento_especial_csl.js"
