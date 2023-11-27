@@ -562,13 +562,13 @@ function controller(title) {
     __editalEsclarecimentos(title);
   }
   /* Dispensas */
-  else if (title.toLowerCase().indexOf(("AVISO DE DISPENSA").toLowerCase()) > 0) {
+  else if (title.toLowerCase().indexOf(("AVISO DE DISPENSA DE LICITAÇÃO").toLowerCase()) > 0) {
     __avisoDispensa(title);
   }
-  else if (title.toLowerCase().indexOf(("PROJETO BÁSICO DE DISPENSA").toLowerCase()) > 0) {
+  else if (title.toLowerCase().indexOf(("PROJETO BÁSICO DE DISPENSA DE LICITAÇÃO").toLowerCase()) > 0) {
     __projetoBasicoDispensa(title);
   }
-  else if (title.toLowerCase().indexOf(("TERMO DE REFERÊNCIA DE DISPENSA").toLowerCase()) > 0) {
+  else if (title.toLowerCase().indexOf(("TERMO DE REFERÊNCIA DE DISPENSA DE LICITAÇÃO").toLowerCase()) > 0) {
     __termoReferenciaDispensa(title);
   }
   /* Resultados */
