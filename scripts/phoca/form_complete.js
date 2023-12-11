@@ -183,6 +183,22 @@ function __editalEsclarecimentos(title) {
   setFileName(filename);
 }
 
+function __editalInformativo(title) {
+
+  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
+  let tam_split_title = split_title.length;
+
+  let numero_documento = split_title[tam_split_title - 2];
+  let ano = split_title[tam_split_title - 1];
+
+  let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
+
+  let filename = `csl/editaisetermos_${ano}/INFORMATIVO DE LICITACAO-PERP-${numero_documento}-${ano}.pdf`;
+
+  setCategoria(categoria);
+  setFileName(filename);
+}
+
 
 /* Editais e Termos Reabertura */
 function __editalEditalReabertura(title) {
@@ -560,6 +576,9 @@ function controller(title) {
   }
   else if (title.toLowerCase().indexOf(("Esclarecimentos de Licitação").toLowerCase()) > 0) {
     __editalEsclarecimentos(title);
+  }
+  else if (title.toLowerCase().indexOf(("Informativo de Licitação").toLowerCase()) > 0) {
+    __editalInformativo(title);
   }
   /* Dispensas */
   else if (title.toLowerCase().indexOf(("AVISO DE DISPENSA DE LICITAÇÃO").toLowerCase()) > 0) {
