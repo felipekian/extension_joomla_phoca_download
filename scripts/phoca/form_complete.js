@@ -56,8 +56,6 @@ function __modeloComunicacaoCotacao(title) {
 
 function __modeloPropostaCotacao(title) {
 
-  let [dia_atual, mes_atual, ano_atual] = dataAtual();
-
   let split_title = title.replace(' - ', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -65,8 +63,7 @@ function __modeloPropostaCotacao(title) {
   let numero_documento = split_title[tam_split_title - 1];
 
   let categoria = `:: CSL - :: Pregões - :: Avisos e Comunicados - :: Avisos e Comunicados ${ano} - :: Comunicado de Cotação ${ano}`;
-  // let filename = `csl/cotacao_${ano_atual}/PROPOSTADECOTACAO_${dia_atual}.${mes_atual}.${ano_atual}_${numero_documento}.pdf`;
-  let filename = `csl/cotacao_${ano_atual}/PROPOSTADECOTACAO-${numero_documento}-${ano_atual}.pdf`;
+  let filename = `csl/cotacao_${ano}/PROPOSTADECOTACAO-${numero_documento}-${ano}.pdf`;
 
   setCategoria(categoria);
   setFileName(filename);
