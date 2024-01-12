@@ -90,6 +90,10 @@ function set_last_publisher() {
     return;
   }
 
+  if ((localStorage.getItem(LAST_PUBLISHER_KEY)).toLowerCase().indexOf(("RETIFICAÇÃO").toLowerCase()) > 0) {
+    return;
+  }
+
   /* 
   comunicado e proposta de cotação 
   */
