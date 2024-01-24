@@ -1,8 +1,20 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "joomla! control",
   "author": "Felipe Derkian de Sousa Freitas",
   "version": "1.0.12",
+  "web_accessible_resources" : [
+    {
+      "resources" : [
+        "./css/*",
+        "./logo/*",
+        "./scripts/*"
+      ],
+      "matches": [
+        "*://*/*"
+      ]
+    }
+  ],
   "content_scripts": [
     /* pagina de cadastro phoca download */
     {
@@ -13,10 +25,8 @@
         "./css/index.css"
       ],
       "js": [
-        // "./scripts/phoca/inputs_display_none.js", //já esta sendo importado em baixo
         "./scripts/phoca/date_start_publish_controler.js",
         "./scripts/phoca/form_complete.js",
-        // "./scripts/phoca/shortcuts.js", // ja esta sendo importado em baixo
         "./scripts/phoca/description_controller.js",
         "./scripts/phoca/publication_automatic.js"
       ]
@@ -96,11 +106,15 @@
       ]
     }
   ],
-  "browser_action": {
+  "action": {
     "default_icon": "./logo/logo.png"
   },
   "permissions": [
     "activeTab",
-    "tabs"
+    "tabs",
+    "storage",
+    "debugger",
+    "cookies",
+    "scripting"
   ]
 }
