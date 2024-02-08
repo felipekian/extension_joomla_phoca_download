@@ -1,35 +1,37 @@
 "use strict"
 
+window.addEventListener('load', () => {
 
-function select_listagem_by_id_desc() {
-  let select_options_order = document.querySelector('#list_fullordering');
-  let select_fake = document.querySelector('#list_fullordering_chzn > a > span');
+  function select_listagem_by_id_desc() {
+    let select_options_order = document.querySelector('#list_fullordering');
+    let select_fake = document.querySelector('#list_fullordering_chzn > a > span');
 
-  let OPTION = "a.id DESC";
+    let OPTION = "a.id DESC";
 
-  // select_options_order.style.display = "block";
+    // select_options_order.style.display = "block";
 
-  let options_categories = [...select_options_order.options];
+    let options_categories = [...select_options_order.options];
 
-  let refresh_page = false;
+    let refresh_page = false;
 
-  /* changer selected */
-  for (let i = 0; i < options_categories.length; i++) {
-    
-    /* refresh caso esteja outra option selecionada */
-    if (options_categories[i].selected && options_categories[i].value != OPTION) {
-      refresh_page = true;
+    /* changer selected */
+    for (let i = 0; i < options_categories.length; i++) {
+
+      /* refresh caso esteja outra option selecionada */
+      if (options_categories[i].selected && options_categories[i].value != OPTION) {
+        refresh_page = true;
+      }
+
+      if (options_categories[i].value == OPTION) {
+        options_categories[i].selected = true;
+        break;
+      }
     }
 
-    if (options_categories[i].value == OPTION) {
-      options_categories[i].selected = true;
-      break;
-    }
+    if (refresh_page)
+      document.querySelector('#adminForm').submit();
   }
 
-  if (refresh_page)
-    document.querySelector('#adminForm').submit();
-}
+  select_listagem_by_id_desc();
 
-select_listagem_by_id_desc();
-
+});
