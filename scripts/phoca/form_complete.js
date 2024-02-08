@@ -466,8 +466,29 @@ function __cib_resolucoes(title) {
   let ano = split_title[tam_split_title - 1];
 
   let categoria = `:: CIB - :: Resoluções - :: Resoluções CIB - ${ano}`;
-
   setCategoria(categoria);
+
+  let filename = `cib/resolucoes_${ano}/resolucao-cib-${numero_documento}-${ano}.pdf`;
+  setFileName(filename);
+
+  abrirSelectFileName();
+}
+
+function __cib_resolucoes_adreferendum(title) {
+
+  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
+  let tam_split_title = split_title.length;
+
+  let numero_documento = split_title[tam_split_title - 2];
+  let ano = split_title[tam_split_title - 1];
+
+  let categoria = `:: CIB - :: Resoluções - :: Resoluções CIB - ${ano}`;
+  setCategoria(categoria);
+
+  let filename = `cib/resolucoes_${ano}/resolucao-cib-adreferendum-${numero_documento}-${ano}.pdf`;
+  setFileName(filename);
+
+  abrirSelectFileName();
 }
 
 
@@ -650,9 +671,14 @@ function controller(title) {
   ) {
     __chamamento(title);
   }
-
-  /* CIB */
+  /* CIB Resolução ad'referendum */
   else if (
+    title.toLowerCase().indexOf(("Resolução CIB Ad Referendum").toLowerCase()) > 0
+  ) {
+    __cib_resolucoes_adreferendum(title);
+  }
+   /* CIB Resolução */
+   else if (
     title.toLowerCase().indexOf(("Resolução CIB").toLowerCase()) > 0
   ) {
     __cib_resolucoes(title);
