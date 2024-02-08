@@ -424,6 +424,7 @@ function __credenciamento(title) {
   }
 
 }
+
 function __chamamento(title) {
 
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
@@ -454,6 +455,19 @@ function __chamamento(title) {
     let filename = `chamamentos/CHAMAMENTO_PUBLICO_TERMO_DE_REFERENCIA-${numero_documento}-${ano}.pdf`;
     setFileName(filename);
   }
+}
+
+function __cib_resolucoes(title) {
+
+  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
+  let tam_split_title = split_title.length;
+
+  let numero_documento = split_title[tam_split_title - 2];
+  let ano = split_title[tam_split_title - 1];
+
+  let categoria = `:: CIB - :: Resoluções - :: Resoluções CIB - ${ano}`;
+
+  setCategoria(categoria);
 }
 
 
@@ -635,6 +649,13 @@ function controller(title) {
     title.toLowerCase().indexOf(("CHAMAMENTO PÚBLICO").toLowerCase()) > 0
   ) {
     __chamamento(title);
+  }
+
+  /* CIB */
+  else if (
+    title.toLowerCase().indexOf(("Resolução CIB").toLowerCase()) > 0
+  ) {
+    __cib_resolucoes(title);
   }
 }
 
