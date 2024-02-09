@@ -23,5 +23,14 @@ function category_noticia() {
   select_fake.classList.add('highlighted');
 }
 
-category_noticia();
+/**
+ * 
+ * Start
+ * 
+ */
 
+window.addEventListener('load', () => {
+
+  category_noticia();
+
+});

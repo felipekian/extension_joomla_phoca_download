@@ -12,5 +12,9 @@ window.addEventListener("keydown", function (event) {
   }
 });
 
-const label_acompanhamento = document.querySelector('#lblSelGrupoAcompanhamento');
-label_acompanhamento.innerHTML = label_acompanhamento.innerHTML + " \"(Alt + C) para selecionar CSL\"";
+window.addEventListener('load', () => {
+
+  const label_acompanhamento = document.querySelector('#lblSelGrupoAcompanhamento');
+  label_acompanhamento.innerHTML = label_acompanhamento.innerHTML + " \"(Alt + C) para selecionar CSL\"";
+
+});

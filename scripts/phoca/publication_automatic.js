@@ -127,9 +127,9 @@ function set_last_publisher() {
     title_save_and_close(title);
   }
 
-   /* 
-  editais e termos Republicação
-  */
+  /* 
+ editais e termos Republicação
+ */
   else if ((localStorage.getItem(LAST_PUBLISHER_KEY)).toLowerCase().indexOf(("Aviso de Licitação - REPUBLICAÇÃO - PERP -").toLowerCase()) > 0) {
     let [ano, numero_documento] = get_editais_year_document_number();
     let title = `:: Edital de Licitação - REPUBLICAÇÃO - PERP - ${numero_documento}/${ano}`; // 130/2023
@@ -152,20 +152,30 @@ function set_last_publisher() {
   }
 }
 
-if (localStorage.getItem(LAST_PUBLISHER_ACTIVED_TOGGLE) == 1) {
-  set_last_publisher();
-}
+/**
+ * 
+ * Start
+ *  
+ */
 
-/* Show botão toggle publicacao automatica */
-let botao_toggle_pub_auto = document.createElement('button');
-botao_toggle_pub_auto.innerHTML = localStorage.getItem(LAST_PUBLISHER_ACTIVED_TOGGLE) == 1 ? 'Desativar' : 'Ativar';
-botao_toggle_pub_auto.classList.add('btn');
-botao_toggle_pub_auto.classList.add('btn-small');
-botao_toggle_pub_auto.title = 'Toggle publicação automatica';
-botao_toggle_pub_auto.addEventListener('click', () => {
-  localStorage.setItem(LAST_PUBLISHER_ACTIVED_TOGGLE, (localStorage.getItem(LAST_PUBLISHER_ACTIVED_TOGGLE) == 1 ? 0 : 1));
-  let show_alert_toggle = localStorage.getItem(LAST_PUBLISHER_ACTIVED_TOGGLE) == 1 ? 'Ativado' : 'Desativado';
-  location.reload();
+window.addEventListener('load', () => {
+
+  if (localStorage.getItem(LAST_PUBLISHER_ACTIVED_TOGGLE) == 1) {
+    set_last_publisher();
+  }
+
+  /* Show botão toggle publicacao automatica */
+  let botao_toggle_pub_auto = document.createElement('button');
+  botao_toggle_pub_auto.innerHTML = localStorage.getItem(LAST_PUBLISHER_ACTIVED_TOGGLE) == 1 ? 'Desativar' : 'Ativar';
+  botao_toggle_pub_auto.classList.add('btn');
+  botao_toggle_pub_auto.classList.add('btn-small');
+  botao_toggle_pub_auto.title = 'Toggle publicação automatica';
+  botao_toggle_pub_auto.addEventListener('click', () => {
+    localStorage.setItem(LAST_PUBLISHER_ACTIVED_TOGGLE, (localStorage.getItem(LAST_PUBLISHER_ACTIVED_TOGGLE) == 1 ? 0 : 1));
+    let show_alert_toggle = localStorage.getItem(LAST_PUBLISHER_ACTIVED_TOGGLE) == 1 ? 'Ativado' : 'Desativado';
+    location.reload();
+  });
+
+  document.querySelector('#toolbar-cancel').append(botao_toggle_pub_auto);
+
 });
-
-document.querySelector('#toolbar-cancel').append(botao_toggle_pub_auto);

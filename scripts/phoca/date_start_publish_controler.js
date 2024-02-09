@@ -17,7 +17,7 @@ function getDateNow() {
 }
 
 function format_data_para_amanha(data) {
-  if(data === '') return data;
+  if (data === '') return data;
   data = data.split(' ');
   return data[0] + ' 00:00:00';
 }
@@ -33,4 +33,15 @@ function startPublishInputControl() {
   });
 }
 
-startPublishInputControl();
+/**
+ *
+ * Start
+ * 
+ **/ 
+
+window.addEventListener('load', () => {
+
+  startPublishInputControl();
+
+});
+

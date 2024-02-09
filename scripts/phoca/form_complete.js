@@ -4,6 +4,7 @@ let title_input_phoca = document.querySelector('#jform_title');
 let category_input_phoca = document.querySelector('#jform_catid_chzn > a > span');
 let filename_input_phoca = document.querySelector('#jform_filename');
 
+
 function dataAtual() {
   let data = new Date();
   let dia = String(data.getDate()).padStart(2, '0');
@@ -14,9 +15,6 @@ function dataAtual() {
 
 function setCategoria(categoria) {
   let category_input = document.querySelector('#jform_catid');
-
-  // category_input.style.display = "block";
-
   let options_category = [...category_input.options];
 
   for (let i = 0; i < options_category.length; i++) {
@@ -677,16 +675,25 @@ function controller(title) {
   ) {
     __cib_resolucoes_adreferendum(title);
   }
-   /* CIB Resolução */
-   else if (
+  /* CIB Resolução */
+  else if (
     title.toLowerCase().indexOf(("Resolução CIB").toLowerCase()) > 0
   ) {
     __cib_resolucoes(title);
   }
 }
 
+/**
+ *
+ * Start 
+ * 
+ */
 
-title_input_phoca.addEventListener('blur', function (e) {
-  controller(e.target.value);
+window.addEventListener('load', () => {
+
+  title_input_phoca.addEventListener('blur', function (e) {
+    controller(e.target.value);
+  });
+
 });
 

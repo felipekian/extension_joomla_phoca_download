@@ -1,8 +1,11 @@
 "use strict"
 
-let lnkControleProcessos = document.querySelector('#lnkControleProcessos');
+window.addEventListener('load', () => {
 
-lnkControleProcessos.title = "Alt + Q";
+  let lnkControleProcessos = document.querySelector('#lnkControleProcessos');
+  lnkControleProcessos.title = "Alt + Q";
+
+});
 
 window.addEventListener("keydown", function (event) {
   /************************* 
@@ -11,7 +14,7 @@ window.addEventListener("keydown", function (event) {
   if (event.altKey && (event.key === 'q' || event.key === 'Q')) {
     lnkControleProcessos.click();
   }
-  
+
   if (event.altKey && (event.key === 's' || event.key === 'S')) {
     document.querySelector('#page_joomla').click();
   }

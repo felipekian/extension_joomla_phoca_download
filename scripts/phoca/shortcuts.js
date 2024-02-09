@@ -17,8 +17,12 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
-/* 
-  Add titulo do elemento com o atalho
-*/
-document.querySelector('#toolbar-save > button').title = "(Alt + S)";
-document.querySelector('#toolbar-cancel > button').title = "(Alt + C)"
+window.addEventListener('load', () => {
+
+  /* 
+    Add titulo do elemento com o atalho
+  */
+  document.querySelector('#toolbar-save > button').title = "(Alt + S)";
+  document.querySelector('#toolbar-cancel > button').title = "(Alt + C)";
+
+});

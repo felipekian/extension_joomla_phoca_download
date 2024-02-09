@@ -16,8 +16,13 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
-/* 
-  Add titulo do elemento com o atalho
-*/
-document.querySelector('#toolbar-new > button').title = "(Ctrl + Alt + N)";
-document.querySelector('#toolbar-multiple > button').title = "(Ctrl + Alt + M)";
+
+window.addEventListener('load', () => {
+
+  /* 
+    Add titulo do elemento com o atalho
+  */
+  document.querySelector('#toolbar-new > button').title = "(Ctrl + Alt + N)";
+  document.querySelector('#toolbar-multiple > button').title = "(Ctrl + Alt + M)";
+
+});

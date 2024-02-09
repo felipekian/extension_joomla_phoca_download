@@ -15,7 +15,7 @@ function select_listagem_by_id_desc() {
 
   /* changer selected */
   for (let i = 0; i < options_categories.length; i++) {
-    
+
     /* refresh caso esteja outra option selecionada */
     if (options_categories[i].selected && options_categories[i].value != OPTION) {
       refresh_page = true;
@@ -31,5 +31,15 @@ function select_listagem_by_id_desc() {
     document.querySelector('#adminForm').submit();
 }
 
-select_listagem_by_id_desc();
 
+/**
+ *
+ * Start  
+ *
+ */
+
+window.addEventListener('load', () => {
+
+  select_listagem_by_id_desc();
+
+});

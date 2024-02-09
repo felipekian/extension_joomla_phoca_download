@@ -16,6 +16,14 @@ function displayNoneIputs() {
 
 }
 
-displayNoneIputs();
+/**
+ *
+ * Start 
+ * 
+ **/
 
+window.addEventListener('load', () => {
 
+  displayNoneIputs();
+
+});
