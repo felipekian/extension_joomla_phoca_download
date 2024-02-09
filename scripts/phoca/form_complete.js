@@ -471,7 +471,7 @@ function __cib_resolucoes(title) {
   let filename = `cib/resolucoes_${ano}/resolucao-cib-${numero_documento}-${ano}.pdf`;
   setFileName(filename);
 
-  abrirSelectFileName();
+  // abrirSelectFileName();
 }
 
 function __cib_resolucoes_adreferendum(title) {
@@ -488,7 +488,7 @@ function __cib_resolucoes_adreferendum(title) {
   let filename = `cib/resolucoes_${ano}/resolucao-cib-adreferendum-${numero_documento}-${ano}.pdf`;
   setFileName(filename);
 
-  abrirSelectFileName();
+  // abrirSelectFileName();
 }
 
 
