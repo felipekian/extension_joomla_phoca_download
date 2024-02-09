@@ -28,7 +28,8 @@
         "./scripts/phoca/date_start_publish_controler.js",
         "./scripts/phoca/form_complete.js",
         "./scripts/phoca/description_controller.js",
-        "./scripts/phoca/publication_automatic.js"
+        "./scripts/phoca/publication_automatic.js",
+        "./scripts/phoca/cib_automation.js"
       ]
     },
     /* pagina de editar phoca download */
