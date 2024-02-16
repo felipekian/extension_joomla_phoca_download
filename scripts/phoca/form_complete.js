@@ -204,6 +204,24 @@ function __editalInformativo(title) {
 
 
 /* Editais e Termos Reabertura */
+function __editalAvisoReabertura(title) {
+
+  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
+  let tam_split_title = split_title.length;
+
+  let numero_documento = split_title[tam_split_title - 2];
+  let ano = split_title[tam_split_title - 1];
+
+  let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
+
+  let filename = `csl/editaisetermos_${ano}/AVISO DE LICITACAO REABERTURA-PERP-${numero_documento}-${ano}.pdf`;
+
+  setCategoria(categoria);
+  setFileName(filename);
+
+  abrirSelectFileName();
+}
+
 function __editalEditalReabertura(title) {
 
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
@@ -286,6 +304,24 @@ function __editalNotaExplicativaReabertura(title) {
 
 
 /* Editais e Termos Republicação */
+function __editalAvisoRepublicacao(title) {
+
+  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
+  let tam_split_title = split_title.length;
+
+  let numero_documento = split_title[tam_split_title - 2];
+  let ano = split_title[tam_split_title - 1];
+
+  let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
+
+  let filename = `csl/editaisetermos_${ano}/AVISO DE LICITACAO REPUBLICACAO-PERP-${numero_documento}-${ano}.pdf`;
+
+  setCategoria(categoria);
+  setFileName(filename);
+
+  abrirSelectFileName();
+}
+
 function __editalEditalRepublicacao(title) {
 
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
@@ -553,16 +589,25 @@ function __termoReferenciaDispensa(title) {
 
 function controller(title) {
 
-  /* comunicado e proposta de cotação */
+  /****************************************** 
+  
+  comunicado e proposta de cotação 
+  
+  *******************************************/
   if (title.toLowerCase().indexOf(("Modelo de Comunicado de Cotação").toLowerCase()) > 0) {
     __modeloComunicacaoCotacao(title);
   }
   else if (title.toLowerCase().indexOf(("Modelo de Proposta de Cotação").toLowerCase()) > 0) {
     __modeloPropostaCotacao(title);
   }
-  /* Editais Reabertura */
+
+  /*******************************************
+  
+  Editais Reabertura 
+  
+  *******************************************/
   else if (title.toLowerCase().indexOf(("Aviso de Licitação - REABERTURA").toLowerCase()) > 0) {
-    __editalAviso(title);
+    __editalAvisoReabertura(title);
   }
   else if (title.toLowerCase().indexOf(("Edital de Licitação - REABERTURA").toLowerCase()) > 0) {
     __editalEditalReabertura(title);
@@ -579,9 +624,14 @@ function controller(title) {
   else if (title.toLowerCase().indexOf(("Nota Explicativa de Licitação - REABERTURA").toLowerCase()) > 0) {
     __editalNotaExplicativaReabertura(title);
   }
-  /* Editais republicação */
+
+  /******************************************
+  
+  Editais Republicação
+  
+  *******************************************/
   else if (title.toLowerCase().indexOf(("Aviso de Licitação - REPUBLICAÇÃO").toLowerCase()) > 0) {
-    __editalAviso(title);
+    __editalAvisoRepublicacao(title);
   }
   else if (title.toLowerCase().indexOf(("Edital de Licitação - REPUBLICAÇÃO").toLowerCase()) > 0) {
     __editalEditalRepublicacao(title);
@@ -596,7 +646,11 @@ function controller(title) {
     __editalTermoDeReferenciaRepublicacao(title);
   }
 
-  /* Editais */
+  /*******************************************
+  
+  Editais e Termos
+  
+  *******************************************/
   else if (title.toLowerCase().indexOf(("Aviso de Licitação").toLowerCase()) > 0) {
     __editalAviso(title);
   }
@@ -621,7 +675,12 @@ function controller(title) {
   else if (title.toLowerCase().indexOf(("Informativo de Licitação").toLowerCase()) > 0) {
     __editalInformativo(title);
   }
-  /* Dispensas */
+
+  /******************************************
+  
+  Dispensas 
+  
+  ******************************************/
   else if (title.toLowerCase().indexOf(("AVISO DE DISPENSA DE LICITAÇÃO").toLowerCase()) > 0) {
     __avisoDispensa(title);
   }
@@ -631,7 +690,12 @@ function controller(title) {
   else if (title.toLowerCase().indexOf(("TERMO DE REFERÊNCIA DE DISPENSA DE LICITAÇÃO").toLowerCase()) > 0) {
     __termoReferenciaDispensa(title);
   }
-  /* Resultados */
+
+  /******************************************
+  
+  Resultados
+  
+  ******************************************/
   else if (
     title.toLowerCase().indexOf(("Resultado de Licitação").toLowerCase()) > 0 ||
     title.toLowerCase().indexOf(("Errata Resultado de Licitação").toLowerCase()) > 0 ||
@@ -640,14 +704,24 @@ function controller(title) {
   ) {
     __resultadoLicitacao(title);
   }
-  /* sinteses */
+
+  /******************************************
+  
+  Sinteses
+  
+  *******************************************/
   else if (
     title.toLowerCase().indexOf(("Síntese de Licitação Registro de Preços").toLowerCase()) > 0 ||
     title.toLowerCase().indexOf(("Síntese de Licitação Complementar Registro de Preços").toLowerCase()) > 0
   ) {
     __resultadoLicitacao(title);
   }
-  /* Comunicados */
+
+  /******************************************
+  
+  Comunicados
+  
+  ******************************************/
   else if (
     title.toLowerCase().indexOf(("Comunicado de Licitação").toLowerCase()) > 0 ||
     title.toLowerCase().indexOf(("Errata - Aviso de Licitação").toLowerCase()) > 0 ||
@@ -655,7 +729,12 @@ function controller(title) {
   ) {
     __avisosEComunicados(title);
   }
-  /* Avisos */
+
+  /******************************************
+  
+  Avisos 
+  
+  ******************************************/
   else if (
     title.toLowerCase().indexOf(("Aviso de Adiamento").toLowerCase()) > 0 ||
     title.toLowerCase().indexOf(("Aviso de Revogação").toLowerCase()) > 0 ||
@@ -663,30 +742,55 @@ function controller(title) {
   ) {
     __avisosEComunicados(title);
   }
-  /* Corona virus */
+
+  /******************************************
+  
+  Corona virus
+  
+  ******************************************/
   else if (
     title.toLowerCase().indexOf(("Boletim Epidemiologico - Coronavírus").toLowerCase()) > 0) {
     __coronaVirus(title);
   }
-  /* Credenciamento */
+
+  /******************************************
+  
+  Credenciamento
+  
+  ******************************************/
   else if (
     title.toLowerCase().indexOf(("CREDENCIAMENTO PÚBLICO").toLowerCase()) > 0
   ) {
     __credenciamento(title);
   }
-  /* Chamamento */
+
+  /******************************************
+  
+  Chamamento 
+  
+  ******************************************/
   else if (
     title.toLowerCase().indexOf(("CHAMAMENTO PÚBLICO").toLowerCase()) > 0
   ) {
     __chamamento(title);
   }
-  /* CIB Resolução ad'referendum */
+
+  /******************************************
+  
+  CIB Resolução ad'referendum
+  
+  ******************************************/
   else if (
     title.toLowerCase().indexOf(("Resolução CIB Ad Referendum").toLowerCase()) > 0
   ) {
     __cib_resolucoes_adreferendum(title);
   }
-  /* CIB Resolução */
+
+  /******************************************
+  
+  CIB Resolução 
+  
+  ******************************************/
   else if (
     title.toLowerCase().indexOf(("Resolução CIB").toLowerCase()) > 0
   ) {
@@ -696,11 +800,11 @@ function controller(title) {
 
 
 
-/**
+/*******************************************
 *
 * Start 
 * 
-*/
+*******************************************/
 
 window.addEventListener('load', () => {
 
