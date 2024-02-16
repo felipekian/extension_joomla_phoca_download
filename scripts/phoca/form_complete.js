@@ -49,7 +49,10 @@ function __modeloComunicacaoCotacao(title) {
 
   let categoria = `:: CSL - :: Pregões - :: Avisos e Comunicados - :: Avisos e Comunicados ${ano} - :: Comunicado de Cotação ${ano}`;
 
+  let filename = `csl/cotacao_${ano}/COMUNICADODECOTACAO-${numero_documento}-${ano}.pdf`;
+
   setCategoria(categoria);
+  setFileName(filename);
 
   abrirSelectFileName();
 }
@@ -79,7 +82,10 @@ function __editalAviso(title) {
 
   let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
 
+  let filename = `csl/editaisetermos_${ano}/AVISO DE LICITACAO-PERP-${numero_documento}-${ano}.pdf`;
+
   setCategoria(categoria);
+  setFileName(filename);
 
   abrirSelectFileName();
 }
@@ -395,6 +401,8 @@ function __credenciamento(title) {
   setCategoria(categoria);
 
   if (split_title[1].toLowerCase() === 'aviso') {
+    let filename = `csl/credenciamento${ano}/aviso_credenciamento-${numero_documento}-${ano}.pdf`;
+    setFileName(filename);
     abrirSelectFileName();
   }
 
@@ -438,6 +446,8 @@ function __chamamento(title) {
   setCategoria(categoria);
 
   if (split_title[1].toLowerCase() === 'aviso') {
+    let filename = `chamamentos/CHAMAMENTO_PUBLICO_AVISO-${numero_documento}-${ano}.pdf`;
+    setFileName(filename);
     abrirSelectFileName();
   }
 
@@ -470,8 +480,6 @@ function __cib_resolucoes(title) {
 
   let filename = `cib/resolucoes_${ano}/resolucao-cib-${numero_documento}-${ano}.pdf`;
   setFileName(filename);
-
-  // abrirSelectFileName();
 }
 
 function __cib_resolucoes_adreferendum(title) {
@@ -487,8 +495,6 @@ function __cib_resolucoes_adreferendum(title) {
 
   let filename = `cib/resolucoes_${ano}/resolucao-cib-adreferendum-${numero_documento}-${ano}.pdf`;
   setFileName(filename);
-
-  // abrirSelectFileName();
 }
 
 
@@ -503,7 +509,10 @@ function __avisoDispensa(title) {
 
   let categoria = `:: CSL - :: Dispensa de Licitação - :: Dispensa Licitação ${ano}`;
 
+  let filename = `csl/avisosecomunicados_${ano}/AVISO DE DISPENSA DE LICITACAO-${numero_documento}-${ano}.pdf`;
+
   setCategoria(categoria);
+  setFileName(filename);
 
   abrirSelectFileName();
 }
