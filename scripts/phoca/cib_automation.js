@@ -6,6 +6,12 @@ const CIB_STATUS_NOT_PUBLISH = 0;
 const CIB_STATUS_PUBLISH = 1;
 const CIB_TIME_PUBLISH = 10;
 
+/* 
+  Desative publication_automatic quando fizer por aqui
+*/
+function disablePublicationAutomatic() {
+  localStorage.setItem("LAST_PUBLISHER_KEY", title_input_phoca_publish_automatic.value);
+}
 
 /* 
   adicionar valores no formato correto no local storage
@@ -182,6 +188,7 @@ function cib_controll_publish() {
   }, 1500);
 
   setTimeout(() => {
+    disablePublicationAutomatic();
     btn_salvar_e_novo.click();
   }, CIB_TIME_PUBLISH * 1000);
 }
