@@ -483,22 +483,6 @@ function __sinteseLicitacaoComplementar(title) {
   abrirSelectFileName();
 }
 
-function __avisosEComunicados(title) {
-
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
-
-  let categoria = `:: CSL - :: Pregões - :: Avisos e Comunicados - :: Avisos e Comunicados ${ano}`;
-  let filename = ``;
-
-  setCategoria(categoria);
-  setFileName(filename);
-  abrirSelectFileName();
-}
-
 function __avisosLicitacaoAdiamento(title) {
 
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
