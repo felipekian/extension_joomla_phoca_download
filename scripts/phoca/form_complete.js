@@ -392,12 +392,94 @@ function __resultadoLicitacao(title) {
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
+  let numero_documento = split_title[tam_split_title - 2];
   let ano = split_title[tam_split_title - 1];
 
   let categoria = `:: CSL - :: Pregões - :: Resultados e Sínteses - :: Resultados e Sínteses ${ano}`;
+  let filename = `csl/resultadosesinteses_${ano}/RESULTADO DE LICITACAO-PERP-${numero_documento}-${ano}.pdf`;
 
   setCategoria(categoria);
+  setFileName(filename);
+  abrirSelectFileName();
+}
 
+function __resultadoLicitacaoErrata(title) {
+
+  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
+  let tam_split_title = split_title.length;
+
+  let numero_documento = split_title[tam_split_title - 2];
+  let ano = split_title[tam_split_title - 1];
+
+  let categoria = `:: CSL - :: Pregões - :: Resultados e Sínteses - :: Resultados e Sínteses ${ano}`;
+  let filename = `csl/resultadosesinteses_${ano}/ERRATA RESULTADO DE LICITACAO-PERP-${numero_documento}-${ano}.pdf`;
+
+  setCategoria(categoria);
+  setFileName(filename);
+  abrirSelectFileName();
+}
+
+function __resultadoLicitacaoComplementar(title) {
+
+  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
+  let tam_split_title = split_title.length;
+
+  let numero_documento = split_title[tam_split_title - 2];
+  let ano = split_title[tam_split_title - 1];
+
+  let categoria = `:: CSL - :: Pregões - :: Resultados e Sínteses - :: Resultados e Sínteses ${ano}`;
+  let filename = `csl/resultadosesinteses_${ano}/RESULTADO DE LICITACAO COMPLEMENTAR-PERP-${numero_documento}-${ano}.pdf`;
+
+  setCategoria(categoria);
+  setFileName(filename);
+  abrirSelectFileName();
+}
+
+function __resultadoLicitacaoFracassada(title) {
+
+  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
+  let tam_split_title = split_title.length;
+
+  let numero_documento = split_title[tam_split_title - 2];
+  let ano = split_title[tam_split_title - 1];
+
+  let categoria = `:: CSL - :: Pregões - :: Resultados e Sínteses - :: Resultados e Sínteses ${ano}`;
+  let filename = `csl/resultadosesinteses_${ano}/RESULTADO DE LICITACAO FRACASSADA-PERP-${numero_documento}-${ano}.pdf`;
+
+  setCategoria(categoria);
+  setFileName(filename);
+  abrirSelectFileName();
+}
+
+function __sinteseLicitacao(title) {
+
+  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
+  let tam_split_title = split_title.length;
+
+  let numero_documento = split_title[tam_split_title - 2];
+  let ano = split_title[tam_split_title - 1];
+
+  let categoria = `:: CSL - :: Pregões - :: Resultados e Sínteses - :: Resultados e Sínteses ${ano}`;
+  let filename = `csl/resultadosesinteses_${ano}/SINTESE DE LICITACAO REGISTRO PRECOS-PERP-${numero_documento}-${ano}.pdf`;
+
+  setCategoria(categoria);
+  setFileName(filename);
+  abrirSelectFileName();
+}
+
+function __sinteseLicitacaoComplementar(title) {
+
+  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
+  let tam_split_title = split_title.length;
+
+  let numero_documento = split_title[tam_split_title - 2];
+  let ano = split_title[tam_split_title - 1];
+
+  let categoria = `:: CSL - :: Pregões - :: Resultados e Sínteses - :: Resultados e Sínteses ${ano}`;
+  let filename = `csl/resultadosesinteses_${ano}/SINTESE DE LICITACAO COMPLEMENTAR REGISTRO PRECOS-PERP-${numero_documento}-${ano}.pdf`;
+
+  setCategoria(categoria);
+  setFileName(filename);
   abrirSelectFileName();
 }
 
@@ -406,12 +488,110 @@ function __avisosEComunicados(title) {
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
+  let numero_documento = split_title[tam_split_title - 2];
   let ano = split_title[tam_split_title - 1];
 
   let categoria = `:: CSL - :: Pregões - :: Avisos e Comunicados - :: Avisos e Comunicados ${ano}`;
+  let filename = ``;
 
   setCategoria(categoria);
+  setFileName(filename);
+  abrirSelectFileName();
+}
 
+function __avisosLicitacaoAdiamento(title) {
+
+  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
+  let tam_split_title = split_title.length;
+
+  let numero_documento = split_title[tam_split_title - 2];
+  let ano = split_title[tam_split_title - 1];
+
+  let categoria = `:: CSL - :: Pregões - :: Avisos e Comunicados - :: Avisos e Comunicados ${ano}`;
+  let filename = `csl/avisosecomunicados_${ano}/AVISO DE ADIAMENTO-PERP-${numero_documento}-${ano}.pdf`;
+
+  setCategoria(categoria);
+  setFileName(filename);
+  abrirSelectFileName();
+}
+
+function __avisosLicitacaoRevogacao(title) {
+
+  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
+  let tam_split_title = split_title.length;
+
+  let numero_documento = split_title[tam_split_title - 2];
+  let ano = split_title[tam_split_title - 1];
+
+  let categoria = `:: CSL - :: Pregões - :: Avisos e Comunicados - :: Avisos e Comunicados ${ano}`;
+  let filename = `csl/avisosecomunicados_${ano}/AVISO DE REVOGACAO-PERP-${numero_documento}-${ano}.pdf`;
+
+  setCategoria(categoria);
+  setFileName(filename);
+  abrirSelectFileName();
+}
+
+function __avisosLicitacaoTornarSemEfeito(title) {
+
+  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
+  let tam_split_title = split_title.length;
+
+  let numero_documento = split_title[tam_split_title - 2];
+  let ano = split_title[tam_split_title - 1];
+
+  let categoria = `:: CSL - :: Pregões - :: Avisos e Comunicados - :: Avisos e Comunicados ${ano}`;
+  let filename = `csl/avisosecomunicados_${ano}/TORNAR SEM EFEITO AVISO DE LICITACAO-PERP-${numero_documento}-${ano}.pdf`;
+
+  setCategoria(categoria);
+  setFileName(filename);
+  abrirSelectFileName();
+}
+
+function __comunicadosLicitacao(title) {
+
+  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
+  let tam_split_title = split_title.length;
+
+  let numero_documento = split_title[tam_split_title - 2];
+  let ano = split_title[tam_split_title - 1];
+
+  let categoria = `:: CSL - :: Pregões - :: Avisos e Comunicados - :: Avisos e Comunicados ${ano}`;
+  let filename = `csl/avisosecomunicados_${ano}/COMUNICADO DE LICITACAO-PERP-${numero_documento}-${ano}.pdf`;
+
+  setCategoria(categoria);
+  setFileName(filename);
+  abrirSelectFileName();
+}
+
+function __avisosLicitacaoErrata(title) {
+
+  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
+  let tam_split_title = split_title.length;
+
+  let numero_documento = split_title[tam_split_title - 2];
+  let ano = split_title[tam_split_title - 1];
+
+  let categoria = `:: CSL - :: Pregões - :: Avisos e Comunicados - :: Avisos e Comunicados ${ano}`;
+  let filename = `csl/avisosecomunicados_${ano}/ERRATA_AVISO DE LICITACAO_PERP_${numero_documento}_${ano}.pdf`;
+
+  setCategoria(categoria);
+  setFileName(filename);
+  abrirSelectFileName();
+}
+
+function __comunicadosLicitacaoSuspensao(title) {
+
+  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
+  let tam_split_title = split_title.length;
+
+  let numero_documento = split_title[tam_split_title - 2];
+  let ano = split_title[tam_split_title - 1];
+
+  let categoria = `:: CSL - :: Pregões - :: Avisos e Comunicados - :: Avisos e Comunicados ${ano}`;
+  let filename = `csl/avisosecomunicados_${ano}/COMUNICADO SUSPENSAO DE LICITACAO-PERP-${numero_documento}-${ano}.pdf`;
+
+  setCategoria(categoria);
+  setFileName(filename);
   abrirSelectFileName();
 }
 
@@ -696,13 +876,17 @@ function controller(title) {
   Resultados
   
   ******************************************/
-  else if (
-    title.toLowerCase().indexOf(("Resultado de Licitação").toLowerCase()) > 0 ||
-    title.toLowerCase().indexOf(("Errata Resultado de Licitação").toLowerCase()) > 0 ||
-    title.toLowerCase().indexOf(("Resultado Complementar de Licitação").toLowerCase()) > 0 ||
-    title.toLowerCase().indexOf(("Resultado DE Licitação Fracassada").toLowerCase()) > 0
-  ) {
+  else if (title.toLowerCase().indexOf(("Resultado de Licitação").toLowerCase()) > 0) {
     __resultadoLicitacao(title);
+  }
+  else if (title.toLowerCase().indexOf(("Errata Resultado de Licitação").toLowerCase()) > 0) {
+    __resultadoLicitacaoErrata(title);
+  }
+  else if (title.toLowerCase().indexOf(("Resultado Complementar de Licitação").toLowerCase()) > 0) {
+    __resultadoLicitacaoComplementar(title);
+  }
+  else if (title.toLowerCase().indexOf(("Resultado DE Licitação Fracassada").toLowerCase()) > 0) {
+    __resultadoLicitacaoFracassada(title);
   }
 
   /******************************************
@@ -710,11 +894,11 @@ function controller(title) {
   Sinteses
   
   *******************************************/
-  else if (
-    title.toLowerCase().indexOf(("Síntese de Licitação Registro de Preços").toLowerCase()) > 0 ||
-    title.toLowerCase().indexOf(("Síntese de Licitação Complementar Registro de Preços").toLowerCase()) > 0
-  ) {
-    __resultadoLicitacao(title);
+  else if (title.toLowerCase().indexOf(("Síntese de Licitação Registro de Preços").toLowerCase()) > 0) {
+    __sinteseLicitacao(title);
+  }
+  else if (title.toLowerCase().indexOf(("Síntese de Licitação Complementar Registro de Preços").toLowerCase()) > 0) {
+    __sinteseLicitacaoComplementar(title);
   }
 
   /******************************************
@@ -722,12 +906,14 @@ function controller(title) {
   Comunicados
   
   ******************************************/
-  else if (
-    title.toLowerCase().indexOf(("Comunicado de Licitação").toLowerCase()) > 0 ||
-    title.toLowerCase().indexOf(("Errata - Aviso de Licitação").toLowerCase()) > 0 ||
-    title.toLowerCase().indexOf(("Comunicado de Suspensão de Licitação").toLowerCase()) > 0
-  ) {
-    __avisosEComunicados(title);
+  else if (title.toLowerCase().indexOf(("Comunicado de Licitação").toLowerCase()) > 0) {
+    __comunicadosLicitacao(title);
+  }
+  else if (title.toLowerCase().indexOf(("Errata - Aviso de Licitação").toLowerCase()) > 0) {
+    __avisosLicitacaoErrata(title);
+  }
+  else if (title.toLowerCase().indexOf(("Comunicado de Suspensão de Licitação").toLowerCase()) > 0) {
+    __comunicadosLicitacaoSuspensao(title);
   }
 
   /******************************************
@@ -735,12 +921,14 @@ function controller(title) {
   Avisos 
   
   ******************************************/
-  else if (
-    title.toLowerCase().indexOf(("Aviso de Adiamento").toLowerCase()) > 0 ||
-    title.toLowerCase().indexOf(("Aviso de Revogação").toLowerCase()) > 0 ||
-    title.toLowerCase().indexOf(("Tornar sem Efeito - Aviso de Licitação").toLowerCase()) > 0
-  ) {
-    __avisosEComunicados(title);
+  else if (title.toLowerCase().indexOf(("Aviso de Adiamento").toLowerCase()) > 0) {
+    __avisosLicitacaoAdiamento(title);
+  }
+  else if (title.toLowerCase().indexOf(("Aviso de Revogação").toLowerCase()) > 0) {
+    __avisosLicitacaoRevogacao(title);
+  }
+  else if (title.toLowerCase().indexOf(("Tornar sem Efeito - Aviso de Licitação").toLowerCase()) > 0) {
+    __avisosLicitacaoTornarSemEfeito(title);
   }
 
   /******************************************
