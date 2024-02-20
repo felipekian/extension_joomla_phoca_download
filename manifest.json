@@ -3,7 +3,7 @@
   "name": "joomla! control",
   "author": "Felipe Derkian de Sousa Freitas",
   "description" : "Automatic controller and publisher",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "web_accessible_resources" : [
     {
       "resources" : [
