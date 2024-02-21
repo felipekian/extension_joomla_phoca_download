@@ -3,6 +3,8 @@
 let title_input_phoca = document.querySelector('#jform_title');
 let category_input_phoca = document.querySelector('#jform_catid_chzn > a > span');
 let filename_input_phoca = document.querySelector('#jform_filename');
+/* setar path upload no final para abrir em outra aba */
+const URL_PHOCA_FILES_UPLOAD = 'https://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadmanager&manager=file&tmpl=component&field=jform_filename&folder=';
 
 function dataAtual() {
   let data = new Date();
@@ -14,9 +16,6 @@ function dataAtual() {
 
 function setCategoria(categoria) {
   let category_input = document.querySelector('#jform_catid');
-
-  // category_input.style.display = "block";
-
   let options_category = [...category_input.options];
 
   for (let i = 0; i < options_category.length; i++) {
@@ -36,8 +35,16 @@ function setFileName(filename) {
   filename_input_phoca.value = filename;
 }
 
-function abrirSelectFileName() {
-  document.querySelector('#general > div:nth-child(5) > div.controls > span > a').click();
+function abrirSelectFileName(path_to_upload='') {
+  /* 
+    abre a tela de upload do arquivo
+  */
+  // document.querySelector('#general > div:nth-child(5) > div.controls > span > a').click();
+
+  /* 
+    abre a aba ja na janela correta de upload
+  */
+  window.open(`${URL_PHOCA_FILES_UPLOAD}${path_to_upload}`, '__blank');
 }
 
 function __modeloComunicacaoCotacao(title) {
@@ -53,8 +60,7 @@ function __modeloComunicacaoCotacao(title) {
 
   setCategoria(categoria);
   setFileName(filename);
-
-  abrirSelectFileName();
+  abrirSelectFileName(`csl/cotacao_${ano}`);
 }
 
 function __modeloPropostaCotacao(title) {
@@ -86,8 +92,7 @@ function __editalAviso(title) {
 
   setCategoria(categoria);
   setFileName(filename);
-
-  abrirSelectFileName();
+  abrirSelectFileName(`csl/editaisetermos_${ano}`);
 }
 
 function __editalEdital(title) {
@@ -219,8 +224,7 @@ function __editalAvisoReabertura(title) {
 
   setCategoria(categoria);
   setFileName(filename);
-
-  abrirSelectFileName();
+  abrirSelectFileName(`csl/editaisetermos_${ano}`);
 }
 
 function __editalEditalReabertura(title) {
@@ -341,8 +345,7 @@ function __editalAvisoRepublicacao(title) {
 
   setCategoria(categoria);
   setFileName(filename);
-
-  abrirSelectFileName();
+  abrirSelectFileName(`csl/editaisetermos_${ano}`);
 }
 
 function __editalEditalRepublicacao(title) {
@@ -423,7 +426,7 @@ function __resultadoLicitacao(title) {
 
   setCategoria(categoria);
   setFileName(filename);
-  abrirSelectFileName();
+  abrirSelectFileName(`csl/resultadosesinteses_${ano}`);
 }
 
 function __resultadoLicitacaoErrata(title) {
@@ -439,7 +442,7 @@ function __resultadoLicitacaoErrata(title) {
 
   setCategoria(categoria);
   setFileName(filename);
-  abrirSelectFileName();
+  abrirSelectFileName(`csl/resultadosesinteses_${ano}`);
 }
 
 function __resultadoLicitacaoComplementar(title) {
@@ -455,7 +458,7 @@ function __resultadoLicitacaoComplementar(title) {
 
   setCategoria(categoria);
   setFileName(filename);
-  abrirSelectFileName();
+  abrirSelectFileName(`csl/resultadosesinteses_${ano}`);
 }
 
 function __resultadoLicitacaoFracassada(title) {
@@ -471,7 +474,7 @@ function __resultadoLicitacaoFracassada(title) {
 
   setCategoria(categoria);
   setFileName(filename);
-  abrirSelectFileName();
+  abrirSelectFileName(`csl/resultadosesinteses_${ano}`);
 }
 
 function __sinteseLicitacao(title) {
@@ -487,7 +490,7 @@ function __sinteseLicitacao(title) {
 
   setCategoria(categoria);
   setFileName(filename);
-  abrirSelectFileName();
+  abrirSelectFileName(`csl/resultadosesinteses_${ano}`);
 }
 
 function __sinteseLicitacaoComplementar(title) {
@@ -503,7 +506,7 @@ function __sinteseLicitacaoComplementar(title) {
 
   setCategoria(categoria);
   setFileName(filename);
-  abrirSelectFileName();
+  abrirSelectFileName(`csl/resultadosesinteses_${ano}`);
 }
 
 function __avisosLicitacaoAdiamento(title) {
@@ -519,7 +522,7 @@ function __avisosLicitacaoAdiamento(title) {
 
   setCategoria(categoria);
   setFileName(filename);
-  abrirSelectFileName();
+  abrirSelectFileName(`csl/avisosecomunicados_${ano}`);
 }
 
 function __avisosLicitacaoRevogacao(title) {
@@ -535,7 +538,7 @@ function __avisosLicitacaoRevogacao(title) {
 
   setCategoria(categoria);
   setFileName(filename);
-  abrirSelectFileName();
+  abrirSelectFileName(`csl/avisosecomunicados_${ano}`);
 }
 
 function __avisosLicitacaoTornarSemEfeito(title) {
@@ -551,7 +554,7 @@ function __avisosLicitacaoTornarSemEfeito(title) {
 
   setCategoria(categoria);
   setFileName(filename);
-  abrirSelectFileName();
+  abrirSelectFileName(`csl/avisosecomunicados_${ano}`);
 }
 
 function __comunicadosLicitacao(title) {
@@ -567,7 +570,7 @@ function __comunicadosLicitacao(title) {
 
   setCategoria(categoria);
   setFileName(filename);
-  abrirSelectFileName();
+  abrirSelectFileName(`csl/avisosecomunicados_${ano}`);
 }
 
 function __avisosLicitacaoErrata(title) {
@@ -583,7 +586,7 @@ function __avisosLicitacaoErrata(title) {
 
   setCategoria(categoria);
   setFileName(filename);
-  abrirSelectFileName();
+  abrirSelectFileName(`csl/avisosecomunicados_${ano}`);
 }
 
 function __comunicadosLicitacaoSuspensao(title) {
@@ -599,16 +602,7 @@ function __comunicadosLicitacaoSuspensao(title) {
 
   setCategoria(categoria);
   setFileName(filename);
-  abrirSelectFileName();
-}
-
-function __coronaVirus(title) {
-
-  let categoria = `Coronavírus - Informações`;
-
-  setCategoria(categoria);
-
-  abrirSelectFileName();
+  abrirSelectFileName(`csl/avisosecomunicados_${ano}`);
 }
 
 function __credenciamento(title) {
@@ -626,7 +620,7 @@ function __credenciamento(title) {
   if (split_title[1].toLowerCase() === 'aviso') {
     let filename = `csl/credenciamento${ano}/aviso_credenciamento-${numero_documento}-${ano}.pdf`;
     setFileName(filename);
-    abrirSelectFileName();
+    abrirSelectFileName(`csl/credenciamento${ano}`);
   }
 
   if (split_title[1].toLowerCase() === 'edital') {
@@ -671,7 +665,7 @@ function __chamamento(title) {
   if (split_title[1].toLowerCase() === 'aviso') {
     let filename = `chamamentos/CHAMAMENTO_PUBLICO_AVISO-${numero_documento}-${ano}.pdf`;
     setFileName(filename);
-    abrirSelectFileName();
+    abrirSelectFileName(`chamamentos`);
   }
 
   if (split_title[1].toLowerCase() === 'edital') {
@@ -736,8 +730,7 @@ function __avisoDispensa(title) {
 
   setCategoria(categoria);
   setFileName(filename);
-
-  abrirSelectFileName();
+  abrirSelectFileName(`csl/avisosecomunicados_${ano}`);
 }
 
 function __projetoBasicoDispensa(title) {
@@ -939,16 +932,6 @@ function controller(title) {
   }
   else if (title.toLowerCase().indexOf(("Tornar sem Efeito - Aviso de Licitação").toLowerCase()) > 0) {
     __avisosLicitacaoTornarSemEfeito(title);
-  }
-
-  /******************************************
-  
-  Corona virus
-  
-  ******************************************/
-  else if (
-    title.toLowerCase().indexOf(("Boletim Epidemiologico - Coronavírus").toLowerCase()) > 0) {
-    __coronaVirus(title);
   }
 
   /******************************************
