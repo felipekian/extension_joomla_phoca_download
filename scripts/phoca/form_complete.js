@@ -215,6 +215,7 @@ function __editalAvisoReabertura(title) {
   let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
 
   let filename = `csl/editaisetermos_${ano}/AVISO DE LICITACAO REABERTURA-PERP-${numero_documento}-${ano}.pdf`;
+  //let filename = `csl/editaisetermos_${ano}/reabertura-${numero_documento}-${ano}/AVISO DE LICITACAO REABERTURA-PERP-${numero_documento}-${ano}.pdf`;
 
   setCategoria(categoria);
   setFileName(filename);
@@ -233,6 +234,7 @@ function __editalEditalReabertura(title) {
   let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
 
   let filename = `csl/editaisetermos_${ano}/EDITAL DE LICITACAO REABERTURA-PERP-${numero_documento}-${ano}.pdf`;
+  //let filename = `csl/editaisetermos_${ano}/reabertura-${numero_documento}-${ano}/EDITAL DE LICITACAO REABERTURA-PERP-${numero_documento}-${ano}.pdf`;
 
   setCategoria(categoria);
   setFileName(filename);
@@ -249,6 +251,7 @@ function __editalMinutaReabertura(title) {
   let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
 
   let filename = `csl/editaisetermos_${ano}/MINUTA DE CONTRATO DE LICITACAO REABERTURA-PERP-${numero_documento}-${ano}.pdf`;
+  //let filename = `csl/editaisetermos_${ano}/reabertura-${numero_documento}-${ano}/MINUTA DE CONTRATO DE LICITACAO REABERTURA-PERP-${numero_documento}-${ano}.pdf`;
 
   setCategoria(categoria);
   setFileName(filename);
@@ -265,6 +268,7 @@ function __editalPlanilhaEstimativaReabertura(title) {
   let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
 
   let filename = `csl/editaisetermos_${ano}/PLANILHA ESTIMATIVA DE LICITACAO REABERTURA-PERP-${numero_documento}-${ano}.pdf`;
+  //let filename = `csl/editaisetermos_${ano}/reabertura-${numero_documento}-${ano}/PLANILHA ESTIMATIVA DE LICITACAO REABERTURA-PERP-${numero_documento}-${ano}.pdf`;
 
   setCategoria(categoria);
   setFileName(filename);
@@ -281,6 +285,7 @@ function __editalTermoDeReferenciaReabertura(title) {
   let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
 
   let filename = `csl/editaisetermos_${ano}/TERMO DE REFERENCIA DE LICITACAO REABERTURA-PERP-${numero_documento}-${ano}.pdf`;
+  //let filename = `csl/editaisetermos_${ano}/reabertura-${numero_documento}-${ano}/TERMO DE REFERENCIA DE LICITACAO REABERTURA-PERP-${numero_documento}-${ano}.pdf`;
 
   setCategoria(categoria);
   setFileName(filename);
@@ -297,7 +302,25 @@ function __editalNotaExplicativaReabertura(title) {
   let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
 
   let filename = `csl/editaisetermos_${ano}/NOTA EXPLICATIVA REABERTURA-PERP-${numero_documento}-${ano}.pdf`;
+  //let filename = `csl/editaisetermos_${ano}/reabertura-${numero_documento}-${ano}/NOTA EXPLICATIVA REABERTURA-PERP-${numero_documento}-${ano}.pdf`;
 
+  setCategoria(categoria);
+  setFileName(filename);
+}
+
+function __editalMapaReabertura(title) {
+
+  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
+  let tam_split_title = split_title.length;
+
+  let numero_documento = split_title[tam_split_title - 2];
+  let ano = split_title[tam_split_title - 1];
+
+  let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
+
+  let filename = `csl/editaisetermos_${ano}/MAPA DE LICITACAO REABERTURA-PERP-${numero_documento}-${ano}.pdf`;
+  //let filename = `csl/editaisetermos_${ano}/reabertura-${numero_documento}-${ano}/MAPA DE LICITACAO REABERTURA-PERP-${numero_documento}-${ano}.pdf`;
+  
   setCategoria(categoria);
   setFileName(filename);
 }
@@ -787,6 +810,9 @@ function controller(title) {
   }
   else if (title.toLowerCase().indexOf(("Nota Explicativa de Licitação - REABERTURA").toLowerCase()) > 0) {
     __editalNotaExplicativaReabertura(title);
+  }
+  else if (title.toLowerCase().indexOf(("Mapa de Licitação - REABERTURA").toLowerCase()) > 0) {
+    __editalMapaReabertura(title);
   }
 
   /******************************************

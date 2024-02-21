@@ -10,7 +10,7 @@ const CIB_TIME_PUBLISH = 10;
   Desative publication_automatic quando fizer por aqui
 */
 function disablePublicationAutomatic() {
-  localStorage.setItem("LAST_PUBLISHER_KEY", title_input_phoca_publish_automatic.value);
+  localStorage.setItem("LAST_PUBLISHER_KEY", "");
 }
 
 /* 
