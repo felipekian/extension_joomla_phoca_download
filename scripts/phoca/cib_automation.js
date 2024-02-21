@@ -84,7 +84,7 @@ function cib_set_button_interface() {
   * 
   **********************************************/
   let botao_cib_adicionar = document.createElement('button');
-  botao_cib_adicionar.innerHTML = 'Add CIB';
+  botao_cib_adicionar.innerHTML = 'Lista pub add';
   botao_cib_adicionar.title = "Adicionar dados CIB";
   botao_cib_adicionar.classList.add('btn');
   botao_cib_adicionar.classList.add('btn-small');
@@ -100,7 +100,7 @@ function cib_set_button_interface() {
   });
 
   let botao_cib_remover = document.createElement('button');
-  botao_cib_remover.innerHTML = 'Rem CIB';
+  botao_cib_remover.innerHTML = 'Lista pub rem';
   botao_cib_remover.classList.add('btn');
   botao_cib_remover.classList.add('btn-small');
   botao_cib_remover.title = 'Remover dados CIB';

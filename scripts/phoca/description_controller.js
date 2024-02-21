@@ -89,7 +89,7 @@ function setDescriptionAutomaticIfExists() {
     Botoes de controle das funções de adicionar e remover descrição
   **********************************************/
   let botao_descricao_adicionar = document.createElement('button');
-  botao_descricao_adicionar.innerHTML = 'Add Desc';
+  botao_descricao_adicionar.innerHTML = 'Desc add';
   botao_descricao_adicionar.title = "Adicionar descrição automatica (Ctrl + Alt + D)";
   botao_descricao_adicionar.classList.add('btn');
   botao_descricao_adicionar.classList.add('btn-small');
@@ -98,7 +98,7 @@ function setDescriptionAutomaticIfExists() {
   });
 
   let botao_descricao_remover = document.createElement('button');
-  botao_descricao_remover.innerHTML = 'Rem Desc';
+  botao_descricao_remover.innerHTML = 'Desc rem';
   botao_descricao_remover.classList.add('btn');
   botao_descricao_remover.classList.add('btn-small');
   botao_descricao_remover.title = 'Remover descrição automatica (Ctrl + Alt + R)';

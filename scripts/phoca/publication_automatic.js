@@ -165,10 +165,10 @@ window.addEventListener('load', () => {
 
   /* Show botão toggle publicacao automatica */
   let botao_toggle_pub_auto = document.createElement('button');
-  botao_toggle_pub_auto.innerHTML = localStorage.getItem(LAST_PUBLISHER_ACTIVED_TOGGLE) == 1 ? 'Desativar' : 'Ativar';
+  botao_toggle_pub_auto.innerHTML = localStorage.getItem(LAST_PUBLISHER_ACTIVED_TOGGLE) == 1 ? 'Desativado' : 'Ativado';
   botao_toggle_pub_auto.classList.add('btn');
   botao_toggle_pub_auto.classList.add('btn-small');
-  botao_toggle_pub_auto.title = 'Toggle publicação automatica';
+  botao_toggle_pub_auto.title = 'ativar/desativar publicação automática';
   botao_toggle_pub_auto.addEventListener('click', () => {
     localStorage.setItem(LAST_PUBLISHER_ACTIVED_TOGGLE, (localStorage.getItem(LAST_PUBLISHER_ACTIVED_TOGGLE) == 1 ? 0 : 1));
     let show_alert_toggle = localStorage.getItem(LAST_PUBLISHER_ACTIVED_TOGGLE) == 1 ? 'Ativado' : 'Desativado';
