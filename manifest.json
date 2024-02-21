@@ -2,114 +2,115 @@
   "manifest_version": 3,
   "name": "joomla! control",
   "author": "Felipe Derkian de Sousa Freitas",
-  "description" : "Automatic controller and publisher",
-  "version": "2.2.1",
-  "web_accessible_resources" : [
+  "description": "Automatic controller and publisher Joomla",
+  "version": "2.3.1",
+  "content_scripts": [
     {
-      "resources" : [
-        "./css/*",
-        "./logo/*",
-        "./scripts/*"
+      "matches": [
+        "*://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadfile&layout=edit*"
+      ],
+      "js": [
+        "scripts/phoca/date_start_publish_controler.js",
+        "scripts/phoca/form_complete.js",
+        "scripts/phoca/description_controller.js",
+        "scripts/phoca/publication_automatic.js",
+        "scripts/phoca/cib_automation.js",
+        "scripts/phoca/inputs_display_none.js",
+        "scripts/phoca/shortcuts.js"
+      ],
+      "all_frames": true,
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "*://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadmanager&manager=file&tmpl=component&field=jform_filename&folder*"
+      ],
+      "js": [
+        "scripts/phoca/jform_filename_scroll_bottom.js"
+      ],
+      "all_frames": true,
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "*://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadfiles"
+      ],
+      "js": [
+        "scripts/phoca/shortcut_phoca_listagem.js",
+        "scripts/phoca/select_listagem_by_id_desc.js"
+      ],
+      "all_frames": true,
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "*://saude.rr.gov.br/administrator/index.php?option=com_content&view=article&layout=edit"
+      ],
+      "js": [
+        "scripts/articles/form_control.js"
+      ],
+      "all_frames": true,
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "*://saude.rr.gov.br/administrator/index.php*"
+      ],
+      "js": [
+        "scripts/joomla/joomla_lang_login.js",
+        "scripts/joomla/joomla_shortcuts.js",
+        "scripts/joomla/add_btn_head_clear_cache.js",
+        "scripts/joomla/add_btn_head_phoca_download.js"
+      ],
+      "all_frames": true,
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "*://sei.rr.gov.br/sei/*"
+      ],
+      "js": [
+        "scripts/sei/sei_controller.js",
+        "scripts/sei/sei_shortcuts.js"
+      ],
+      "all_frames": true,
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "*://sei.rr.gov.br/sei/controlador.php?acao=acompanhamento_*"
+      ],
+      "js": [
+        "scripts/sei/andamento_especial_csl.js"
+      ],
+      "all_frames": true,
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "*://sip.rr.gov.br/sip/login.php*"
+      ],
+      "js": [
+        "scripts/sei/login.styles.js"
+      ],
+      "all_frames": true,
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "css/*/*",
+        "logo/*/*",
+        "scripts/*/*"
       ],
       "matches": [
         "*://*/*"
       ]
     }
   ],
-  "content_scripts": [
-    /* pagina de cadastro phoca download */
-    {
-      "matches": [
-        "https://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadfile&layout=edit"
-      ],
-      "css": [
-        "./css/index.css"
-      ],
-      "js": [
-        "./scripts/phoca/date_start_publish_controler.js",
-        "./scripts/phoca/form_complete.js",
-        "./scripts/phoca/description_controller.js",
-        "./scripts/phoca/publication_automatic.js",
-        "./scripts/phoca/cib_automation.js"
-      ]
-    },
-    /* pagina de editar phoca download */
-    {
-      "matches": [
-        "https://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadfile&layout=edit*"
-      ],
-      "js": [
-        "./scripts/phoca/inputs_display_none.js",
-        "./scripts/phoca/shortcuts.js"
-      ]
-    },
-    /* pagina de listagem do phoca downloads */
-    {
-      "matches": [
-        "https://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadfiles"
-      ],
-      "js": [
-        "./scripts/phoca/shortcut_phoca_listagem.js",
-        "./scripts/phoca/select_listagem_by_id_desc.js"
-      ]
-    },
-    /* pagina de cadastro de noticias */
-    {
-      "matches": [
-        "https://saude.rr.gov.br/administrator/index.php?option=com_content&view=article&layout=edit"
-      ],
-      "js": [
-        "./scripts/articles/form_control.js"
-      ]
-    }
-    ,
-    /* Shortcuts joomla phoca downloads e Cache */
-    {
-      "matches": [
-        "https://saude.rr.gov.br/administrator/index.php*"
-      ],
-      "js": [
-        "./scripts/joomla/joomla_lang_login.js",
-        "./scripts/joomla/joomla_shortcuts.js",
-        "./scripts/joomla/add_btn_head_clear_cache.js",
-        "./scripts/joomla/add_btn_head_phoca_download.js"
-      ]
-    }
-    ,
-    /* reload pagina sei */
-    {
-      "matches": [
-        "https://sei.rr.gov.br/sei/*"
-      ],
-      "js": [
-        "./scripts/sei/sei_controller.js",
-        "./scripts/sei/sei_shortcuts.js"
-      ]
-    }
-    ,
-    /* sei andamento especial csl */
-    {
-      "matches": [
-        "https://sei.rr.gov.br/sei/controlador.php?acao=acompanhamento_cadastrar*",
-        "https://sei.rr.gov.br/sei/controlador.php?acao=acompanhamento_alterar*"
-      ],
-      "js": [
-        "./scripts/sei/andamento_especial_csl.js"
-      ]
-    }
-    ,
-    /* pagina sei login */
-    {
-      "matches": [
-        "https://sip.rr.gov.br/sip/login.php*"
-      ],
-      "js": [
-        "./scripts/sei/login.styles.js"
-      ]
-    }
-  ],
   "action": {
-    "default_icon": "./logo/logo.png"
+    "default_icon": "logo/logo.png"
   },
   "permissions": [
     "activeTab",
