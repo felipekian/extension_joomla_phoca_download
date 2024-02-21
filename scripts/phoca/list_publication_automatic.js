@@ -1,5 +1,11 @@
 "use strict"
+/******************************************** 
 
+  Publicação automatica passando uma lista com
+  os valores dos titulos e descrições das
+  respectivas publicações  
+
+********************************************/
 const CIB_DATA_NAME_LOCAL_STORAGE = 'cib_data';
 const CIB_CONTROLLER_STATUS_LOCAL_STORAGE = 'cib_status';
 const CIB_STATUS_NOT_PUBLISH = 0;
@@ -85,7 +91,7 @@ function cib_set_button_interface() {
   **********************************************/
   let botao_cib_adicionar = document.createElement('button');
   botao_cib_adicionar.innerHTML = 'Lista pub add';
-  botao_cib_adicionar.title = "Adicionar dados CIB";
+  botao_cib_adicionar.title = "Adicionar lista com títulos e descrições";
   botao_cib_adicionar.classList.add('btn');
   botao_cib_adicionar.classList.add('btn-small');
   botao_cib_adicionar.addEventListener('click', () => {
@@ -103,7 +109,7 @@ function cib_set_button_interface() {
   botao_cib_remover.innerHTML = 'Lista pub rem';
   botao_cib_remover.classList.add('btn');
   botao_cib_remover.classList.add('btn-small');
-  botao_cib_remover.title = 'Remover dados CIB';
+  botao_cib_remover.title = 'Remover lista de publicações';
   botao_cib_remover.addEventListener('click', () => {
 
     cib_remove_all_data();

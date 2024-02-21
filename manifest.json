@@ -14,7 +14,7 @@
         "scripts/phoca/form_complete.js",
         "scripts/phoca/description_controller.js",
         "scripts/phoca/publication_automatic.js",
-        "scripts/phoca/cib_automation.js",
+        "scripts/phoca/list_publication_automatic.js",
         "scripts/phoca/inputs_display_none.js",
         "scripts/phoca/shortcuts.js"
       ],
