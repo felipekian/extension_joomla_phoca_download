@@ -5,8 +5,9 @@ let btn_salvar = document.querySelector('#toolbar-apply > button');
 let btn_salvar_e_novo = document.querySelector('#toolbar-new > button');
 let btn_salvar_e_sair = document.querySelector('#toolbar-save > button');
 let title_input_phoca_publish_automatic = document.querySelector('#jform_title');
-let LAST_PUBLISHER_KEY = "LAST_PUBLISHER_KEY";
-let LAST_PUBLISHER_ACTIVED_TOGGLE = "LAST_PUBLISHER_ACTIVED_TOGGLE";
+const LAST_PUBLISHER_KEY = "LAST_PUBLISHER_KEY";
+const LAST_PUBLISHER_ACTIVED_TOGGLE = "LAST_PUBLISHER_ACTIVED_TOGGLE";
+const TEXTAREA_DESCRIPTION = "textarea_description";
 const TIME_PUBLISH = 5;
 let tempo_restante = TIME_PUBLISH;
 
@@ -61,7 +62,7 @@ function title_save_and_close(title) {
   }, 1000 * TIME_PUBLISH * 0.7);
 
   setTimeout(() => {
-    localStorage.setItem('textarea_description', '');
+    localStorage.setItem(TEXTAREA_DESCRIPTION, '');
     localStorage.setItem(LAST_PUBLISHER_KEY, '');
     window.open('https://saude.rr.gov.br/administrator/index.php?option=com_cache', '_blank'); // abre a pagina de limpar o cache
     btn_salvar_e_sair.click();
@@ -171,7 +172,8 @@ window.addEventListener('load', () => {
   botao_toggle_pub_auto.title = 'ativar/desativar publicação automática';
   botao_toggle_pub_auto.addEventListener('click', () => {
     localStorage.setItem(LAST_PUBLISHER_ACTIVED_TOGGLE, (localStorage.getItem(LAST_PUBLISHER_ACTIVED_TOGGLE) == 1 ? 0 : 1));
-    let show_alert_toggle = localStorage.getItem(LAST_PUBLISHER_ACTIVED_TOGGLE) == 1 ? 'Ativado' : 'Desativado';
+    localStorage.setItem(TEXTAREA_DESCRIPTION, '');
+    localStorage.setItem(LAST_PUBLISHER_KEY, '');
     location.reload();
   });
 
