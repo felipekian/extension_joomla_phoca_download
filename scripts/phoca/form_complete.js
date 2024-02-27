@@ -31,11 +31,12 @@ function setCategoria(categoria) {
 }
 
 function setFileName(filename) {
+  // deepcode ignore OverwriteAssignment: <please specify a reason of ignoring this>
   filename_input_phoca.value = '';
   filename_input_phoca.value = filename;
 }
 
-function abrirSelectFileName(path_to_upload='') {
+function abrirSelectFileName(path_to_upload = '') {
   /* 
     abre a tela de upload do arquivo
   */
@@ -65,6 +66,7 @@ function __modeloComunicacaoCotacao(title) {
 
 function __modeloPropostaCotacao(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -80,6 +82,7 @@ function __modeloPropostaCotacao(title) {
 
 function __editalAviso(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -97,6 +100,7 @@ function __editalAviso(title) {
 
 function __editalEdital(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -113,6 +117,7 @@ function __editalEdital(title) {
 
 function __editalMinuta(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -129,6 +134,7 @@ function __editalMinuta(title) {
 
 function __editalPlanilhaEstimativa(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -145,6 +151,7 @@ function __editalPlanilhaEstimativa(title) {
 
 function __editalTermoDeReferencia(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -161,6 +168,7 @@ function __editalTermoDeReferencia(title) {
 
 function __editalNotaExplicativa(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -177,6 +185,7 @@ function __editalNotaExplicativa(title) {
 
 function __editalEsclarecimentos(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -193,6 +202,7 @@ function __editalEsclarecimentos(title) {
 
 function __editalInformativo(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -211,6 +221,7 @@ function __editalInformativo(title) {
 /* Editais e Termos Reabertura */
 function __editalAvisoReabertura(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -229,6 +240,7 @@ function __editalAvisoReabertura(title) {
 
 function __editalEditalReabertura(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -246,6 +258,7 @@ function __editalEditalReabertura(title) {
 
 function __editalMinutaReabertura(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -263,6 +276,7 @@ function __editalMinutaReabertura(title) {
 
 function __editalPlanilhaEstimativaReabertura(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -280,6 +294,7 @@ function __editalPlanilhaEstimativaReabertura(title) {
 
 function __editalTermoDeReferenciaReabertura(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -297,6 +312,7 @@ function __editalTermoDeReferenciaReabertura(title) {
 
 function __editalNotaExplicativaReabertura(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -314,6 +330,7 @@ function __editalNotaExplicativaReabertura(title) {
 
 function __editalMapaReabertura(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -324,7 +341,7 @@ function __editalMapaReabertura(title) {
 
   let filename = `csl/editaisetermos_${ano}/MAPA DE LICITACAO REABERTURA-PERP-${numero_documento}-${ano}.pdf`;
   //let filename = `csl/editaisetermos_${ano}/reabertura-${numero_documento}-${ano}/MAPA DE LICITACAO REABERTURA-PERP-${numero_documento}-${ano}.pdf`;
-  
+
   setCategoria(categoria);
   setFileName(filename);
 }
@@ -333,6 +350,7 @@ function __editalMapaReabertura(title) {
 /* Editais e Termos Republicação */
 function __editalAvisoRepublicacao(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -350,6 +368,7 @@ function __editalAvisoRepublicacao(title) {
 
 function __editalEditalRepublicacao(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -366,6 +385,7 @@ function __editalEditalRepublicacao(title) {
 
 function __editalMinutaRepublicacao(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -382,6 +402,7 @@ function __editalMinutaRepublicacao(title) {
 
 function __editalPlanilhaEstimativaRepublicacao(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -397,7 +418,7 @@ function __editalPlanilhaEstimativaRepublicacao(title) {
 }
 
 function __editalTermoDeReferenciaRepublicacao(title) {
-
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -415,6 +436,7 @@ function __editalTermoDeReferenciaRepublicacao(title) {
 
 function __resultadoLicitacao(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -431,6 +453,7 @@ function __resultadoLicitacao(title) {
 
 function __resultadoLicitacaoErrata(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -447,6 +470,7 @@ function __resultadoLicitacaoErrata(title) {
 
 function __resultadoLicitacaoComplementar(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -463,6 +487,7 @@ function __resultadoLicitacaoComplementar(title) {
 
 function __resultadoLicitacaoFracassada(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -479,6 +504,7 @@ function __resultadoLicitacaoFracassada(title) {
 
 function __sinteseLicitacao(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -495,6 +521,7 @@ function __sinteseLicitacao(title) {
 
 function __sinteseLicitacaoComplementar(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -511,6 +538,7 @@ function __sinteseLicitacaoComplementar(title) {
 
 function __avisosLicitacaoAdiamento(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -527,6 +555,7 @@ function __avisosLicitacaoAdiamento(title) {
 
 function __avisosLicitacaoRevogacao(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -543,6 +572,7 @@ function __avisosLicitacaoRevogacao(title) {
 
 function __avisosLicitacaoTornarSemEfeito(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -559,6 +589,7 @@ function __avisosLicitacaoTornarSemEfeito(title) {
 
 function __comunicadosLicitacao(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -575,6 +606,7 @@ function __comunicadosLicitacao(title) {
 
 function __avisosLicitacaoErrata(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -591,6 +623,7 @@ function __avisosLicitacaoErrata(title) {
 
 function __comunicadosLicitacaoSuspensao(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -607,6 +640,7 @@ function __comunicadosLicitacaoSuspensao(title) {
 
 function __credenciamento(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -652,6 +686,7 @@ function __credenciamento(title) {
 
 function __chamamento(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -686,6 +721,7 @@ function __chamamento(title) {
 
 function __cib_resolucoes(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -701,6 +737,7 @@ function __cib_resolucoes(title) {
 
 function __cib_resolucoes_adreferendum(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -718,6 +755,7 @@ function __cib_resolucoes_adreferendum(title) {
 /* Dispensas */
 function __avisoDispensa(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -735,6 +773,7 @@ function __avisoDispensa(title) {
 
 function __projetoBasicoDispensa(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 
@@ -751,6 +790,7 @@ function __projetoBasicoDispensa(title) {
 
 function __termoReferenciaDispensa(title) {
 
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
 

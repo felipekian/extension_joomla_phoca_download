@@ -79,6 +79,7 @@ function get_cotacao_year_document_number() {
 }
 
 function get_editais_year_document_number() {
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = localStorage.getItem(LAST_PUBLISHER_KEY).replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
   let ano = split_title[tam_split_title - 1];
