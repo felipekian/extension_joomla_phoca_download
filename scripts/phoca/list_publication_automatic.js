@@ -170,7 +170,7 @@ function cib_controll_publish() {
     return;
 
   if (cib_data_count() === 0) {
-    cib_controller_get_status_in_local_storage(CIB_STATUS_NOT_PUBLISH);
+    cib_controller_set_status_in_local_storage(CIB_STATUS_NOT_PUBLISH);
     return;
   }
 
