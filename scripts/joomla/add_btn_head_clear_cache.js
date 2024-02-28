@@ -2,6 +2,8 @@
 
 window.addEventListener('load', () => {
 
+  if(!document.querySelector('#sp-pagebuiler-menu')) return;
+
   let link_clear_cache = document.createElement('a')
   link_clear_cache.href = 'https://saude.rr.gov.br/administrator/index.php?option=com_cache';
   link_clear_cache.textContent = 'Cache';

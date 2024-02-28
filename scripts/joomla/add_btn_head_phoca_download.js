@@ -2,6 +2,8 @@
 
 window.addEventListener('load', () => {
 
+  if(!document.querySelector('#sp-pagebuiler-menu')) return;
+
   let link_phoca_downloads = document.createElement('a')
   link_phoca_downloads.href = 'https://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadfile&layout=edit';
   link_phoca_downloads.textContent = 'Phoca';
