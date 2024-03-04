@@ -6,6 +6,15 @@ let filename_input_phoca = document.querySelector('#jform_filename');
 /* setar path upload no final para abrir em outra aba */
 const URL_PHOCA_FILES_UPLOAD = 'https://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadmanager&manager=file&tmpl=component&field=jform_filename&folder=';
 
+function getNumberFileAndYear(title){
+  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
+  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
+  let tam_split_title = split_title.length;
+  let numero_documento = split_title[tam_split_title - 2];
+  let ano = split_title[tam_split_title - 1];
+  return [numero_documento, ano];
+}
+
 function dataAtual() {
   let data = new Date();
   let dia = String(data.getDate()).padStart(2, '0');
@@ -82,12 +91,7 @@ function __modeloPropostaCotacao(title) {
 
 function __editalAviso(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
 
@@ -100,12 +104,7 @@ function __editalAviso(title) {
 
 function __editalEdital(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
 
@@ -117,12 +116,7 @@ function __editalEdital(title) {
 
 function __editalMinuta(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
 
@@ -134,12 +128,7 @@ function __editalMinuta(title) {
 
 function __editalPlanilhaEstimativa(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
 
@@ -151,12 +140,7 @@ function __editalPlanilhaEstimativa(title) {
 
 function __editalTermoDeReferencia(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
 
@@ -168,12 +152,7 @@ function __editalTermoDeReferencia(title) {
 
 function __editalNotaExplicativa(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
 
@@ -185,12 +164,7 @@ function __editalNotaExplicativa(title) {
 
 function __editalEsclarecimentos(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
 
@@ -202,12 +176,7 @@ function __editalEsclarecimentos(title) {
 
 function __editalInformativo(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
 
@@ -221,12 +190,7 @@ function __editalInformativo(title) {
 /* Editais e Termos Reabertura */
 function __editalAvisoReabertura(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
 
@@ -240,12 +204,7 @@ function __editalAvisoReabertura(title) {
 
 function __editalEditalReabertura(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
 
@@ -258,12 +217,7 @@ function __editalEditalReabertura(title) {
 
 function __editalMinutaReabertura(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
 
@@ -276,12 +230,7 @@ function __editalMinutaReabertura(title) {
 
 function __editalPlanilhaEstimativaReabertura(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
 
@@ -294,12 +243,7 @@ function __editalPlanilhaEstimativaReabertura(title) {
 
 function __editalTermoDeReferenciaReabertura(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
 
@@ -312,12 +256,7 @@ function __editalTermoDeReferenciaReabertura(title) {
 
 function __editalNotaExplicativaReabertura(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
 
@@ -330,12 +269,7 @@ function __editalNotaExplicativaReabertura(title) {
 
 function __editalMapaReabertura(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
 
@@ -350,12 +284,7 @@ function __editalMapaReabertura(title) {
 /* Editais e Termos Republicação */
 function __editalAvisoRepublicacao(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
 
@@ -368,12 +297,7 @@ function __editalAvisoRepublicacao(title) {
 
 function __editalEditalRepublicacao(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
 
@@ -385,12 +309,7 @@ function __editalEditalRepublicacao(title) {
 
 function __editalMinutaRepublicacao(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
 
@@ -402,12 +321,7 @@ function __editalMinutaRepublicacao(title) {
 
 function __editalPlanilhaEstimativaRepublicacao(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
 
@@ -418,12 +332,8 @@ function __editalPlanilhaEstimativaRepublicacao(title) {
 }
 
 function __editalTermoDeReferenciaRepublicacao(title) {
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
 
@@ -436,12 +346,7 @@ function __editalTermoDeReferenciaRepublicacao(title) {
 
 function __resultadoLicitacao(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Pregões - :: Resultados e Sínteses - :: Resultados e Sínteses ${ano}`;
   let filename = `csl/resultadosesinteses_${ano}/RESULTADO DE LICITACAO-PERP-${numero_documento}-${ano}.pdf`;
@@ -453,12 +358,7 @@ function __resultadoLicitacao(title) {
 
 function __resultadoLicitacaoErrata(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Pregões - :: Resultados e Sínteses - :: Resultados e Sínteses ${ano}`;
   let filename = `csl/resultadosesinteses_${ano}/ERRATA RESULTADO DE LICITACAO-PERP-${numero_documento}-${ano}.pdf`;
@@ -470,12 +370,7 @@ function __resultadoLicitacaoErrata(title) {
 
 function __resultadoLicitacaoComplementar(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Pregões - :: Resultados e Sínteses - :: Resultados e Sínteses ${ano}`;
   let filename = `csl/resultadosesinteses_${ano}/RESULTADO DE LICITACAO COMPLEMENTAR-PERP-${numero_documento}-${ano}.pdf`;
@@ -487,12 +382,7 @@ function __resultadoLicitacaoComplementar(title) {
 
 function __resultadoLicitacaoFracassada(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Pregões - :: Resultados e Sínteses - :: Resultados e Sínteses ${ano}`;
   let filename = `csl/resultadosesinteses_${ano}/RESULTADO DE LICITACAO FRACASSADA-PERP-${numero_documento}-${ano}.pdf`;
@@ -504,12 +394,7 @@ function __resultadoLicitacaoFracassada(title) {
 
 function __sinteseLicitacao(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Pregões - :: Resultados e Sínteses - :: Resultados e Sínteses ${ano}`;
   let filename = `csl/resultadosesinteses_${ano}/SINTESE DE LICITACAO REGISTRO PRECOS-PERP-${numero_documento}-${ano}.pdf`;
@@ -521,12 +406,7 @@ function __sinteseLicitacao(title) {
 
 function __sinteseLicitacaoComplementar(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Pregões - :: Resultados e Sínteses - :: Resultados e Sínteses ${ano}`;
   let filename = `csl/resultadosesinteses_${ano}/SINTESE DE LICITACAO COMPLEMENTAR REGISTRO PRECOS-PERP-${numero_documento}-${ano}.pdf`;
@@ -538,12 +418,7 @@ function __sinteseLicitacaoComplementar(title) {
 
 function __avisosLicitacaoAdiamento(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Pregões - :: Avisos e Comunicados - :: Avisos e Comunicados ${ano}`;
   let filename = `csl/avisosecomunicados_${ano}/AVISO DE ADIAMENTO-PERP-${numero_documento}-${ano}.pdf`;
@@ -555,12 +430,7 @@ function __avisosLicitacaoAdiamento(title) {
 
 function __avisosLicitacaoRevogacao(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Pregões - :: Avisos e Comunicados - :: Avisos e Comunicados ${ano}`;
   let filename = `csl/avisosecomunicados_${ano}/AVISO DE REVOGACAO-PERP-${numero_documento}-${ano}.pdf`;
@@ -572,12 +442,7 @@ function __avisosLicitacaoRevogacao(title) {
 
 function __avisosLicitacaoTornarSemEfeito(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Pregões - :: Avisos e Comunicados - :: Avisos e Comunicados ${ano}`;
   let filename = `csl/avisosecomunicados_${ano}/TORNAR SEM EFEITO AVISO DE LICITACAO-PERP-${numero_documento}-${ano}.pdf`;
@@ -589,12 +454,7 @@ function __avisosLicitacaoTornarSemEfeito(title) {
 
 function __comunicadosLicitacao(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Pregões - :: Avisos e Comunicados - :: Avisos e Comunicados ${ano}`;
   let filename = `csl/avisosecomunicados_${ano}/COMUNICADO DE LICITACAO-PERP-${numero_documento}-${ano}.pdf`;
@@ -606,12 +466,7 @@ function __comunicadosLicitacao(title) {
 
 function __avisosLicitacaoErrata(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Pregões - :: Avisos e Comunicados - :: Avisos e Comunicados ${ano}`;
   let filename = `csl/avisosecomunicados_${ano}/ERRATA_AVISO DE LICITACAO_PERP_${numero_documento}_${ano}.pdf`;
@@ -623,12 +478,7 @@ function __avisosLicitacaoErrata(title) {
 
 function __comunicadosLicitacaoSuspensao(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Pregões - :: Avisos e Comunicados - :: Avisos e Comunicados ${ano}`;
   let filename = `csl/avisosecomunicados_${ano}/COMUNICADO SUSPENSAO DE LICITACAO-PERP-${numero_documento}-${ano}.pdf`;
@@ -640,12 +490,7 @@ function __comunicadosLicitacaoSuspensao(title) {
 
 function __credenciamento(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Credenciamento - :: Credenciamento ${ano}`;
 
@@ -686,12 +531,7 @@ function __credenciamento(title) {
 
 function __chamamento(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Chamamento - :: Chamamento Público ${ano}`;
 
@@ -721,12 +561,7 @@ function __chamamento(title) {
 
 function __cib_resolucoes(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CIB - :: Resoluções - :: Resoluções CIB - ${ano}`;
   setCategoria(categoria);
@@ -737,12 +572,7 @@ function __cib_resolucoes(title) {
 
 function __cib_resolucoes_adreferendum(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CIB - :: Resoluções - :: Resoluções CIB - ${ano}`;
   setCategoria(categoria);
@@ -755,12 +585,7 @@ function __cib_resolucoes_adreferendum(title) {
 /* Dispensas */
 function __avisoDispensa(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Dispensa de Licitação - :: Dispensa Licitação ${ano}`;
 
@@ -773,12 +598,7 @@ function __avisoDispensa(title) {
 
 function __projetoBasicoDispensa(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Dispensa de Licitação - :: Dispensa Licitação ${ano}`;
 
@@ -790,12 +610,7 @@ function __projetoBasicoDispensa(title) {
 
 function __termoReferenciaDispensa(title) {
 
-  // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
-  let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
-  let tam_split_title = split_title.length;
-
-  let numero_documento = split_title[tam_split_title - 2];
-  let ano = split_title[tam_split_title - 1];
+  const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Dispensa de Licitação - :: Dispensa Licitação ${ano}`;
 
