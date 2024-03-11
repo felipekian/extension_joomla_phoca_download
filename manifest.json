@@ -7,7 +7,18 @@
   "content_scripts": [
     {
       "matches": [
-        "*://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadfile&layout=edit*"
+        "*://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadfile&layout=edit&*"
+      ],
+      "js": [        
+        "scripts/phoca/inputs_display_none.js",
+        "scripts/phoca/shortcuts.js"
+      ],
+      "all_frames": true,
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "*://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadfile&layout=edit"
       ],
       "js": [
         "scripts/phoca/date_start_publish_controler.js",
