@@ -6,7 +6,11 @@ let filename_input_phoca = document.querySelector('#jform_filename');
 /* setar path upload no final para abrir em outra aba */
 const URL_PHOCA_FILES_UPLOAD = 'https://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadmanager&manager=file&tmpl=component&field=jform_filename&folder=';
 
-function getNumberFileAndYear(title){
+function verificarSeTituloExperado(titleInput, expected) {
+  return titleInput.toLowerCase().indexOf(expected.toLowerCase()) > 0;
+}
+
+function getNumberFileAndYear(title) {
   // deepcode ignore GlobalReplacementRegex: <please specify a reason of ignoring this>
   let split_title = title.replace(' - ', ' ').replace('/', ' ').trim().split(' ');
   let tam_split_title = split_title.length;
@@ -332,7 +336,7 @@ function __editalPlanilhaEstimativaRepublicacao(title) {
 }
 
 function __editalTermoDeReferenciaRepublicacao(title) {
-  
+
   const [numero_documento, ano] = getNumberFileAndYear(title);
 
   let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
@@ -629,10 +633,10 @@ function controller(title) {
   comunicado e proposta de cotação 
   
   *******************************************/
-  if (title.toLowerCase().indexOf(("Modelo de Comunicado de Cotação").toLowerCase()) > 0) {
+  if (verificarSeTituloExperado(title, 'modelo de comunicado de cotação')) {
     __modeloComunicacaoCotacao(title);
   }
-  else if (title.toLowerCase().indexOf(("Modelo de Proposta de Cotação").toLowerCase()) > 0) {
+  else if (verificarSeTituloExperado(title, 'modelo de proposta de cotação')) {
     __modeloPropostaCotacao(title);
   }
 
@@ -641,25 +645,25 @@ function controller(title) {
   Editais Reabertura 
   
   *******************************************/
-  else if (title.toLowerCase().indexOf(("Aviso de Licitação - REABERTURA").toLowerCase()) > 0) {
+  else if (verificarSeTituloExperado(title, 'aviso de licitação - reabertura')) {
     __editalAvisoReabertura(title);
   }
-  else if (title.toLowerCase().indexOf(("Edital de Licitação - REABERTURA").toLowerCase()) > 0) {
+  else if (verificarSeTituloExperado(title, 'edital de licitação - reabertura')) {
     __editalEditalReabertura(title);
   }
-  else if (title.toLowerCase().indexOf(("Minuta de Contrato de Licitação - REABERTURA").toLowerCase()) > 0) {
+  else if (verificarSeTituloExperado(title, 'minuta de contrato de licitação - reabertura')) {
     __editalMinutaReabertura(title);
   }
-  else if (title.toLowerCase().indexOf(("Planilha Estimativa de Licitação - REABERTURA").toLowerCase()) > 0) {
+  else if (verificarSeTituloExperado(title, 'planilha estimativa de licitação - reabertura')) {
     __editalPlanilhaEstimativaReabertura(title);
   }
-  else if (title.toLowerCase().indexOf(("Termo de Referência de Licitação - REABERTURA").toLowerCase()) > 0) {
+  else if (verificarSeTituloExperado(title, 'termo de referência de licitação - reabertura')) {
     __editalTermoDeReferenciaReabertura(title);
   }
-  else if (title.toLowerCase().indexOf(("Nota Explicativa de Licitação - REABERTURA").toLowerCase()) > 0) {
+  else if (verificarSeTituloExperado(title, 'nota explicativa de licitação - reabertura')) {
     __editalNotaExplicativaReabertura(title);
   }
-  else if (title.toLowerCase().indexOf(("Mapa de Licitação - REABERTURA").toLowerCase()) > 0) {
+  else if (verificarSeTituloExperado(title, 'mapa de licitação - reabertura')) {
     __editalMapaReabertura(title);
   }
 
@@ -668,19 +672,19 @@ function controller(title) {
   Editais Republicação
   
   *******************************************/
-  else if (title.toLowerCase().indexOf(("Aviso de Licitação - REPUBLICAÇÃO").toLowerCase()) > 0) {
+  else if (verificarSeTituloExperado(title, 'aviso de licitação - republicação')) {
     __editalAvisoRepublicacao(title);
   }
-  else if (title.toLowerCase().indexOf(("Edital de Licitação - REPUBLICAÇÃO").toLowerCase()) > 0) {
+  else if (verificarSeTituloExperado(title, 'edital de licitação - republicação')) {
     __editalEditalRepublicacao(title);
   }
-  else if (title.toLowerCase().indexOf(("Minuta de Contrato de Licitação - REPUBLICAÇÃO").toLowerCase()) > 0) {
+  else if (verificarSeTituloExperado(title, 'minuta de contrato de licitação - republicação')) {
     __editalMinutaRepublicacao(title);
   }
-  else if (title.toLowerCase().indexOf(("Planilha Estimativa de Licitação - REPUBLICAÇÃO").toLowerCase()) > 0) {
+  else if (verificarSeTituloExperado(title, 'planilha estimativa de licitação - republicação')) {
     __editalPlanilhaEstimativaRepublicacao(title);
   }
-  else if (title.toLowerCase().indexOf(("Termo de Referência de Licitação - REPUBLICAÇÃO").toLowerCase()) > 0) {
+  else if (verificarSeTituloExperado(title, 'termo de referência de licitação - republicação')) {
     __editalTermoDeReferenciaRepublicacao(title);
   }
 
@@ -689,28 +693,28 @@ function controller(title) {
   Editais e Termos
   
   *******************************************/
-  else if (title.toLowerCase().indexOf(("Aviso de Licitação").toLowerCase()) > 0) {
+  else if (verificarSeTituloExperado(title, 'aviso de licitação')) {
     __editalAviso(title);
   }
-  else if (title.toLowerCase().indexOf(("Edital de Licitação").toLowerCase()) > 0) {
+  else if (verificarSeTituloExperado(title, 'edital de licitação')) {
     __editalEdital(title);
   }
-  else if (title.toLowerCase().indexOf(("Minuta de Contrato de Licitação").toLowerCase()) > 0) {
+  else if (verificarSeTituloExperado(title, 'minuta de contrato de licitação')) {
     __editalMinuta(title);
   }
-  else if (title.toLowerCase().indexOf(("Planilha Estimativa de Licitação").toLowerCase()) > 0) {
+  else if (verificarSeTituloExperado(title, 'planilha estimativa de licitação')) {
     __editalPlanilhaEstimativa(title);
   }
-  else if (title.toLowerCase().indexOf(("Termo de Referência de Licitação").toLowerCase()) > 0) {
+  else if (verificarSeTituloExperado(title, 'termo de referência de licitação')) {
     __editalTermoDeReferencia(title);
   }
-  else if (title.toLowerCase().indexOf(("Nota Explicativa de Licitação").toLowerCase()) > 0) {
+  else if (verificarSeTituloExperado(title, 'nota explicativa de licitação')) {
     __editalNotaExplicativa(title);
   }
-  else if (title.toLowerCase().indexOf(("Esclarecimentos de Licitação").toLowerCase()) > 0) {
+  else if (verificarSeTituloExperado(title, 'esclarecimentos de licitação')) {
     __editalEsclarecimentos(title);
   }
-  else if (title.toLowerCase().indexOf(("Informativo de Licitação").toLowerCase()) > 0) {
+  else if (verificarSeTituloExperado(title, 'informativo de licitação')) {
     __editalInformativo(title);
   }
 
@@ -719,13 +723,13 @@ function controller(title) {
   Dispensas 
   
   ******************************************/
-  else if (title.toLowerCase().indexOf(("AVISO DE DISPENSA DE LICITAÇÃO").toLowerCase()) > 0) {
+  else if (verificarSeTituloExperado(title, 'aviso de dispensa de licitação')) {
     __avisoDispensa(title);
   }
-  else if (title.toLowerCase().indexOf(("PROJETO BÁSICO DE DISPENSA DE LICITAÇÃO").toLowerCase()) > 0) {
+  else if (verificarSeTituloExperado(title, 'projeto básico de dispensa de licitação')) {
     __projetoBasicoDispensa(title);
   }
-  else if (title.toLowerCase().indexOf(("TERMO DE REFERÊNCIA DE DISPENSA DE LICITAÇÃO").toLowerCase()) > 0) {
+  else if (verificarSeTituloExperado(title, 'termo de referência de dispensa de licitação')) {
     __termoReferenciaDispensa(title);
   }
 
@@ -734,17 +738,17 @@ function controller(title) {
   Resultados
   
   ******************************************/
-  else if (title.toLowerCase().indexOf(("Resultado de Licitação").toLowerCase()) > 0) {
-    __resultadoLicitacao(title);
-  }
-  else if (title.toLowerCase().indexOf(("Errata Resultado de Licitação").toLowerCase()) > 0) {
+  else if (verificarSeTituloExperado(title, 'errata resultado de licitação')) {
     __resultadoLicitacaoErrata(title);
   }
-  else if (title.toLowerCase().indexOf(("Resultado Complementar de Licitação").toLowerCase()) > 0) {
+  else if (verificarSeTituloExperado(title, 'resultado complementar de licitação')) {
     __resultadoLicitacaoComplementar(title);
   }
-  else if (title.toLowerCase().indexOf(("Resultado DE Licitação Fracassada").toLowerCase()) > 0) {
+  else if (verificarSeTituloExperado(title, 'resultado de licitação fracassada')) {
     __resultadoLicitacaoFracassada(title);
+  }
+  else if (verificarSeTituloExperado(title, 'resultado de licitação')) {
+    __resultadoLicitacao(title);
   }
 
   /******************************************
@@ -752,10 +756,10 @@ function controller(title) {
   Sinteses
   
   *******************************************/
-  else if (title.toLowerCase().indexOf(("Síntese de Licitação Registro de Preços").toLowerCase()) > 0) {
+  else if (verificarSeTituloExperado(title, 'síntese de licitação registro de preços')) {
     __sinteseLicitacao(title);
   }
-  else if (title.toLowerCase().indexOf(("Síntese de Licitação Complementar Registro de Preços").toLowerCase()) > 0) {
+  else if (verificarSeTituloExperado(title, 'síntese de licitação complementar registro de preços')) {
     __sinteseLicitacaoComplementar(title);
   }
 
@@ -764,13 +768,13 @@ function controller(title) {
   Comunicados
   
   ******************************************/
-  else if (title.toLowerCase().indexOf(("Comunicado de Licitação").toLowerCase()) > 0) {
+  else if (verificarSeTituloExperado(title, 'comunicado de licitação')) {
     __comunicadosLicitacao(title);
   }
-  else if (title.toLowerCase().indexOf(("Errata - Aviso de Licitação").toLowerCase()) > 0) {
+  else if (verificarSeTituloExperado(title, 'errata - aviso de licitação')) {
     __avisosLicitacaoErrata(title);
   }
-  else if (title.toLowerCase().indexOf(("Comunicado de Suspensão de Licitação").toLowerCase()) > 0) {
+  else if (verificarSeTituloExperado(title, 'comunicado de suspensão de licitação')) {
     __comunicadosLicitacaoSuspensao(title);
   }
 
@@ -779,13 +783,13 @@ function controller(title) {
   Avisos 
   
   ******************************************/
-  else if (title.toLowerCase().indexOf(("Aviso de Adiamento").toLowerCase()) > 0) {
+  else if (verificarSeTituloExperado(title, 'aviso de adiamento')) {
     __avisosLicitacaoAdiamento(title);
   }
-  else if (title.toLowerCase().indexOf(("Aviso de Revogação").toLowerCase()) > 0) {
+  else if (verificarSeTituloExperado(title, 'aviso de revogação')) {
     __avisosLicitacaoRevogacao(title);
   }
-  else if (title.toLowerCase().indexOf(("Tornar sem Efeito - Aviso de Licitação").toLowerCase()) > 0) {
+  else if (verificarSeTituloExperado(title, 'tornar sem efeito - aviso de licitação')) {
     __avisosLicitacaoTornarSemEfeito(title);
   }
 
@@ -794,9 +798,7 @@ function controller(title) {
   Credenciamento
   
   ******************************************/
-  else if (
-    title.toLowerCase().indexOf(("CREDENCIAMENTO PÚBLICO").toLowerCase()) > 0
-  ) {
+  else if (verificarSeTituloExperado(title, 'credenciamento público')) {
     __credenciamento(title);
   }
 
@@ -805,9 +807,7 @@ function controller(title) {
   Chamamento 
   
   ******************************************/
-  else if (
-    title.toLowerCase().indexOf(("CHAMAMENTO PÚBLICO").toLowerCase()) > 0
-  ) {
+  else if (verificarSeTituloExperado(title, 'chamamento público')) {
     __chamamento(title);
   }
 
@@ -816,9 +816,7 @@ function controller(title) {
   CIB Resolução ad'referendum
   
   ******************************************/
-  else if (
-    title.toLowerCase().indexOf(("Resolução CIB Ad Referendum").toLowerCase()) > 0
-  ) {
+  else if (verificarSeTituloExperado(title, 'resolução cib ad referendum')) {
     __cib_resolucoes_adreferendum(title);
   }
 
@@ -827,9 +825,7 @@ function controller(title) {
   CIB Resolução 
   
   ******************************************/
-  else if (
-    title.toLowerCase().indexOf(("Resolução CIB").toLowerCase()) > 0
-  ) {
+  else if (verificarSeTituloExperado(title, 'resolução cib')) {
     __cib_resolucoes(title);
   }
 }
