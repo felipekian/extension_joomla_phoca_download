@@ -347,6 +347,18 @@ function __editalTermoDeReferenciaRepublicacao(title) {
   setFileName(filename);
 }
 
+function __editalAdendoRepublicacao(title) {
+
+  const [numero_documento, ano] = getNumberFileAndYear(title);
+
+  let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
+
+  let filename = `csl/editaisetermos_${ano}/ADENDO DE LICITACAO REPUBLICACAO-PERP-${numero_documento}-${ano}.pdf`;
+
+  setCategoria(categoria);
+  setFileName(filename);
+}
+
 
 function __resultadoLicitacao(title) {
 
@@ -686,6 +698,9 @@ function controller(title) {
   }
   else if (verificarSeTituloExperado(title, 'termo de referência de licitação - republicação')) {
     __editalTermoDeReferenciaRepublicacao(title);
+  }
+  else if (verificarSeTituloExperado(title, 'adendo de licitação - republicação')) {
+    __editalAdendoRepublicacao(title);
   }
 
   /*******************************************
