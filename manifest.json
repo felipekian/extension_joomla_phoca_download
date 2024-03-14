@@ -99,6 +99,7 @@
     },
     {
       "matches": [
+        "*://sip.rr.gov.br/sip/login.php?sigla_orgao_sistema=GRR&sigla_sistema=SEI&infra_url=L3NlaS8=",
         "*://sip.rr.gov.br/sip/login.php*"
       ],
       "js": [
