@@ -93,6 +93,19 @@ function __modeloPropostaCotacao(title) {
   setFileName(filename);
 }
 
+function __editalErrataAviso(title) {
+
+  const [numero_documento, ano] = getNumberFileAndYear(title);
+
+  let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
+
+  let filename = `csl/editaisetermos_${ano}/ERRATA DO AVISO DE LICITACAO-PERP-${numero_documento}-${ano}.pdf`;
+
+  setCategoria(categoria);
+  setFileName(filename);
+  abrirSelectFileName(`csl/editaisetermos_${ano}`);
+}
+
 function __editalAviso(title) {
 
   const [numero_documento, ano] = getNumberFileAndYear(title);
@@ -708,6 +721,9 @@ function controller(title) {
   Editais e Termos
   
   *******************************************/
+  else if (verificarSeTituloExperado(title, 'errata do aviso de licitação')) {
+    __editalErrataAviso(title);
+  }
   else if (verificarSeTituloExperado(title, 'aviso de licitação')) {
     __editalAviso(title);
   }

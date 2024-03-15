@@ -88,6 +88,10 @@ function get_editais_year_document_number() {
   return [ano, numero_documento];
 }
 
+function checkNextPublish(titleAtual) {
+  return (localStorage.getItem(LAST_PUBLISHER_KEY)).toLowerCase().indexOf(titleAtual.toLowerCase()) > 0;
+}
+
 /* Verificações para validar possiveis publicações */
 
 function set_last_publisher() {
@@ -95,14 +99,20 @@ function set_last_publisher() {
     return;
   }
 
-  if ((localStorage.getItem(LAST_PUBLISHER_KEY)).toLowerCase().indexOf(("RETIFICAÇÃO").toLowerCase()) > 0) {
+  /* 
+    caso queira que certo tipo não publique automaticamente
+  */
+  if (
+    checkNextPublish('retificação') ||
+    checkNextPublish('errata do aviso de licitação')
+  ) {
     return;
   }
 
   /*
   comunicado e proposta de cotação
   */
-  if ((localStorage.getItem(LAST_PUBLISHER_KEY)).toLowerCase().indexOf(("Modelo de Comunicado de Cotação").toLowerCase()) > 0) {
+  if (checkNextPublish('modelo de comunicado de cotação')) {
     let [ano, numero_documento] = get_cotacao_year_document_number();
     let title = `:: Modelo de Proposta de Cotação ${ano} - ${numero_documento}`; // 2023 - 130
     title_save_and_close(title);
@@ -111,22 +121,22 @@ function set_last_publisher() {
   /*
   editais e termos
   */
-  else if ((localStorage.getItem(LAST_PUBLISHER_KEY)).toLowerCase().indexOf(("Aviso de Licitação - PERP -").toLowerCase()) > 0) {
+  else if (checkNextPublish('Aviso de Licitação - PERP')) {
     let [ano, numero_documento] = get_editais_year_document_number();
     let title = `:: Edital de Licitação - PERP - ${numero_documento}/${ano}`; // 130/2023
     title_save_and_new(title);
   }
-  else if ((localStorage.getItem(LAST_PUBLISHER_KEY)).toLowerCase().indexOf(("Edital de Licitação - PERP -").toLowerCase()) > 0) {
+  else if (checkNextPublish('Edital de Licitação - PERP')) {
     let [ano, numero_documento] = get_editais_year_document_number();
     let title = `:: Minuta de Contrato de Licitação - PERP - ${numero_documento}/${ano}`; // 130/2023
     title_save_and_new(title);
   }
-  else if ((localStorage.getItem(LAST_PUBLISHER_KEY)).toLowerCase().indexOf(("Minuta de Contrato de Licitação - PERP -").toLowerCase()) > 0) {
+  else if (checkNextPublish('Minuta de Contrato de Licitação - PERP')) {
     let [ano, numero_documento] = get_editais_year_document_number();
     let title = `:: Planilha Estimativa de Licitação - PERP - ${numero_documento}/${ano}`; // 130/2023
     title_save_and_new(title);
   }
-  else if ((localStorage.getItem(LAST_PUBLISHER_KEY)).toLowerCase().indexOf(("Planilha Estimativa de Licitação - PERP -").toLowerCase()) > 0) {
+  else if (checkNextPublish('Planilha Estimativa de Licitação - PERP')) {
     let [ano, numero_documento] = get_editais_year_document_number();
     let title = `:: Termo de Referência de Licitação - PERP - ${numero_documento}/${ano}`; // 130/2023
     title_save_and_close(title);
@@ -135,22 +145,22 @@ function set_last_publisher() {
   /*
  editais e termos Republicação
  */
-  else if ((localStorage.getItem(LAST_PUBLISHER_KEY)).toLowerCase().indexOf(("Aviso de Licitação - REPUBLICAÇÃO - PERP -").toLowerCase()) > 0) {
+  else if (checkNextPublish('Aviso de Licitação - REPUBLICAÇÃO - PERP')) {
     let [ano, numero_documento] = get_editais_year_document_number();
     let title = `:: Edital de Licitação - REPUBLICAÇÃO - PERP - ${numero_documento}/${ano}`; // 130/2023
     title_save_and_new(title);
   }
-  else if ((localStorage.getItem(LAST_PUBLISHER_KEY)).toLowerCase().indexOf(("Edital de Licitação - REPUBLICAÇÃO - PERP -").toLowerCase()) > 0) {
+  else if (checkNextPublish('Edital de Licitação - REPUBLICAÇÃO - PERP')) {
     let [ano, numero_documento] = get_editais_year_document_number();
     let title = `:: Minuta de Contrato de Licitação - REPUBLICAÇÃO - PERP - ${numero_documento}/${ano}`; // 130/2023
     title_save_and_new(title);
   }
-  else if ((localStorage.getItem(LAST_PUBLISHER_KEY)).toLowerCase().indexOf(("Minuta de Contrato de Licitação - REPUBLICAÇÃO - PERP -").toLowerCase()) > 0) {
+  else if (checkNextPublish('Minuta de Contrato de Licitação - REPUBLICAÇÃO - PERP')) {
     let [ano, numero_documento] = get_editais_year_document_number();
     let title = `:: Planilha Estimativa de Licitação - REPUBLICAÇÃO - PERP - ${numero_documento}/${ano}`; // 130/2023
     title_save_and_new(title);
   }
-  else if ((localStorage.getItem(LAST_PUBLISHER_KEY)).toLowerCase().indexOf(("Planilha Estimativa de Licitação - REPUBLICAÇÃO - PERP -").toLowerCase()) > 0) {
+  else if (checkNextPublish('Planilha Estimativa de Licitação - REPUBLICAÇÃO - PERP')) {
     let [ano, numero_documento] = get_editais_year_document_number();
     let title = `:: Termo de Referência de Licitação - REPUBLICAÇÃO - PERP - ${numero_documento}/${ano}`; // 130/2023
     title_save_and_close(title);
