@@ -27,7 +27,7 @@ function formatValue(value) {
 
 window.addEventListener('load', () => {
 
-  let SECONDS = 60;
+  let SECONDS = 60*2.5; /* 2 min e 30 s */
   let COUNT = SECONDS;
 
   let ELEMENTO = document.querySelector('#divInfraBarraSuperior > label');
