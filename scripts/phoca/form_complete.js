@@ -385,6 +385,18 @@ function __resultadoLicitacao(title) {
   abrirSelectFileName(`csl/resultadosesinteses_${ano}`);
 }
 
+function __resultadoLicitacaoParcial(title) {
+
+  const [numero_documento, ano] = getNumberFileAndYear(title);
+
+  let categoria = `:: CSL - :: Pregões - :: Resultados e Sínteses - :: Resultados e Sínteses ${ano}`;
+  let filename = `csl/resultadosesinteses_${ano}/RESULTADO DE LICITACAO PARCIAL-PERP-${numero_documento}-${ano}.pdf`;
+
+  setCategoria(categoria);
+  setFileName(filename);
+  abrirSelectFileName(`csl/resultadosesinteses_${ano}`);
+}
+
 function __resultadoLicitacaoErrata(title) {
 
   const [numero_documento, ano] = getNumberFileAndYear(title);
@@ -777,6 +789,9 @@ function controller(title) {
   }
   else if (verificarSeTituloExperado(title, 'resultado de licitação fracassada')) {
     __resultadoLicitacaoFracassada(title);
+  }
+  else if (verificarSeTituloExperado(title, 'resultado de licitação parcial')) {
+    __resultadoLicitacaoParcial(title);
   }
   else if (verificarSeTituloExperado(title, 'resultado de licitação')) {
     __resultadoLicitacao(title);
