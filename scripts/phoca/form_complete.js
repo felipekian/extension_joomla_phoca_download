@@ -457,6 +457,18 @@ function __sinteseLicitacao(title) {
   abrirSelectFileName(`csl/resultadosesinteses_${ano}`);
 }
 
+function __sinteseParcialLicitacao(title) {
+
+  const [numero_documento, ano] = getNumberFileAndYear(title);
+
+  let categoria = `:: CSL - :: Pregões - :: Resultados e Sínteses - :: Resultados e Sínteses ${ano}`;
+  let filename = `csl/resultadosesinteses_${ano}/SINTESE PARCIAL DE LICITACAO-PERP-${numero_documento}-${ano}.pdf`;
+
+  setCategoria(categoria);
+  setFileName(filename);
+  abrirSelectFileName(`csl/resultadosesinteses_${ano}`);
+}
+
 function __sinteseLicitacaoComplementar(title) {
 
   const [numero_documento, ano] = getNumberFileAndYear(title);
@@ -819,6 +831,9 @@ function controller(title) {
   *******************************************/
   else if (verificarSeTituloExperado(title, 'síntese de licitação registro de preços')) {
     __sinteseLicitacao(title);
+  }
+  else if (verificarSeTituloExperado(title, 'síntese parcial de licitação registro de preços')) {
+    __sinteseParcialLicitacao(title);
   }
   else if (verificarSeTituloExperado(title, 'síntese de licitação complementar registro de preços')) {
     __sinteseLicitacaoComplementar(title);
