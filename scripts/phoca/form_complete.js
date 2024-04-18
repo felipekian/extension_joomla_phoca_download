@@ -421,6 +421,18 @@ function __resultadoLicitacaoErrata(title) {
   abrirSelectFileName(`csl/resultadosesinteses_${ano}`);
 }
 
+function __resultadoLicitacaoErrataParcial(title) {
+
+  const [numero_documento, ano] = getNumberFileAndYear(title);
+
+  let categoria = `:: CSL - :: Pregões - :: Resultados e Sínteses - :: Resultados e Sínteses ${ano}`;
+  let filename = `csl/resultadosesinteses_${ano}/ERRATA RESULTADO PARCIAL DE LICITACAO-PERP-${numero_documento}-${ano}.pdf`;
+
+  setCategoria(categoria);
+  setFileName(filename);
+  abrirSelectFileName(`csl/resultadosesinteses_${ano}`);
+}
+
 function __resultadoLicitacaoComplementar(title) {
 
   const [numero_documento, ano] = getNumberFileAndYear(title);
@@ -451,6 +463,18 @@ function __sinteseLicitacao(title) {
 
   let categoria = `:: CSL - :: Pregões - :: Resultados e Sínteses - :: Resultados e Sínteses ${ano}`;
   let filename = `csl/resultadosesinteses_${ano}/SINTESE DE LICITACAO REGISTRO PRECOS-PERP-${numero_documento}-${ano}.pdf`;
+
+  setCategoria(categoria);
+  setFileName(filename);
+  abrirSelectFileName(`csl/resultadosesinteses_${ano}`);
+}
+
+function __sinteseErrataParcialLicitacao(title) {
+
+  const [numero_documento, ano] = getNumberFileAndYear(title);
+
+  let categoria = `:: CSL - :: Pregões - :: Resultados e Sínteses - :: Resultados e Sínteses ${ano}`;
+  let filename = `csl/resultadosesinteses_${ano}/ERRATA SINTESE PARCIAL DE LICITACAO-PERP-${numero_documento}-${ano}.pdf`;
 
   setCategoria(categoria);
   setFileName(filename);
@@ -808,6 +832,9 @@ function controller(title) {
   else if (verificarSeTituloExperado(title, 'errata resultado de licitação')) {
     __resultadoLicitacaoErrata(title);
   }
+  else if (verificarSeTituloExperado(title, 'errata de resultado parcial de licitação')) {
+    __resultadoLicitacaoErrataParcial(title);
+  }
   else if (verificarSeTituloExperado(title, 'resultado complementar de licitação')) {
     __resultadoLicitacaoComplementar(title);
   }
@@ -829,6 +856,9 @@ function controller(title) {
   Sinteses
   
   *******************************************/
+  else if (verificarSeTituloExperado(title, 'errata de síntese parcial de licitação registro de preços')) {
+    __sinteseErrataParcialLicitacao(title);
+  }
   else if (verificarSeTituloExperado(title, 'síntese de licitação registro de preços')) {
     __sinteseLicitacao(title);
   }
