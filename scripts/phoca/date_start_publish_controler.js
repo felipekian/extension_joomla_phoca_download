@@ -24,6 +24,7 @@ function format_data_para_amanha(data) {
 }
 
 function startPublishInputControl() {
+
   setDateStartPublishInput(localStorage.getItem('joomla_start_publish'), localStorage.getItem('joomla_start_publish_date'));
 
   document.querySelector('#jform_publish_up').addEventListener('blur', (event) => {
@@ -34,6 +35,37 @@ function startPublishInputControl() {
   });
 }
 
+
+function set_button_clear_in_interface_phoca() {
+  /********************************************** 
+  *
+  * add botão para limpar data para publicação
+  * 
+  **********************************************/
+  let button_data_publish_clear = document.createElement('button');
+  button_data_publish_clear.innerHTML = 'Limpar data pub';
+  button_data_publish_clear.title = "Limpar data de agendamento de publicação";
+  button_data_publish_clear.classList.add('btn');
+  button_data_publish_clear.classList.add('btn-small');
+  button_data_publish_clear.addEventListener('click', () => {
+  
+    /* limpa o input de data agendada para publicação */
+    let input_date_publish = document.querySelector('#jform_publish_up');
+    input_date_publish.dataset.altValue = "";
+    input_date_publish.dataset.localValue = "";
+    input_date_publish.value = "";
+    localStorage.setItem('joomla_start_publish', "");
+    localStorage.setItem('joomla_start_publish_date', getDateNow());
+
+    alert('Data de publicação agendada foi limpo!');
+    
+  });
+
+  document.querySelector('#toolbar-cancel').append(button_data_publish_clear);
+}
+
+
+
 /**
  *
  * Start
@@ -41,6 +73,10 @@ function startPublishInputControl() {
  **/
 
 window.addEventListener('load', () => {
+
+  setTimeout(() => {
+    set_button_clear_in_interface_phoca();    
+  }, 50);
 
   startPublishInputControl();
 
