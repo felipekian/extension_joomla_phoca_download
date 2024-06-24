@@ -1,8 +1,8 @@
 "use strict"
 
 
-function setDateStartPublishInput(data_publish, date_old_publish) {
-  if (date_old_publish === getDateNow()) {
+function setDataInicioPublicacaoInput(data_publish, date_old_publish) {
+  if (date_old_publish === getDataDeHoje()) {
     let input_date_publish = document.querySelector('#jform_publish_up');
     input_date_publish.dataset.altValue = "" + data_publish;
     input_date_publish.dataset.localValue = "" + data_publish;
@@ -11,13 +11,13 @@ function setDateStartPublishInput(data_publish, date_old_publish) {
   }
 }
 
-function getDateNow() {
+function getDataDeHoje() {
   const timeElapsed = Date.now();
   const today = new Date(timeElapsed);
   return today.toDateString(); // "Sun Jan 30 2022"
 }
 
-function format_data_para_amanha(data) {
+function formatar_data_para_meia_noite(data) {
   if (data === '') return data;
   data = data.split(' ');
   return data[0] + ' 00:00:00';
@@ -25,13 +25,13 @@ function format_data_para_amanha(data) {
 
 function startPublishInputControl() {
 
-  setDateStartPublishInput(localStorage.getItem('joomla_start_publish'), localStorage.getItem('joomla_start_publish_date'));
+  setDataInicioPublicacaoInput(localStorage.getItem('joomla_start_publish'), localStorage.getItem('joomla_start_publish_date'));
 
   document.querySelector('#jform_publish_up').addEventListener('blur', (event) => {
-    let data = format_data_para_amanha(event.target.value);
+    let data = formatar_data_para_meia_noite(event.target.value);
     localStorage.setItem('joomla_start_publish', data);
-    localStorage.setItem('joomla_start_publish_date', getDateNow());
-    setDateStartPublishInput(data, localStorage.getItem('joomla_start_publish_date'));
+    localStorage.setItem('joomla_start_publish_date', getDataDeHoje());
+    setDataInicioPublicacaoInput(data, localStorage.getItem('joomla_start_publish_date'));
   });
 }
 
@@ -55,7 +55,7 @@ function set_button_clear_in_interface_phoca() {
     input_date_publish.dataset.localValue = "";
     input_date_publish.value = "";
     localStorage.setItem('joomla_start_publish', "");
-    localStorage.setItem('joomla_start_publish_date', getDateNow());
+    localStorage.setItem('joomla_start_publish_date', getDataDeHoje());
 
     alert('Data de publicação agendada foi limpo!');
     
