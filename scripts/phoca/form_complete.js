@@ -19,13 +19,7 @@ function getNumberFileAndYear(title) {
   return [numero_documento, ano];
 }
 
-function dataAtual() {
-  let data = new Date();
-  let dia = String(data.getDate()).padStart(2, '0');
-  let mes = String(data.getMonth() + 1).padStart(2, '0');
-  let ano = data.getFullYear();
-  return [dia, mes, ano];
-}
+
 
 function setCategoria(categoria) {
   let category_input = document.querySelector('#jform_catid');
@@ -469,6 +463,18 @@ function __sinteseLicitacao(title) {
   abrirSelectFileName(`csl/resultadosesinteses_${ano}`);
 }
 
+function __sinteseErrataLicitacao(title) {
+
+  const [numero_documento, ano] = getNumberFileAndYear(title);
+
+  let categoria = `:: CSL - :: Pregões - :: Resultados e Sínteses - :: Resultados e Sínteses ${ano}`;
+  let filename = `csl/resultadosesinteses_${ano}/ERRATA SINTESE DE LICITACAO REGISTRO PRECOS-PERP-${numero_documento}-${ano}.pdf`;
+
+  setCategoria(categoria);
+  setFileName(filename);
+  abrirSelectFileName(`csl/resultadosesinteses_${ano}`);
+}
+
 function __sinteseErrataParcialLicitacao(title) {
 
   const [numero_documento, ano] = getNumberFileAndYear(title);
@@ -858,6 +864,9 @@ function controller(title) {
   *******************************************/
   else if (verificarSeTituloExperado(title, 'errata de síntese parcial de licitação registro de preços')) {
     __sinteseErrataParcialLicitacao(title);
+  }
+  else if (verificarSeTituloExperado(title, 'errata síntese de licitação registro de preços')) {
+    __sinteseErrataLicitacao(title);
   }
   else if (verificarSeTituloExperado(title, 'síntese de licitação registro de preços')) {
     __sinteseLicitacao(title);
