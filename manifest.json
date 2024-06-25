@@ -21,7 +21,8 @@
         "*://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadfile&layout=edit"
       ],
       "js": [
-        "scripts/phoca/date_start_publish_controler.js",
+        "scripts/utilitarios/data.js",
+        "scripts/phoca/agendamento_publicacao_controller.js",
         "scripts/phoca/form_complete.js",
         "scripts/phoca/description_controller.js",
         "scripts/phoca/publication_automatic.js",
