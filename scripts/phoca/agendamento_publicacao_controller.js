@@ -74,21 +74,25 @@ const ElementoDeInterfaceGrafica = {
 
 
 
-/**
- *
- * Start
- * 
- **/
+const MountedAgendamentoController = {
 
-window.addEventListener('load', () => {
+  run: function() {
 
-  setTimeout(() => {
+    window.addEventListener('load', () => {
 
-    ElementoDeInterfaceGrafica.setBotaoLimparInputDataAgendada();    
+      setTimeout(() => {
     
-  }, 50);
+        ElementoDeInterfaceGrafica.setBotaoLimparInputDataAgendada();    
+        
+      }, 50);
+    
+      PublicacaoController.startPublishInputControl();
+    
+    });
 
-  PublicacaoController.startPublishInputControl();
+  }
 
-});
+}
+
+MountedAgendamentoController.run();
 

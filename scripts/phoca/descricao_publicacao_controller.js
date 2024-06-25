@@ -133,7 +133,7 @@ const ElementoInterfaceGrafica = {
 }
 
 
-const Mounted = {
+const MountedDescricaoController = {
 
   run: function () {
     
@@ -151,7 +151,7 @@ const Mounted = {
 }
 
 
-Mounted.run();
+MountedDescricaoController.run();
 
 
 
