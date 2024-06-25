@@ -10,12 +10,12 @@ function adicionar_descricao() {
 
   if (!descricao) {
     localStorage.setItem('textarea_description', ' ');
-    localStorage.setItem('textarea_description_date', getDateNow());
+    localStorage.setItem('textarea_description_date', getDataDeHoje());
     return;
   }
 
   localStorage.setItem('textarea_description', descricao);
-  localStorage.setItem('textarea_description_date', getDateNow());
+  localStorage.setItem('textarea_description_date', getDataDeHoje());
 
   location.reload();
 }
@@ -77,7 +77,7 @@ function setDescriptionAutomaticIfExists() {
    Verifica a data atual e a salva no localstorage são diferentes para limpar a descrição
   ***********************************************/
 
-  if (getDateNow() != localStorage.getItem('textarea_description_date')) {
+  if (getDataDeHoje() != localStorage.getItem('textarea_description_date')) {
     remover_descricao();
   }
 
