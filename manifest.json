@@ -23,7 +23,7 @@
       "js": [
         "scripts/utilitarios/data.js",
         "scripts/phoca/agendamento_publicacao_controller.js",
-        "scripts/phoca/form_complete.js",
+        "scripts/phoca/form_publicacao_controller.js",
         "scripts/phoca/descricao_publicacao_controller.js",
         "scripts/phoca/publication_automatic.js",
         "scripts/phoca/list_publication_automatic.js",
