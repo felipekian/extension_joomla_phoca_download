@@ -37,6 +37,7 @@ const PublicacaoController = {
 }
 
 
+
 const ElementoDeInterfaceGrafica = {
 
   setBotaoLimparInputDataAgendada: function() {
@@ -94,5 +95,6 @@ const MountedAgendamentoController = {
 
 }
 
-MountedAgendamentoController.run();
 
+
+MountedAgendamentoController.run();
