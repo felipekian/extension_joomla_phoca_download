@@ -11,6 +11,7 @@ const PageCache = {
 
 }
 
+
 const ShortCutBtnSalvarESair = {
 
   handle: function() {
@@ -42,6 +43,7 @@ const ShortCutBtnSalvarESair = {
   }
 
 }
+
 
 const ShortCutBtnCancelar = {
 
@@ -88,5 +90,6 @@ const MountedShortCutFormCadastro = {
   }
 
 }
+
 
 MountedShortCutFormCadastro.handle(); 

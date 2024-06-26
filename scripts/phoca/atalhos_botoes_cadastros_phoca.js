@@ -32,6 +32,7 @@ const ShortCutBtnNew = {
 
 }
 
+
 const ShortCutBtnAddMultiple = {
   
   handle: function() {
