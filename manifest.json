@@ -11,7 +11,7 @@
       ],
       "js": [        
         "scripts/phoca/ocultar_inputs_publicacao_controller.js",
-        "scripts/phoca/shortcuts.js"
+        "scripts/phoca/atalhos_salvar_form_cadastro.js"
       ],
       "all_frames": true,
       "run_at": "document_end"
@@ -28,7 +28,7 @@
         "scripts/phoca/publication_automatic.js",
         "scripts/phoca/list_publication_automatic.js",
         "scripts/phoca/ocultar_inputs_publicacao_controller.js",
-        "scripts/phoca/shortcuts.js"
+        "scripts/phoca/atalhos_salvar_form_cadastro.js"
       ],
       "all_frames": true,
       "run_at": "document_end"
@@ -38,7 +38,7 @@
         "*://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadmanager&manager=file&tmpl=component&field=jform_filename&folder*"
       ],
       "js": [
-        "scripts/phoca/jform_filename_scroll_bottom.js"
+        "scripts/phoca/scroll_page_upload_arquivos.js"
       ],
       "all_frames": true,
       "run_at": "document_end"
@@ -48,8 +48,8 @@
         "*://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadfiles"
       ],
       "js": [
-        "scripts/phoca/shortcut_phoca_listagem.js",
-        "scripts/phoca/select_listagem_by_id_desc.js"
+        "scripts/phoca/atalhos_botoes_cadastros_phoca.js",
+        "scripts/phoca/phoca_downloads_listagem_por_id_desc.js"
       ],
       "all_frames": true,
       "run_at": "document_end"
