@@ -11,11 +11,10 @@ const CONSTANTES_PUBLISH_AUTOMATIC = {
   LAST_PUBLISHER_KEY: "LAST_PUBLISHER_KEY",
   LAST_PUBLISHER_ACTIVED_TOGGLE: "LAST_PUBLISHER_ACTIVED_TOGGLE",
   TEXTAREA_DESCRIPTION: "textarea_description",
-  TIME_PUBLISH: 5,
-  TEMPO_RESTANTE: this.TIME_PUBLISH
-
+  TIME_PUBLISH: 5
 }
 
+let TEMPO_RESTANTE = CONSTANTES_PUBLISH_AUTOMATIC.TIME_PUBLISH.TIME_PUBLISH;
 
 const Utilitarios = {
 
@@ -60,8 +59,8 @@ const Timer = {
 
   show_countdown: function () {
     setInterval(() => {
-      document.querySelector('body > header > div.container-title > h1').innerHTML = `File :: ${CONSTANTES_PUBLISH_AUTOMATIC.TEMPO_RESTANTE}seg`;
-      CONSTANTES_PUBLISH_AUTOMATIC.TEMPO_RESTANTE--;
+      document.querySelector('body > header > div.container-title > h1').innerHTML = `File :: ${TEMPO_RESTANTE}seg`;
+      TEMPO_RESTANTE--;
     }, 1000);
   }
 
