@@ -996,6 +996,18 @@ const Dispensas = {
       this.termo_referencia(title);
     }
 
+    else if (UtilitariosFormPublicacao.verificar_se_titulo_tem_match_esperado(title, 'edital de dispensa de licitação')) {
+      this.edital(title);
+    }
+
+    else if (UtilitariosFormPublicacao.verificar_se_titulo_tem_match_esperado(title, 'mapa de cotação de dispensa de licitação')) {
+      this.mapa_cotacao(title);
+    }
+
+    else if (UtilitariosFormPublicacao.verificar_se_titulo_tem_match_esperado(title, 'minuta de dispensa de licitação')) {
+      this.minuta(title);
+    }
+
   },
 
   aviso: function (title) {
@@ -1030,6 +1042,42 @@ const Dispensas = {
     let categoria = `:: CSL - :: Dispensa de Licitação - :: Dispensa Licitação ${ano}`;
 
     let filename = `csl/dispensa${ano}/TERMO DE REFERENCIA DE DISPENSA DE LICITACAO-${numero_documento}-${ano}.pdf`;
+
+    UtilitariosFormPublicacao.setCategoria(categoria);
+    UtilitariosFormPublicacao.setFileName(filename);
+  },
+
+  edital: function (title) {
+
+    const [numero_documento, ano] = UtilitariosFormPublicacao.get_numero_e_ano_do_documento(title);
+
+    let categoria = `:: CSL - :: Dispensa de Licitação - :: Dispensa Licitação ${ano}`;
+
+    let filename = `csl/dispensa${ano}/EDITAL DE DISPENSA DE LICITACAO-${numero_documento}-${ano}.pdf`;
+
+    UtilitariosFormPublicacao.setCategoria(categoria);
+    UtilitariosFormPublicacao.setFileName(filename);
+  },
+
+  mapa_cotacao: function (title) {
+
+    const [numero_documento, ano] = UtilitariosFormPublicacao.get_numero_e_ano_do_documento(title);
+
+    let categoria = `:: CSL - :: Dispensa de Licitação - :: Dispensa Licitação ${ano}`;
+
+    let filename = `csl/dispensa${ano}/MAPA DE COTACAO DE DISPENSA DE LICITACAO-${numero_documento}-${ano}.pdf`;
+
+    UtilitariosFormPublicacao.setCategoria(categoria);
+    UtilitariosFormPublicacao.setFileName(filename);
+  },
+
+  minuta: function (title) {
+
+    const [numero_documento, ano] = UtilitariosFormPublicacao.get_numero_e_ano_do_documento(title);
+
+    let categoria = `:: CSL - :: Dispensa de Licitação - :: Dispensa Licitação ${ano}`;
+
+    let filename = `csl/dispensa${ano}/MINUTA DE DISPENSA DE LICITACAO-${numero_documento}-${ano}.pdf`;
 
     UtilitariosFormPublicacao.setCategoria(categoria);
     UtilitariosFormPublicacao.setFileName(filename);
