@@ -437,6 +437,10 @@ const RepublicacaoEditais = {
     else if (UtilitariosFormPublicacao.verificar_se_titulo_tem_match_esperado(title, 'adendo de licitação - republicação')) {
       this.adendo_republicacao(title);
     }
+   
+    else if (UtilitariosFormPublicacao.verificar_se_titulo_tem_match_esperado(title, 'nota explicativa de licitação - republicação')) {
+      this.nota_explicativa_republicacao(title);
+    }
 
   },
 
@@ -508,6 +512,18 @@ const RepublicacaoEditais = {
     let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
 
     let filename = `csl/editaisetermos_${ano}/ADENDO DE LICITACAO REPUBLICACAO-PERP-${numero_documento}-${ano}.pdf`;
+
+    UtilitariosFormPublicacao.setCategoria(categoria);
+    UtilitariosFormPublicacao.setFileName(filename);
+  },
+  
+  nota_explicativa_republicacao: function (title) {
+
+    const [numero_documento, ano] = UtilitariosFormPublicacao.get_numero_e_ano_do_documento(title);
+
+    let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
+
+    let filename = `csl/editaisetermos_${ano}/NOTA EXPLICATIVA DE LICITACAO REPUBLICACAO-PERP-${numero_documento}-${ano}.pdf`;
 
     UtilitariosFormPublicacao.setCategoria(categoria);
     UtilitariosFormPublicacao.setFileName(filename);
@@ -1091,11 +1107,11 @@ const Controller = {
 
     Cotacao.handle(title);
 
+    Editais.handle(title);
+
     ReaberturaEditais.handle(title);
 
     RepublicacaoEditais.handle(title);
-
-    Editais.handle(title);
 
     Dispensas.handle(title);
 
