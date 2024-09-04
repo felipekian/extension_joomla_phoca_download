@@ -1032,7 +1032,7 @@ const Dispensas = {
 
     let categoria = `:: CSL - :: Dispensa de Licitação - :: Dispensa Licitação ${ano}`;
 
-    let filename = `csl/avisosecomunicados_${ano}/AVISO DE DISPENSA DE LICITACAO-${numero_documento}-${ano}.pdf`;
+    let filename = `csl/dispensa${ano}/AVISO DE DISPENSA DE LICITACAO-${numero_documento}-${ano}.pdf`;
 
     UtilitariosFormPublicacao.setCategoria(categoria);
     UtilitariosFormPublicacao.setFileName(filename);
