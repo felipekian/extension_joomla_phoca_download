@@ -965,7 +965,7 @@ const CIB = {
       this.resolucoes_adreferendum(title);
     }
 
-    else if (UtilitariosFormPublicacao.verificar_se_titulo_tem_match_esperado(title, 'resolução this')) {
+    else if (UtilitariosFormPublicacao.verificar_se_titulo_tem_match_esperado(title, 'resolução cib')) {
       this.resolucoes(title);
     }
 
