@@ -532,6 +532,96 @@ const RepublicacaoEditais = {
 }
 
 
+const AlteracaoEditais = {
+
+  handle: function (title) {
+
+    if (UtilitariosFormPublicacao.verificar_se_titulo_tem_match_esperado(title, 'aviso de licitação - alteração')) {
+      this.aviso_alteracao(title);
+    }
+
+    else if (UtilitariosFormPublicacao.verificar_se_titulo_tem_match_esperado(title, 'edital de licitação - alteração')) {
+      this.edital_alteracao(title);
+    }
+
+    else if (UtilitariosFormPublicacao.verificar_se_titulo_tem_match_esperado(title, 'minuta de contrato de licitação - alteração')) {
+      this.minut_alteracao(title);
+    }
+
+    else if (UtilitariosFormPublicacao.verificar_se_titulo_tem_match_esperado(title, 'planilha estimativa de licitação - alteração')) {
+      this.planilha_estimativa_alteracao(title);
+    }
+
+    else if (UtilitariosFormPublicacao.verificar_se_titulo_tem_match_esperado(title, 'termo de referência de licitação - alteração')) {
+      this.termo_de_referencia_alteracao(title);
+    }
+
+  },
+
+  aviso_alteracao: function (title) {
+
+    const [numero_documento, ano] = UtilitariosFormPublicacao.get_numero_e_ano_do_documento(title);
+
+    let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
+
+    let filename = `csl/editaisetermos_${ano}/AVISO DE LICITACAO ALTERACAO-PERP-${numero_documento}-${ano}.pdf`;
+
+    UtilitariosFormPublicacao.setCategoria(categoria);
+    UtilitariosFormPublicacao.setFileName(filename);
+    UtilitariosFormPublicacao.abrirSelectFileNameURL(`csl/editaisetermos_${ano}`);
+  },
+
+  edital_alteracao: function (title) {
+
+    const [numero_documento, ano] = UtilitariosFormPublicacao.get_numero_e_ano_do_documento(title);
+
+    let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
+
+    let filename = `csl/editaisetermos_${ano}/EDITAL DE LICITACAO ALTERACAO-PERP-${numero_documento}-${ano}.pdf`;
+
+    UtilitariosFormPublicacao.setCategoria(categoria);
+    UtilitariosFormPublicacao.setFileName(filename);
+  },
+
+  minut_alteracao: function (title) {
+
+    const [numero_documento, ano] = UtilitariosFormPublicacao.get_numero_e_ano_do_documento(title);
+
+    let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
+
+    let filename = `csl/editaisetermos_${ano}/MINUTA DE CONTRATO DE LICITACAO ALTERACAO-PERP-${numero_documento}-${ano}.pdf`;
+
+    UtilitariosFormPublicacao.setCategoria(categoria);
+    UtilitariosFormPublicacao.setFileName(filename);
+  },
+
+  planilha_estimativa_alteracao: function (title) {
+
+    const [numero_documento, ano] = UtilitariosFormPublicacao.get_numero_e_ano_do_documento(title);
+
+    let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
+
+    let filename = `csl/editaisetermos_${ano}/PLANILHA ESTIMATIVA DE LICITACAO ALTERACAO-PERP-${numero_documento}-${ano}.pdf`;
+
+    UtilitariosFormPublicacao.setCategoria(categoria);
+    UtilitariosFormPublicacao.setFileName(filename);
+  },
+
+  termo_de_referencia_alteracao: function (title) {
+
+    const [numero_documento, ano] = UtilitariosFormPublicacao.get_numero_e_ano_do_documento(title);
+
+    let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
+
+    let filename = `csl/editaisetermos_${ano}/TERMO DE REFERENCIA DE LICITACAO ALTERACAO-PERP-${numero_documento}-${ano}.pdf`;
+
+    UtilitariosFormPublicacao.setCategoria(categoria);
+    UtilitariosFormPublicacao.setFileName(filename);
+  }
+
+}
+
+
 const Resultados = {
 
   handle: function (title) {
@@ -1112,6 +1202,8 @@ const Controller = {
     ReaberturaEditais.handle(title);
 
     RepublicacaoEditais.handle(title);
+
+    AlteracaoEditais.handle(title);
 
     Dispensas.handle(title);
 
