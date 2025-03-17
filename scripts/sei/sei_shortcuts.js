@@ -3,7 +3,9 @@
 window.addEventListener('load', () => {
 
   let lnkControleProcessos = document.querySelector('#lnkControleProcessos');
-  lnkControleProcessos.title = "Alt + Q";
+  if (lnkControleProcessos) {
+    lnkControleProcessos.title = "Alt + Q";    
+  }
 
 });
 
