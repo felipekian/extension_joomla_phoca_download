@@ -29,9 +29,9 @@ window.addEventListener('load', () => {
 
   let SECONDS = 60*2.5; /* 2 min e 30 s */
   let COUNT = SECONDS;
-
+  let TEXT = "";
   let ELEMENTO = document.querySelector('#divInfraBarraSuperior > label');
-  let TEXT = document.querySelector('#divInfraBarraSuperior > label').innerHTML;
+  if(ELEMENTO) TEXT = ELEMENTO.innerHTML;
   let URL_ATUAL = window.location.href;
   let RELOAD_ACTIVE_PAGE = URL_ATUAL.indexOf('https://sei.rr.gov.br/sei/controlador.php?acao=procedimento_controlar') !== -1;
 
