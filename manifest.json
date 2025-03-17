@@ -3,7 +3,7 @@
   "name": "joomla! control",
   "author": "Felipe Derkian de Sousa Freitas",
   "description": "Automatic controller and publisher Joomla",
-  "version": "2.3.2",
+  "version": "2.3.3",
   "content_scripts": [
     {
       "matches": [
