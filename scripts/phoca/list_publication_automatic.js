@@ -30,7 +30,7 @@ function cib_set_in_localStorage(data = []) {
   pega os dados do local storage já parciando os dados
 */
 function cib_get_data() {
-  return JSON.parse(localStorage.getItem(CIB_DATA_NAME_LOCAL_STORAGE));
+  return JSON.parse(localStorage.getItem(CIB_DATA_NAME_LOCAL_STORAGE)) ?? [];
 }
 
 /* 
