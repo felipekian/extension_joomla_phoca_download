@@ -137,7 +137,7 @@ function pub_title_desc_controller_get_status_in_local_storage() {
 
 function pub_title_desc_get_data_prompt_web() {
 
-  let dados = prompt('Informe os dados cib: ');
+  let dados = prompt('Informe a lista com titulos e descricoes: ');
 
   if (!dados) return;
 
