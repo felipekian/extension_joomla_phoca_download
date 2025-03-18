@@ -164,6 +164,14 @@ const Editais = {
     else if (UtilitariosFormPublicacao.verificar_se_titulo_tem_match_esperado(title, 'informativo de licitação')) {
       this.informativo(title);
     }
+    
+    else if (UtilitariosFormPublicacao.verificar_se_titulo_tem_match_esperado(title, 'resposta do pedido de esclarecimento')) {
+      this.pedidoEsclarecimento(title);
+    }
+
+    else if (UtilitariosFormPublicacao.verificar_se_titulo_tem_match_esperado(title, 'pedido e resposta de impugnação')) {
+      this.pedidoImpugnacao(title);
+    }
 
   },
 
@@ -275,6 +283,24 @@ const Editais = {
 
     UtilitariosFormPublicacao.setCategoria(categoria);
     UtilitariosFormPublicacao.setFileName(filename);
+  },
+
+  pedidoEsclarecimento: function (title) {
+
+    const [numero_documento, ano] = UtilitariosFormPublicacao.get_numero_e_ano_do_documento(title);
+
+    let categoria = `:: CSL - :: Pregões - :: Esclarecimentos e Impugnações - :: Esclarecimentos e Impugnações ${ano}`;
+
+    UtilitariosFormPublicacao.setCategoria(categoria);
+  },
+
+  pedidoImpugnacao: function (title) {
+
+    const [numero_documento, ano] = UtilitariosFormPublicacao.get_numero_e_ano_do_documento(title);
+
+    let categoria = `:: CSL - :: Pregões - :: Esclarecimentos e Impugnações - :: Esclarecimentos e Impugnações ${ano}`;
+
+    UtilitariosFormPublicacao.setCategoria(categoria);
   }
 
 }
@@ -1086,6 +1112,7 @@ const CIB = {
 }
 
 
+
 const Dispensas = {
 
   handle: function (title) {
@@ -1220,6 +1247,7 @@ const Controller = {
     Chamamentos.handle(title);
 
     CIB.handle(title);
+
   }
 
 }
