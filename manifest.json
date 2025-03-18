@@ -26,7 +26,7 @@
         "scripts/phoca/form_publicacao_controller.js",
         "scripts/phoca/descricao_publicacao_controller.js",
         "scripts/phoca/publicacoes_automaticas.js",
-        "scripts/phoca/list_publication_automatic.js",
+        "scripts/phoca/list_publication_automatic_title_description.js",
         "scripts/phoca/ocultar_inputs_publicacao_controller.js",
         "scripts/phoca/atalhos_salvar_form_cadastro.js"
       ],
