@@ -292,8 +292,10 @@ const Editais = {
     let categoria = `:: CSL - :: Pregões - :: Esclarecimentos e Impugnações - :: Esclarecimentos e Impugnações ${ano}`;
 
     UtilitariosFormPublicacao.setCategoria(categoria);
-  },
 
+    document.querySelector('#general > div:nth-child(5) > div.controls > span > a').click();
+  },
+  
   pedidoImpugnacao: function (title) {
 
     const [numero_documento, ano] = UtilitariosFormPublicacao.get_numero_e_ano_do_documento(title);
@@ -301,6 +303,8 @@ const Editais = {
     let categoria = `:: CSL - :: Pregões - :: Esclarecimentos e Impugnações - :: Esclarecimentos e Impugnações ${ano}`;
 
     UtilitariosFormPublicacao.setCategoria(categoria);
+    
+    document.querySelector('#general > div:nth-child(5) > div.controls > span > a').click();
   }
 
 }
