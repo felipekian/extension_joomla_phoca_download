@@ -90,7 +90,7 @@ function pub_title_desc_set_button_interface() {
   * 
   **********************************************/
   let botao_pub_title_desc_adicionar = document.createElement('button');
-  botao_pub_title_desc_adicionar.innerHTML = 'Lista pub add';
+  botao_pub_title_desc_adicionar.innerHTML = 'Lista pub add t&d';
   botao_pub_title_desc_adicionar.title = "Adicionar lista com títulos e descrições";
   botao_pub_title_desc_adicionar.classList.add('btn');
   botao_pub_title_desc_adicionar.classList.add('btn-small');
@@ -106,10 +106,10 @@ function pub_title_desc_set_button_interface() {
   });
 
   let botao_pub_title_desc_remover = document.createElement('button');
-  botao_pub_title_desc_remover.innerHTML = 'Lista pub rem';
+  botao_pub_title_desc_remover.innerHTML = 'Lista pub rem t&d';
   botao_pub_title_desc_remover.classList.add('btn');
   botao_pub_title_desc_remover.classList.add('btn-small');
-  botao_pub_title_desc_remover.title = 'Remover lista de publicações';
+  botao_pub_title_desc_remover.title = 'Remover lista de publicações títulos e descrições';
   botao_pub_title_desc_remover.addEventListener('click', () => {
 
     pub_title_desc_remove_all_data();
