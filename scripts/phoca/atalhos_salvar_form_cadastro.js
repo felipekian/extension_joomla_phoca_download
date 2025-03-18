@@ -29,7 +29,10 @@ const ShortCutBtnSalvarESair = {
 
         // PageCache.open();
         
-        document.querySelector('#toolbar-save > button').click();
+        let btn = document.querySelector('#toolbar-save > button');
+
+        if(btn)
+          btn.click();
 
       }
 
@@ -38,7 +41,10 @@ const ShortCutBtnSalvarESair = {
 
   setTitle: function() {
 
-    document.querySelector('#toolbar-save > button').title = "(Alt + S)";
+    let save_btn = document.querySelector('#toolbar-save > button');
+    
+    if(save_btn)
+      save_btn.title = "(Alt + S)";
 
   }
 

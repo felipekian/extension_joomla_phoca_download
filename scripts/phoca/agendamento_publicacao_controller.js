@@ -23,14 +23,18 @@ const PublicacaoController = {
   
     this.setDataInicioPublicacaoInput(localStorage.getItem('joomla_start_publish'), localStorage.getItem('joomla_start_publish_date'));
   
-    document.querySelector('#jform_publish_up').addEventListener('blur', (event) => {
+    let jform_publish_up = document.querySelector('#jform_publish_up');
 
-      let data = Data.formatar_data_para_meia_noite(event.target.value);
-      localStorage.setItem('joomla_start_publish', data);
-      localStorage.setItem('joomla_start_publish_date', Data.getDataDeHoje());
-      this.setDataInicioPublicacaoInput(data, localStorage.getItem('joomla_start_publish_date'));
+    if(jform_publish_up){
+      jform_publish_up.addEventListener('blur', (event) => {
 
-    });
+        let data = Data.formatar_data_para_meia_noite(event.target.value);
+        localStorage.setItem('joomla_start_publish', data);
+        localStorage.setItem('joomla_start_publish_date', Data.getDataDeHoje());
+        this.setDataInicioPublicacaoInput(data, localStorage.getItem('joomla_start_publish_date'));
+  
+      });
+    } 
 
   }
 

@@ -118,8 +118,12 @@ function cib_set_button_interface() {
 
   });
 
-  document.querySelector('#toolbar-cancel').append(botao_cib_adicionar);
-  document.querySelector('#toolbar-cancel').append(botao_cib_remover);
+  let toolbar_cancel = document.querySelector('#toolbar-cancel'); 
+
+  if(toolbar_cancel){
+    toolbar_cancel.append(botao_cib_adicionar);
+    toolbar_cancel.append(botao_cib_remover);
+  }
 }
 
 

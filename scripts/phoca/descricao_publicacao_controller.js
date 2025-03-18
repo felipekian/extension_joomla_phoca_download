@@ -36,7 +36,10 @@ const DescriptionController = {
       this.adicionar_descricao();
     }
   
-    document.querySelector('#jform_description').textContent = localStorage.getItem('textarea_description');
+    let description = document.querySelector('#jform_description');
+    
+    if(description) 
+      description.textContent = localStorage.getItem('textarea_description');
   
   },
 

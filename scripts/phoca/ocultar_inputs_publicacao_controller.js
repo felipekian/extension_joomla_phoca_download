@@ -5,40 +5,65 @@ const OcultarInputs = {
 
   alias: function() {
 
-    document.querySelector('#general > div:nth-child(2)').style.display = "none";
+    let hide_alias = document.querySelector('#general > div:nth-child(2)');
+    
+    if(hide_alias){
+      hide_alias.style.display = "none";
+    }
 
   },
 
   features: function() {
 
-    document.querySelector('#general > div:nth-child(31) > div.editor.wf-editor-container.mb-2').style.display = 'none';
+    let hide_features = document.querySelector('#general > div:nth-child(31) > div.editor.wf-editor-container.mb-2');
+    
+    if(hide_features){
+      hide_features.style.display = 'none';
+    }
 
   },
 
   changelog: function() {
 
-    document.querySelector('#general > div:nth-child(34) > div.editor.wf-editor-container.mb-2').style.display = 'none';
+    let hide_changelog = document.querySelector('#general > div:nth-child(34) > div.editor.wf-editor-container.mb-2'); 
+
+    if(hide_changelog){
+      hide_changelog.style.display = 'none';
+    }
 
   },
   
   notes: function() {
 
-    document.querySelector('#general > div:nth-child(37) > div.editor.wf-editor-container.mb-2').style.display = 'none';
+    let hide_notes = document.querySelector('#general > div:nth-child(37) > div.editor.wf-editor-container.mb-2');
+
+    if(hide_notes){
+      hide_notes.style.display = 'none';
+    }
 
   },
   
   ordering: function() {
 
-    document.querySelector('#general > div:nth-child(4)').style.display = 'none';
+    let hide_ordering = document.querySelector('#general > div:nth-child(4)');
+
+    if(hide_ordering){
+      hide_ordering.style.display = 'none';
+    }
 
   },
 
   varios_em_sequencia: function() {
 
     for (let index = 6; index < 26; index++) {
-      document.querySelector(`#general > div:nth-child(${index})`).style.display = "none";
-    }
 
+      let hide_varios_em_sequencia = document.querySelector(`#general > div:nth-child(${index})`);
+      
+      if(hide_varios_em_sequencia){
+        hide_varios_em_sequencia.style.display = "none";
+      }
+
+    }
   }
 
 }

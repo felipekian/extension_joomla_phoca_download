@@ -1231,11 +1231,13 @@ const MountedPublicacaoController = {
 
     window.addEventListener('load', () => {
 
-      title_input_phoca.addEventListener('blur', function (e) {
-
-        Controller.handle(e.target.value);
-
-      });
+      if(title_input_phoca){
+        title_input_phoca.addEventListener('blur', function (e) {
+          
+          Controller.handle(e.target.value);
+          
+        });
+      }
 
     });
 

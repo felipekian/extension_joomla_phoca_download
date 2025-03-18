@@ -241,7 +241,10 @@ const ElementInterfacePublishAutomatic = {
       location.reload();
     });
 
-    document.querySelector('#toolbar-cancel').append(botao_toggle_pub_auto);
+    let toolbar_cancel = document.querySelector('#toolbar-cancel');
+    
+    if(toolbar_cancel)
+      toolbar_cancel.append(botao_toggle_pub_auto);
 
   }
 

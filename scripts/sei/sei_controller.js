@@ -1,7 +1,11 @@
 "use strict"
 
 function setMessageReloadPage() {
-  document.querySelector('#divInfraBarraSuperior').style.borderBottom = "2px solid #90EE90";
+  let divInfraBarraSuperior = document.querySelector('#divInfraBarraSuperior');
+  
+  if(divInfraBarraSuperior){
+    divInfraBarraSuperior.style.borderBottom = "2px solid #90EE90";
+  }
 }
 
 function getHoras() {
