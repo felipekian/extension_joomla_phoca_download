@@ -164,7 +164,7 @@ const Editais = {
     else if (UtilitariosFormPublicacao.verificar_se_titulo_tem_match_esperado(title, 'informativo de licitação')) {
       this.informativo(title);
     }
-    
+
     else if (UtilitariosFormPublicacao.verificar_se_titulo_tem_match_esperado(title, 'resposta do pedido de esclarecimento')) {
       this.pedidoEsclarecimento(title);
     }
@@ -295,7 +295,7 @@ const Editais = {
 
     document.querySelector('#general > div:nth-child(5) > div.controls > span > a').click();
   },
-  
+
   pedidoImpugnacao: function (title) {
 
     const [numero_documento, ano] = UtilitariosFormPublicacao.get_numero_e_ano_do_documento(title);
@@ -303,7 +303,7 @@ const Editais = {
     let categoria = `:: CSL - :: Pregões - :: Esclarecimentos e Impugnações - :: Esclarecimentos e Impugnações ${ano}`;
 
     UtilitariosFormPublicacao.setCategoria(categoria);
-    
+
     document.querySelector('#general > div:nth-child(5) > div.controls > span > a').click();
   }
 
@@ -467,7 +467,7 @@ const RepublicacaoEditais = {
     else if (UtilitariosFormPublicacao.verificar_se_titulo_tem_match_esperado(title, 'adendo de licitação - republicação')) {
       this.adendo_republicacao(title);
     }
-   
+
     else if (UtilitariosFormPublicacao.verificar_se_titulo_tem_match_esperado(title, 'nota explicativa de licitação - republicação')) {
       this.nota_explicativa_republicacao(title);
     }
@@ -546,7 +546,7 @@ const RepublicacaoEditais = {
     UtilitariosFormPublicacao.setCategoria(categoria);
     UtilitariosFormPublicacao.setFileName(filename);
   },
-  
+
   nota_explicativa_republicacao: function (title) {
 
     const [numero_documento, ano] = UtilitariosFormPublicacao.get_numero_e_ano_do_documento(title);
@@ -664,6 +664,10 @@ const Resultados = {
       this.errata_parcial(title);
     }
 
+    else if (UtilitariosFormPublicacao.verificar_se_titulo_tem_match_esperado(title, 'resultado da dispensa eletronica')) {
+      this.dispensaEletronica(title);
+    }
+
     else if (UtilitariosFormPublicacao.verificar_se_titulo_tem_match_esperado(title, 'resultado complementar de licitação')) {
       this.complementar(title);
     }
@@ -740,6 +744,18 @@ const Resultados = {
 
     let categoria = `:: CSL - :: Pregões - :: Resultados e Sínteses - :: Resultados e Sínteses ${ano}`;
     let filename = `csl/resultadosesinteses_${ano}/ERRATA RESULTADO PARCIAL DE LICITACAO-PERP-${numero_documento}-${ano}.pdf`;
+
+    UtilitariosFormPublicacao.setCategoria(categoria);
+    UtilitariosFormPublicacao.setFileName(filename);
+    UtilitariosFormPublicacao.abrirSelectFileNameURL(`csl/resultadosesinteses_${ano}`);
+  },
+
+  dispensaEletronica: function (title) {
+
+    const [numero_documento, ano] = UtilitariosFormPublicacao.get_numero_e_ano_do_documento(title);
+
+    let categoria = `:: CSL - :: Pregões - :: Resultados e Sínteses - :: Resultados e Sínteses ${ano}`;
+    let filename = `csl/resultadosesinteses_${ano}/RESULTADO DA DISPENSA ELETRONICA-PERP-${numero_documento}-${ano}.pdf`;
 
     UtilitariosFormPublicacao.setCategoria(categoria);
     UtilitariosFormPublicacao.setFileName(filename);
@@ -1263,11 +1279,11 @@ const MountedPublicacaoController = {
 
     window.addEventListener('load', () => {
 
-      if(title_input_phoca){
+      if (title_input_phoca) {
         title_input_phoca.addEventListener('blur', function (e) {
-          
+
           Controller.handle(e.target.value);
-          
+
         });
       }
 
