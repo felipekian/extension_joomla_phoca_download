@@ -173,6 +173,10 @@ const Editais = {
       this.pedidoImpugnacao(title);
     }
 
+    else if (UtilitariosFormPublicacao.verificar_se_titulo_tem_match_esperado(title, 'resposta à impugnação e pedido de esclarecimento')) {
+      this.respostaImpugnacaoPedidoEsclarecimento(title);
+    }
+
   },
 
   errata_aviso: function (title) {
@@ -297,6 +301,17 @@ const Editais = {
   },
 
   pedidoImpugnacao: function (title) {
+
+    const [numero_documento, ano] = UtilitariosFormPublicacao.get_numero_e_ano_do_documento(title);
+
+    let categoria = `:: CSL - :: Pregões - :: Esclarecimentos e Impugnações - :: Esclarecimentos e Impugnações ${ano}`;
+
+    UtilitariosFormPublicacao.setCategoria(categoria);
+
+    document.querySelector('#general > div:nth-child(5) > div.controls > span > a').click();
+  },
+
+  respostaImpugnacaoPedidoEsclarecimento: function (title) {
 
     const [numero_documento, ano] = UtilitariosFormPublicacao.get_numero_e_ano_do_documento(title);
 
