@@ -11,8 +11,8 @@ const CONSTANTES_PUBLISH_AUTOMATIC = {
   LAST_PUBLISHER_KEY: "LAST_PUBLISHER_KEY",
   LAST_PUBLISHER_ACTIVED_TOGGLE: "LAST_PUBLISHER_ACTIVED_TOGGLE",
   TEXTAREA_DESCRIPTION: "textarea_description",
-  TIME_PUBLISH: 30
-  
+  TIME_PUBLISH: 60
+
 }
 
 let TEMPO_RESTANTE = CONSTANTES_PUBLISH_AUTOMATIC.TIME_PUBLISH;
@@ -242,8 +242,8 @@ const ElementInterfacePublishAutomatic = {
     });
 
     let toolbar_cancel = document.querySelector('#toolbar-cancel');
-    
-    if(toolbar_cancel)
+
+    if (toolbar_cancel)
       toolbar_cancel.append(botao_toggle_pub_auto);
 
   }
