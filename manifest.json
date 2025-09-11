@@ -9,7 +9,8 @@
       "matches": [
         "*://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadfile&layout=edit&*"
       ],
-      "js": [        
+      "js": [
+        "scripts/utilitarios/spinner_load.js",
         "scripts/phoca/ocultar_inputs_publicacao_controller.js",
         "scripts/phoca/atalhos_salvar_form_cadastro.js"
       ],
@@ -21,6 +22,7 @@
         "*://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadfile&layout=edit"
       ],
       "js": [
+        "scripts/utilitarios/spinner_load.js",
         "scripts/utilitarios/data.js",
         "scripts/phoca/agendamento_publicacao_controller.js",
         "scripts/phoca/form_publicacao_controller.js",
@@ -39,6 +41,7 @@
         "*://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadmanager&manager=file&tmpl=component&field=jform_filename&folder*"
       ],
       "js": [
+        "scripts/utilitarios/spinner_load.js",
         "scripts/phoca/scroll_page_upload_arquivos.js"
       ],
       "all_frames": true,
@@ -49,6 +52,7 @@
         "*://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadfiles"
       ],
       "js": [
+        "scripts/utilitarios/spinner_load.js",
         "scripts/phoca/atalhos_botoes_cadastros_phoca.js",
         "scripts/phoca/phoca_downloads_listagem_por_id_desc.js"
       ],
@@ -60,6 +64,7 @@
         "*://saude.rr.gov.br/administrator/index.php?option=com_content&view=article&layout=edit"
       ],
       "js": [
+        "scripts/utilitarios/spinner_load.js",
         "scripts/articles/form_control.js"
       ],
       "all_frames": true,
@@ -70,6 +75,7 @@
         "*://saude.rr.gov.br/administrator/index.php*"
       ],
       "js": [
+        "scripts/utilitarios/spinner_load.js",
         "scripts/joomla/joomla_lang_login.js",
         "scripts/joomla/joomla_shortcuts.js",
         "scripts/joomla/add_btn_head_clear_cache.js",
@@ -83,6 +89,7 @@
         "*://sei.rr.gov.br/sei/*"
       ],
       "js": [
+        "scripts/utilitarios/spinner_load.js",
         "scripts/sei/sei_controller.js",
         "scripts/sei/sei_shortcuts.js"
       ],
@@ -94,7 +101,8 @@
         "*://sei.rr.gov.br/sei/controlador.php?acao=acompanhamento_*"
       ],
       "js": [
-        "scripts/sei/andamento_especial_csl.js"
+        "scripts/sei/andamento_especial_csl.js",
+        "scripts/utilitarios/spinner_load.js"
       ],
       "all_frames": true,
       "run_at": "document_end"
@@ -105,7 +113,8 @@
         "*://sip.rr.gov.br/sip/login.php*"
       ],
       "js": [
-        "scripts/sei/login.styles.js"
+        "scripts/sei/login.styles.js",
+        "scripts/utilitarios/spinner_load.js"
       ],
       "all_frames": true,
       "run_at": "document_end"
