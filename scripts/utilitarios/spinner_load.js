@@ -21,7 +21,7 @@ function addSpinner() {
     left: '0',
     width: '100%',
     height: '100%',
-    backgroundColor: 'rgba(216, 216, 216, 0.2)',
+    backgroundColor: 'rgba(0, 0, 0, 0.85)',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
