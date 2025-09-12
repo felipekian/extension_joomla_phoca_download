@@ -1,11 +1,16 @@
-// Aguarda o evento de carregamento completo da página
-setTimeout(function () {
-  // Encontra e remove o spinner quando a página estiver totalmente carregada
-  const spinner = document.getElementById('loading-spinner');
-  if (spinner) {
-    spinner.remove();
-  }
-}, 5000);
+window.addEventListener('load', function () {
+  // console.log('A página inteira foi carregada, incluindo todos os recursos!');
+
+  // Aguarda o evento de carregamento completo da página
+  setTimeout(function () {
+    // Encontra e remove o spinner quando a página estiver totalmente carregada
+    const spinner = document.getElementById('loading-spinner');
+    if (spinner) {
+      spinner.remove();
+    }
+  }, 2000);
+
+});
 
 
 
@@ -21,7 +26,7 @@ function addSpinner() {
     left: '0',
     width: '100%',
     height: '100%',
-    backgroundColor: 'rgba(0, 0, 0, 0.85)',
+    backgroundColor: 'rgba(230, 230, 230, 1)',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
