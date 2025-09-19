@@ -62,6 +62,7 @@ const Timer = {
     setInterval(() => {
       document.querySelector('body > header > div.container-title > h1').innerHTML = `File :: ${TEMPO_RESTANTE}seg`;
       TEMPO_RESTANTE--;
+      if (TEMPO_RESTANTE < 0) TEMPO_RESTANTE = 0;
     }, 1000);
   }
 
@@ -243,8 +244,11 @@ const ElementInterfacePublishAutomatic = {
 
     let toolbar_cancel = document.querySelector('#toolbar-cancel');
 
-    if (toolbar_cancel)
-      toolbar_cancel.append(botao_toggle_pub_auto);
+    if (toolbar_cancel) {
+      setTimeout(() => {
+        toolbar_cancel.append(botao_toggle_pub_auto);
+      }, 3000);
+    }
 
   }
 

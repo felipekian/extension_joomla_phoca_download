@@ -86,7 +86,7 @@ function pub_title_desc_get_first_description() {
 function pub_title_desc_set_button_interface() {
   /********************************************** 
   *
-  * add botão para adicionar a lista da cib
+  * add botão para adicionar a lista
   * 
   **********************************************/
   let botao_pub_title_desc_adicionar = document.createElement('button');
@@ -105,6 +105,11 @@ function pub_title_desc_set_button_interface() {
 
   });
 
+  /********************************************** 
+  *
+  * add botão para remover a lista
+  * 
+  **********************************************/
   let botao_pub_title_desc_remover = document.createElement('button');
   botao_pub_title_desc_remover.innerHTML = 'Lista pub rem t&d';
   botao_pub_title_desc_remover.classList.add('btn');
@@ -118,11 +123,38 @@ function pub_title_desc_set_button_interface() {
 
   });
 
-  let toolbar_cancel = document.querySelector('#toolbar-cancel'); 
+  /********************************************** 
+  *
+  * add botão toogle a lista
+  * 
+  **********************************************/
+  let botao_pub_title_desc_toggle = document.createElement('button');
+  botao_pub_title_desc_toggle.innerHTML = 'Pub t&d';
+  botao_pub_title_desc_toggle.classList.add('btn');
+  botao_pub_title_desc_toggle.classList.add('btn-small');
+  botao_pub_title_desc_toggle.title = 'Toggle lista de publicações com títulos e descrições';
+  botao_pub_title_desc_toggle.addEventListener('click', () => {
 
-  if(toolbar_cancel){
-    toolbar_cancel.append(botao_pub_title_desc_adicionar);
-    toolbar_cancel.append(botao_pub_title_desc_remover);
+    if (pub_title_desc_data_count() === 0) { //adicionar
+      pub_title_desc_get_data_prompt_web();
+      pub_title_desc_controller_set_status_in_local_storage(PUB_TITLE_DESC_STATUS_PUBLISH);
+      setTimeout(() => {
+        location.reload();
+      }, (PUB_TITLE_DESC_TIME_PUBLISH * 1000) / 2);
+    } else { // remover
+      pub_title_desc_remove_all_data();
+      pub_title_desc_controller_set_status_in_local_storage(PUB_TITLE_DESC_STATUS_NOT_PUBLISH);
+      location.reload();
+    }
+
+  });
+
+  let toolbar_cancel = document.querySelector('#toolbar-cancel');
+
+  if (toolbar_cancel) {
+    // toolbar_cancel.append(botao_pub_title_desc_adicionar);
+    // toolbar_cancel.append(botao_pub_title_desc_remover);
+    toolbar_cancel.append(botao_pub_title_desc_toggle);
   }
 }
 

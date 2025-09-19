@@ -3,56 +3,56 @@
 
 const DescriptionController = {
 
-  adicionar_descricao: function() {
+  adicionar_descricao: function () {
 
     let descricao = window.prompt('Descrição:');
-  
+
     if (!descricao) {
       localStorage.setItem('textarea_description', ' ');
       localStorage.setItem('textarea_description_date', Data.getDataDeHoje());
       return;
     }
-  
+
     localStorage.setItem('textarea_description', descricao);
     localStorage.setItem('textarea_description_date', Data.getDataDeHoje());
-  
+
     location.reload();
 
   },
-   
-  
-  remover_descricao: function() {
+
+
+  remover_descricao: function () {
 
     localStorage.setItem('textarea_description', '');
-  
+
     location.reload();
 
   },
-  
-  
-  set_descricao_automatica_caso_exista: function() {
-  
+
+
+  set_descricao_automatica_caso_exista: function () {
+
     if (localStorage.getItem('textarea_description').length === 0) {
       this.adicionar_descricao();
     }
-  
+
     let description = document.querySelector('#jform_description');
-    
-    if(description) 
+
+    if (description)
       description.textContent = localStorage.getItem('textarea_description');
-  
+
   },
 
 
-  verificar_se_data_da_descricao_e_atual: function() {
+  verificar_se_data_da_descricao_e_atual: function () {
 
     /**********************************************************************************************
        Verifica a data atual e a salva no localstorage são diferentes para limpar a descrição
     **********************************************************************************************/
 
-      if (Data.getDataDeHoje() != localStorage.getItem('textarea_description_date')) {
-        this.remover_descricao();
-      }
+    if (Data.getDataDeHoje() != localStorage.getItem('textarea_description_date')) {
+      this.remover_descricao();
+    }
 
   }
 
@@ -60,32 +60,32 @@ const DescriptionController = {
 
 
 const ShortCuts = {
-  
-  adicionarDescricao: function() {
+
+  adicionarDescricao: function () {
 
     document.addEventListener("keydown", function (event) {
-  
+
       if (event.ctrlKey && event.altKey && (event.key === 'd' || event.key === 'D')) {
-    
+
         DescriptionController.adicionar_descricao();
-    
+
       }
-    
+
     });
   },
-  
-  removerDescricao: function() {
+
+  removerDescricao: function () {
 
     document.addEventListener("keydown", function (event) {
-  
+
       if (event.ctrlKey && event.altKey && (event.key === 'r' || event.key === 'R')) {
 
         if (!confirm('Confirme para remover descrição:')) return;
-    
+
         DescriptionController.remover_descricao();
-    
+
       }
-    
+
     });
 
   }
@@ -129,6 +129,26 @@ const ElementoInterfaceGrafica = {
 
   },
 
+  btnAdicionarRemoverDescricaoToggle: function () {
+
+    let botao_descricao_toggle = document.createElement('button');
+
+    botao_descricao_toggle.innerHTML = 'Desc';
+    botao_descricao_toggle.title = "Descrição Toogle Adicionar (Ctrl + Alt + D) / Remover (Ctrl + Alt + R)";
+    botao_descricao_toggle.classList.add('btn');
+    botao_descricao_toggle.classList.add('btn-small');
+
+    botao_descricao_toggle.addEventListener('click', () => {
+      if (localStorage.getItem('textarea_description').length > 1)
+        DescriptionController.remover_descricao();
+      else
+        DescriptionController.adicionar_descricao();
+    });
+
+    this.setNaInterface(botao_descricao_toggle);
+
+  },
+
   setNaInterface: function (btn) {
     document.querySelector('#toolbar-cancel').append(btn);
   }
@@ -139,12 +159,14 @@ const ElementoInterfaceGrafica = {
 const MountedDescricaoController = {
 
   run: function () {
-    
+
     DescriptionController.verificar_se_data_da_descricao_e_atual();
     DescriptionController.set_descricao_automatica_caso_exista();
 
-    ElementoInterfaceGrafica.btnAdicionarDescricao();
-    ElementoInterfaceGrafica.btnRemoveDescricao();
+    // ElementoInterfaceGrafica.btnAdicionarDescricao();
+    // ElementoInterfaceGrafica.btnRemoveDescricao();
+
+    ElementoInterfaceGrafica.btnAdicionarRemoverDescricaoToggle();
 
     ShortCuts.adicionarDescricao();
     ShortCuts.removerDescricao();

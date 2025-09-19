@@ -10,7 +10,7 @@ const PUB_ONLY_TITLE_DATA_NAME_LOCAL_STORAGE = 'pub_only_title_data';
 const PUB_ONLY_TITLE_CONTROLLER_STATUS_LOCAL_STORAGE = 'pub_only_title_status';
 const PUB_ONLY_TITLE_STATUS_NOT_PUBLISH = 0;
 const PUB_ONLY_TITLE_STATUS_PUBLISH = 1;
-const PUB_ONLY_TITLE_TIME_PUBLISH = 10;
+const PUB_ONLY_TITLE_TIME_PUBLISH = 20;
 
 /* 
   Desative publication_automatic quando fizer por aqui
@@ -44,7 +44,7 @@ function pub_only_title_data_count() {
 /* 
   remove o primeiro elemento do array 
 */
-function pub_only_title_data_shift() {  
+function pub_only_title_data_shift() {
   if (pub_only_title_data_count() === 0) {
     return;
   }
@@ -78,7 +78,7 @@ function pub_only_title_get_first_title() {
 function pub_only_title_set_button_interface() {
   /********************************************** 
   *
-  * add botão para adicionar a lista da cib
+  * add botão para adicionar a lista
   * 
   **********************************************/
   let botao_pub_only_title_adicionar = document.createElement('button');
@@ -97,6 +97,12 @@ function pub_only_title_set_button_interface() {
 
   });
 
+  /********************************************** 
+  *
+  * add botão para remover a lista
+  * 
+  **********************************************/
+
   let botao_pub_only_title_remover = document.createElement('button');
   botao_pub_only_title_remover.innerHTML = 'Lista pub only title rem';
   botao_pub_only_title_remover.classList.add('btn');
@@ -110,11 +116,39 @@ function pub_only_title_set_button_interface() {
 
   });
 
-  let toolbar_cancel = document.querySelector('#toolbar-cancel'); 
+  /********************************************** 
+  *
+  * add botão para remover a lista
+  * 
+  **********************************************/
 
-  if(toolbar_cancel){
-    toolbar_cancel.append(botao_pub_only_title_adicionar);
-    toolbar_cancel.append(botao_pub_only_title_remover);
+  let botao_pub_only_title_toggle = document.createElement('button');
+  botao_pub_only_title_toggle.innerHTML = 'Pub title';
+  botao_pub_only_title_toggle.classList.add('btn');
+  botao_pub_only_title_toggle.classList.add('btn-small');
+  botao_pub_only_title_toggle.title = 'Toggle lista de publicações somente com os titulos';
+  botao_pub_only_title_toggle.addEventListener('click', () => {
+
+    if (pub_only_title_data_count() === 0) {
+      pub_only_title_get_data_prompt_web();
+      pub_only_title_controller_set_status_in_local_storage(PUB_ONLY_TITLE_STATUS_PUBLISH);
+      setTimeout(() => {
+        location.reload();
+      }, (PUB_ONLY_TITLE_TIME_PUBLISH * 1000) / 2);
+    } else {
+      pub_only_title_remove_all_data();
+      pub_only_title_controller_set_status_in_local_storage(PUB_ONLY_TITLE_STATUS_NOT_PUBLISH);
+      location.reload();
+    }
+
+  });
+
+  let toolbar_cancel = document.querySelector('#toolbar-cancel');
+
+  if (toolbar_cancel) {
+    // toolbar_cancel.append(botao_pub_only_title_adicionar);
+    // toolbar_cancel.append(botao_pub_only_title_remover);
+    toolbar_cancel.append(botao_pub_only_title_toggle);
   }
 }
 
@@ -142,7 +176,7 @@ function pub_only_title_get_data_prompt_web() {
 
 
   /**
-   * Pula de 2 em dois para contabilizar title e description sequencial  
+   *  contabilizar title na lista  
    **/
   let dados_tratados = [];
 
