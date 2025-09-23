@@ -10,7 +10,7 @@ const PUB_TITLE_DESC_DATA_NAME_LOCAL_STORAGE = 'pub_title_desc_data';
 const PUB_TITLE_DESC_CONTROLLER_STATUS_LOCAL_STORAGE = 'pub_title_desc_status';
 const PUB_TITLE_DESC_STATUS_NOT_PUBLISH = 0;
 const PUB_TITLE_DESC_STATUS_PUBLISH = 1;
-const PUB_TITLE_DESC_TIME_PUBLISH = 10;
+const PUB_TITLE_DESC_TIME_PUBLISH = 60;
 
 /* 
   Desative publication_automatic quando fizer por aqui

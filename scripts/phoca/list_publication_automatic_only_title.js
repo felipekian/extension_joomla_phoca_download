@@ -10,7 +10,7 @@ const PUB_ONLY_TITLE_DATA_NAME_LOCAL_STORAGE = 'pub_only_title_data';
 const PUB_ONLY_TITLE_CONTROLLER_STATUS_LOCAL_STORAGE = 'pub_only_title_status';
 const PUB_ONLY_TITLE_STATUS_NOT_PUBLISH = 0;
 const PUB_ONLY_TITLE_STATUS_PUBLISH = 1;
-const PUB_ONLY_TITLE_TIME_PUBLISH = 20;
+const PUB_ONLY_TITLE_TIME_PUBLISH = 60;
 
 /* 
   Desative publication_automatic quando fizer por aqui
