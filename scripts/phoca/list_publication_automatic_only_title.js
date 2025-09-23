@@ -12,6 +12,20 @@ const PUB_ONLY_TITLE_STATUS_NOT_PUBLISH = 0;
 const PUB_ONLY_TITLE_STATUS_PUBLISH = 1;
 const PUB_ONLY_TITLE_TIME_PUBLISH = 60;
 
+let TEMPO_RESTANTE_ONLY_TITLE = PUB_ONLY_TITLE_TIME_PUBLISH;
+
+const TimerCounterOnlyTitle = {
+
+  show_countdown: function () {
+    setInterval(() => {
+      document.querySelector('body > header > div.container-title > h1').innerHTML = `File :: ${TEMPO_RESTANTE_ONLY_TITLE}seg`;
+      TEMPO_RESTANTE_ONLY_TITLE--;
+      if (TEMPO_RESTANTE_ONLY_TITLE < 0) TEMPO_RESTANTE_ONLY_TITLE = 0;
+    }, 1000);
+  }
+
+}
+
 /* 
   Desative publication_automatic quando fizer por aqui
 */
@@ -218,7 +232,9 @@ function pub_only_title_controll_publish() {
 
   setTimeout(() => {
     input_title.blur();
-  }, 1500);
+  }, 2000);
+
+  TimerCounterOnlyTitle.show_countdown();
 
   setTimeout(() => {
     disablePublicationAutomatic();

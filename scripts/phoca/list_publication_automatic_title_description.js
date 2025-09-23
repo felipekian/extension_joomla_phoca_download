@@ -12,6 +12,20 @@ const PUB_TITLE_DESC_STATUS_NOT_PUBLISH = 0;
 const PUB_TITLE_DESC_STATUS_PUBLISH = 1;
 const PUB_TITLE_DESC_TIME_PUBLISH = 60;
 
+let TEMPO_RESTANTE_DESC_TITLE = PUB_TITLE_DESC_TIME_PUBLISH;
+
+const TimerCounterTitleDesc = {
+
+  show_countdown: function () {
+    setInterval(() => {
+      document.querySelector('body > header > div.container-title > h1').innerHTML = `File :: ${TEMPO_RESTANTE_DESC_TITLE}seg`;
+      TEMPO_RESTANTE_DESC_TITLE--;
+      if (TEMPO_RESTANTE_DESC_TITLE < 0) TEMPO_RESTANTE_DESC_TITLE = 0;
+    }, 1000);
+  }
+
+}
+
 /* 
   Desative publication_automatic quando fizer por aqui
 */
@@ -227,7 +241,9 @@ function pub_title_desc_controll_publish() {
 
   setTimeout(() => {
     input_title.blur();
-  }, 1500);
+  }, 2000);
+
+  TimerCounterTitleDesc.show_countdown();
 
   setTimeout(() => {
     disablePublicationAutomatic();
