@@ -2,8 +2,8 @@
 
 function setMessageReloadPage() {
   let divInfraBarraSuperior = document.querySelector('#divInfraBarraSuperior');
-  
-  if(divInfraBarraSuperior){
+
+  if (divInfraBarraSuperior) {
     divInfraBarraSuperior.style.borderBottom = "2px solid #90EE90";
   }
 }
@@ -31,11 +31,11 @@ function formatValue(value) {
 
 window.addEventListener('load', () => {
 
-  let SECONDS = 60*2.5; /* 2 min e 30 s */
+  let SECONDS = 60 * 2.5; /* 2 min e 30 s */
   let COUNT = SECONDS;
   let TEXT = "";
   let ELEMENTO = document.querySelector('#divInfraBarraSuperior > label');
-  if(ELEMENTO) TEXT = ELEMENTO.innerHTML;
+  if (ELEMENTO) TEXT = ELEMENTO.innerHTML;
   let URL_ATUAL = window.location.href;
   let RELOAD_ACTIVE_PAGE = URL_ATUAL.indexOf('https://sei.rr.gov.br/sei/controlador.php?acao=procedimento_controlar') !== -1;
 
@@ -53,7 +53,7 @@ window.addEventListener('load', () => {
     let data_insert = `<a 
   id="page_joomla"
   title="Fazer publicação (Alt + S)" 
-  href="https://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadfile&layout=edit" 
+  href="https://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadfiles" 
   target="_blank">
   <span style="color:white;font-wight:bold;">`;
 
