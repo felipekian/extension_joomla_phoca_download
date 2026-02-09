@@ -62,7 +62,8 @@ window.addEventListener('load', () => {
     else
       data_insert += `${TEXT} :: ${getHoras()} horas e ${getMinutos()} minutos</span></a>`;
 
-    ELEMENTO.innerHTML = data_insert;
+    if (ELEMENTO)
+      ELEMENTO.innerHTML = data_insert;
 
     if (--COUNT && COUNT < 0) COUNT = 0;
   }, 1000);

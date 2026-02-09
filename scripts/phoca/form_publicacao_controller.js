@@ -157,6 +157,10 @@ const Editais = {
       this.nota_explicativa(title);
     }
 
+    else if (UtilitariosFormPublicacao.verificar_se_titulo_tem_match_esperado(title, 'análise crítica de pesquisa de preços')) {
+      this.analiseCriticaPesquisa(title);
+    }
+
     else if (UtilitariosFormPublicacao.verificar_se_titulo_tem_match_esperado(title, 'esclarecimentos de licitação')) {
       this.esclarecimentos(title);
     }
@@ -267,6 +271,19 @@ const Editais = {
 
     UtilitariosFormPublicacao.setCategoria(categoria);
     UtilitariosFormPublicacao.setFileName(filename);
+  },
+
+  analiseCriticaPesquisa: function (title) {
+
+    const [numero_documento, ano] = UtilitariosFormPublicacao.get_numero_e_ano_do_documento(title);
+
+    let categoria = `:: CSL - :: Pregões - :: Editais e Termos - :: Editais e Termos ${ano}`;
+
+    let filename = `csl/editaisetermos_${ano}/ANALISE CRITICA DE PESQUISA DE PRECO DE LICITACAO-PERP-${numero_documento}-${ano}.pdf`;
+
+    UtilitariosFormPublicacao.setCategoria(categoria);
+    UtilitariosFormPublicacao.setFileName(filename);
+
   },
 
   esclarecimentos: function (title) {
