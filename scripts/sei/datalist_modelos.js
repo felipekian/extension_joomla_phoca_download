@@ -3,7 +3,9 @@
 const meusModelos = [
     { id: "21171179", descricao: "Editais e Termos 2026" },
 
-    { id: "17353122", descricao: "Sintese de Ata 2026" }
+    { id: "21933596", descricao: "Sintese de Ata 2026" },
+    { id: "17353122", descricao: "Sintese de Ata 2025" }
+
     //   { id: "", descricao = "" },
 
 ];
