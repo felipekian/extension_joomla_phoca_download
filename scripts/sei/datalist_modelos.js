@@ -1,16 +1,20 @@
 "use strict"
 
 const meusModelos = [
-  { id: "21171179", descricao: "Editais e Termos 2026" }
+    { id: "21171179", descricao: "Editais e Termos 2026" },
+
+    { id: "17353122", descricao: "Sintese de Ata 2026" }
+    //   { id: "", descricao = "" },
+
 ];
 
 function injetarDatalistControl() {
     // 1. Tenta localizar o campo (verifique se o ID no seu SEI é 'selSerie' ou 'txtSerie')
     const inputSEI = document.querySelector('#txtProtocoloDocumentoTextoBase');
-    
+
     // Se o campo existe e ainda não tem o datalist associado
     if (inputSEI && !document.getElementById('lista-modelos-sei-custom-joomla-control')) {
-        
+
         const datalist = document.createElement('datalist');
         datalist.id = 'lista-modelos-sei-custom-joomla-control';
 
@@ -18,7 +22,7 @@ function injetarDatalistControl() {
             const opcao = document.createElement('option');
             // Dica: Colocando a descrição no 'value', o usuário busca pelo nome. 
             // Precisaremos de um evento para trocar pelo ID ao selecionar.
-            opcao.value = `${modelo.descricao} (${modelo.id})`; 
+            opcao.value = `${modelo.descricao} (${modelo.id})`;
             opcao.dataset.id = modelo.id;
             datalist.appendChild(opcao);
         });
@@ -29,15 +33,15 @@ function injetarDatalistControl() {
         inputSEI.placeholder = 'Pesquise por nome ou ID...';
         inputSEI.style.width = '200px';
         inputSEI.type = 'search';
-        
+
         // Listener para converter o nome selecionado no ID numérico final
-        inputSEI.addEventListener('change', function() {
+        inputSEI.addEventListener('change', function () {
             const selecionado = meusModelos.find(m => `${m.descricao} (${m.id})` === this.value);
             if (selecionado) {
                 this.value = selecionado.id;
             }
         });
-        
+
         console.log("Datalist injetado com sucesso!");
     }
 }
