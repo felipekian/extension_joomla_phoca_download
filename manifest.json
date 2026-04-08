@@ -107,6 +107,16 @@
       "all_frames": true,
       "run_at": "document_end"
     },
+    {      
+      "matches": [
+        "*://sei.rr.gov.br/sei/controlador.php*"
+      ],
+      "js": [
+        "scripts/sei/datalist_modelos.js"
+      ],
+      "all_frames": true,
+      "run_at": "document_end"
+    },
     {
       "matches": [
         "*://sip.rr.gov.br/sip/login.php?sigla_orgao_sistema=GRR&sigla_sistema=SEI&infra_url=L3NlaS8=",
