@@ -8,7 +8,7 @@ const meusModelos = [
 
   { id: "22030232", descricao: "Escalas de Plantoes Medicos" },
 
-  { id: "22075077", descricao: "Solicitacao Vinculacao SEGOD" }
+  { id: "22075077", descricao: "Solicitacao Vinculacao SEGOD" },
   { id: "22008707", descricao: "Resposta Vinculacao SEGOD" }
   //   { id: "", descricao = "" },
 
