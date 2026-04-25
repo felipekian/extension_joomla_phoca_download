@@ -6,10 +6,10 @@ const meusModelos = [
   { id: "21933596", descricao: "Sintese de Ata 2026" },
   { id: "17353122", descricao: "Sintese de Ata 2025" },
 
-  { id: "22030232", descricao: "Escalas de Médicos" },
+  { id: "22030232", descricao: "Escalas de Plantoes Medicos" },
 
-  { id: "22075077", descricao: "Solicitação Vinculação SEGOD" }
-  { id: "22008707", descricao: "Resposta Vinculação SEGOD" }
+  { id: "22075077", descricao: "Solicitacao Vinculacao SEGOD" }
+  { id: "22008707", descricao: "Resposta Vinculacao SEGOD" }
   //   { id: "", descricao = "" },
 
 ];
