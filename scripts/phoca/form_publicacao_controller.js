@@ -856,7 +856,7 @@ const Sinteses = {
       this.parcial(title);
     }
 
-    else if (UtilitariosFormPublicacao.verificar_se_titulo_tem_match_esperado(title, 'síntese de licitação complementar registro de preços')) {
+    else if (UtilitariosFormPublicacao.verificar_se_titulo_tem_match_esperado(title, 'síntese de ata de registro de preços complementar')) {
       this.complementar(title);
     }
 
@@ -916,7 +916,7 @@ const Sinteses = {
     const [numero_documento, ano] = UtilitariosFormPublicacao.get_numero_e_ano_do_documento(title);
 
     let categoria = `:: CSL - :: Pregões - :: Resultados e Sínteses - :: Resultados e Sínteses ${ano}`;
-    let filename = `csl/resultadosesinteses_${ano}/SINTESE DE LICITACAO COMPLEMENTAR REGISTRO PRECOS-PERP-${numero_documento}-${ano}.pdf`;
+    let filename = `csl/resultadosesinteses_${ano}/SINTESE DE ATA COMPLEMENTAR REGISTRO PRECOS-PERP-${numero_documento}-${ano}.pdf`;
 
     UtilitariosFormPublicacao.setCategoria(categoria);
     UtilitariosFormPublicacao.setFileName(filename);
