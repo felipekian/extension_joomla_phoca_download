@@ -3,9 +3,9 @@
 
 const PageCache = {
 
-  open: function() {
+  open: function () {
 
-    window.open('https://saude.rr.gov.br/administrator/index.php?option=com_cache', '_blank'); 
+    window.open('https://saude.rr.gov.br/transparencia/administrator/index.php?option=com_cache', '_blank');
 
   }
 
@@ -14,24 +14,24 @@ const PageCache = {
 
 const ShortCutBtnSalvarESair = {
 
-  handle: function() {
+  handle: function () {
 
     this.setListenner();
     this.setTitle();
 
   },
 
-  setListenner: function() {
+  setListenner: function () {
 
     document.addEventListener("keydown", function (event) {
 
       if (event.altKey && (event.key === 's' || event.key === 'S')) {
 
         // PageCache.open();
-        
+
         let btn = document.querySelector('#toolbar-save > button');
 
-        if(btn)
+        if (btn)
           btn.click();
 
       }
@@ -39,11 +39,11 @@ const ShortCutBtnSalvarESair = {
     });
   },
 
-  setTitle: function() {
+  setTitle: function () {
 
     let save_btn = document.querySelector('#toolbar-save > button');
-    
-    if(save_btn)
+
+    if (save_btn)
       save_btn.title = "(Alt + S)";
 
   }
@@ -53,14 +53,14 @@ const ShortCutBtnSalvarESair = {
 
 const ShortCutBtnCancelar = {
 
-  handle: function() {
+  handle: function () {
 
     this.setListenner();
     this.setTitle();
 
   },
 
-  setListenner: function() {
+  setListenner: function () {
 
     document.addEventListener("keydown", function (event) {
 
@@ -69,11 +69,11 @@ const ShortCutBtnCancelar = {
         document.querySelector('#toolbar-cancel > button').click();
 
       }
-    
+
     });
   },
 
-  setTitle: function() {
+  setTitle: function () {
 
     document.querySelector('#toolbar-cancel > button').title = "(Alt + C)";
 
@@ -84,7 +84,7 @@ const ShortCutBtnCancelar = {
 
 const MountedShortCutFormCadastro = {
 
-  handle: function() {
+  handle: function () {
 
     window.addEventListener('load', () => {
 

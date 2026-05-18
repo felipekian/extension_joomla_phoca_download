@@ -7,7 +7,7 @@
   "content_scripts": [
     {
       "matches": [
-        "*://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadfile&layout=edit&*"
+        "*://saude.rr.gov.br/transparencia/administrator/index.php?option=com_phocadownload&view=phocadownloadfile&layout=edit&*"
       ],
       "js": [
         "scripts/utilitarios/spinner_load.js",
@@ -19,7 +19,7 @@
     },
     {
       "matches": [
-        "*://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadfile&layout=edit"
+        "*://saude.rr.gov.br/transparencia/administrator/index.php?option=com_phocadownload&view=phocadownloadfile&layout=edit"
       ],
       "js": [
         "scripts/utilitarios/spinner_load.js",
@@ -38,7 +38,7 @@
     },
     {
       "matches": [
-        "*://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadmanager&manager=file&tmpl=component&field=jform_filename&folder*"
+        "*://saude.rr.gov.br/transparencia/administrator/index.php?option=com_phocadownload&view=phocadownloadmanager&manager=file&tmpl=component&field=jform_filename&folder*"
       ],
       "js": [
         "scripts/utilitarios/spinner_load.js",
@@ -49,7 +49,7 @@
     },
     {
       "matches": [
-        "*://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadfiles"
+        "*://saude.rr.gov.br/transparencia/administrator/index.php?option=com_phocadownload&view=phocadownloadfiles"
       ],
       "js": [
         "scripts/utilitarios/spinner_load.js",
@@ -61,7 +61,7 @@
     },
     {
       "matches": [
-        "*://saude.rr.gov.br/administrator/index.php?option=com_content&view=article&layout=edit"
+        "*://saude.rr.gov.br/transparencia/administrator/index.php?option=com_content&view=article&layout=edit"
       ],
       "js": [
         "scripts/utilitarios/spinner_load.js",
@@ -72,7 +72,7 @@
     },
     {
       "matches": [
-        "*://saude.rr.gov.br/administrator/index.php*"
+        "*://saude.rr.gov.br/transparencia/administrator/index.php*"
       ],
       "js": [
         "scripts/utilitarios/spinner_load.js",

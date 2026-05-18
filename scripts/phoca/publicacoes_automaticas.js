@@ -49,7 +49,7 @@ const CachePublishAutomatic = {
 
   open: function () {
 
-    window.open('https://saude.rr.gov.br/administrator/index.php?option=com_cache', '_blank');
+    window.open('https://saude.rr.gov.br/transparencia/administrator/index.php?option=com_cache', '_blank');
 
   }
 

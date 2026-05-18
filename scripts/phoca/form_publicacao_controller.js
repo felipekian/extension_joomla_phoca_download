@@ -10,7 +10,7 @@ const CONSTANTES = {
   /******************************************************** 
           URL de upload da categoria 
   *********************************************************/
-  URL_PHOCA_FILES_UPLOAD: 'https://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadmanager&manager=file&tmpl=component&field=jform_filename&folder='
+  URL_PHOCA_FILES_UPLOAD: 'https://saude.rr.gov.br/transparencia/administrator/index.php?option=com_phocadownload&view=phocadownloadmanager&manager=file&tmpl=component&field=jform_filename&folder='
 
 }
 

@@ -53,7 +53,7 @@ window.addEventListener('load', () => {
     let data_insert = `<a 
   id="page_joomla"
   title="Fazer publicação (Alt + S)" 
-  href="https://saude.rr.gov.br/administrator/index.php?option=com_phocadownload&view=phocadownloadfiles" 
+  href="https://saude.rr.gov.br/transparencia/administrator/index.php?option=com_phocadownload&view=phocadownloadfiles" 
   target="_blank">
   <span style="color:white;font-wight:bold;">`;
 
