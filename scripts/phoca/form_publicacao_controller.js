@@ -95,7 +95,7 @@ const Cotacao = {
     let ano = split_title[tam_split_title - 2];
     let numero_documento = split_title[tam_split_title - 1];
 
-    let categoria = `:: CSL - :: Pregões - :: Avisos e Comunicados - :: Avisos e Comunicados ${ano} - :: Comunicado de Cotação ${ano}`;
+    let categoria = `:: CSL - :: Cotação de Preços - :: Cotação ${ano}`;
 
     let filename = `csl/cotacao_${ano}/COMUNICADODECOTACAO-${numero_documento}-${ano}.pdf`;
 
@@ -114,7 +114,7 @@ const Cotacao = {
     let ano = split_title[tam_split_title - 2];
     let numero_documento = split_title[tam_split_title - 1];
 
-    let categoria = `:: CSL - :: Pregões - :: Avisos e Comunicados - :: Avisos e Comunicados ${ano} - :: Comunicado de Cotação ${ano}`;
+    let categoria = `:: CSL - :: Cotação de Preços - :: Cotação ${ano}`;
     let filename = `csl/cotacao_${ano}/PROPOSTADECOTACAO-${numero_documento}-${ano}.pdf`;
 
     UtilitariosFormPublicacao.setCategoria(categoria);
