@@ -5,7 +5,7 @@ const PageCache = {
 
   open: function () {
 
-    window.open('https://saude.rr.gov.br/transparencia/administrator/index.php?option=com_cache', '_blank');
+    window.open('https://saude.rr.gov.br/transparencia-local/administrator/index.php?option=com_cache', '_blank');
 
   }
 
