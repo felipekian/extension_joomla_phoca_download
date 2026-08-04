@@ -3,63 +3,63 @@
 
 const OcultarInputs = {
 
-  alias: function() {
+  features: function () {
 
-    let hide_alias = document.querySelector('#general > div:nth-child(2)');
-    
-    if(hide_alias){
-      hide_alias.style.display = "none";
-    }
+    let hide_features = document.querySelector('#general > div.control-group-clear.ph-par-features');
 
-  },
-
-  features: function() {
-
-    let hide_features = document.querySelector('#general > div:nth-child(31) > div.editor.wf-editor-container.mb-2');
-    
-    if(hide_features){
+    if (hide_features) {
       hide_features.style.display = 'none';
     }
 
   },
 
-  changelog: function() {
+  changelog: function () {
 
-    let hide_changelog = document.querySelector('#general > div:nth-child(34) > div.editor.wf-editor-container.mb-2'); 
+    let hide_changelog = document.querySelector('#general > div.control-group-clear.ph-par-changelog');
 
-    if(hide_changelog){
+    if (hide_changelog) {
       hide_changelog.style.display = 'none';
     }
 
   },
-  
-  notes: function() {
 
-    let hide_notes = document.querySelector('#general > div:nth-child(37) > div.editor.wf-editor-container.mb-2');
+  notes: function () {
 
-    if(hide_notes){
+    let hide_notes = document.querySelector('#general > div.control-group-clear.ph-par-notes');
+
+    if (hide_notes) {
       hide_notes.style.display = 'none';
     }
 
   },
-  
-  ordering: function() {
 
-    let hide_ordering = document.querySelector('#general > div:nth-child(4)');
+  description_hide_footer: function () {
 
-    if(hide_ordering){
+    let hide_description_footer = document.querySelector('#general > div.control-group-clear.ph-par-description > div:nth-child(2) > joomla-editor-none > div');
+
+    if (hide_description_footer) {
+      hide_description_footer.style.display = 'none';
+    }
+
+  },
+
+  ordering: function () {
+
+    let hide_ordering = document.querySelector('#general > div.control-group.ph-par-ordering');
+
+    if (hide_ordering) {
       hide_ordering.style.display = 'none';
     }
 
   },
 
-  varios_em_sequencia: function() {
+  varios_em_sequencia: function () {
 
-    for (let index = 6; index < 26; index++) {
+    for (let index = 4; index < 24; index++) {
 
       let hide_varios_em_sequencia = document.querySelector(`#general > div:nth-child(${index})`);
-      
-      if(hide_varios_em_sequencia){
+
+      if (hide_varios_em_sequencia) {
         hide_varios_em_sequencia.style.display = "none";
       }
 
@@ -71,17 +71,17 @@ const OcultarInputs = {
 
 const MountedOcultarInputsController = {
 
-  run: function() {
+  run: function () {
 
     window.addEventListener('load', () => {
 
-      OcultarInputs.alias();
       OcultarInputs.changelog();
       OcultarInputs.features();
       OcultarInputs.notes();
+      OcultarInputs.description_hide_footer();
       OcultarInputs.ordering();
       OcultarInputs.varios_em_sequencia();
-    
+
     });
 
   }
