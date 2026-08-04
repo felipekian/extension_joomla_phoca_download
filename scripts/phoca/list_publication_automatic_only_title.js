@@ -18,7 +18,7 @@ const TimerCounterOnlyTitle = {
 
   show_countdown: function () {
     setInterval(() => {
-      document.querySelector('body > header > div.container-title > h1').innerHTML = `File :: ${TEMPO_RESTANTE_ONLY_TITLE}seg`;
+      document.querySelector('#header > div.header-inside > div.header-title.d-flex > div:nth-child(2) > div > h1').innerHTML = `File :: ${TEMPO_RESTANTE_ONLY_TITLE}seg`;
       TEMPO_RESTANTE_ONLY_TITLE--;
       if (TEMPO_RESTANTE_ONLY_TITLE < 0) TEMPO_RESTANTE_ONLY_TITLE = 0;
     }, 1000);
