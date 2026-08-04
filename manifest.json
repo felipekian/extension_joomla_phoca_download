@@ -3,7 +3,7 @@
   "name": "joomla! control",
   "author": "Felipe Derkian de Sousa Freitas",
   "description": "Automatic Publisher Joomla and SEI",
-  "version": "2.4.1",
+  "version": "6.0.0",
   "content_scripts": [
     {
       "matches": [
