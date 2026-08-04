@@ -13,6 +13,16 @@ const OcultarInputs = {
 
   },
 
+  alias: function () {
+
+    let hide_alias = document.querySelector('#phAdminEdit > div > div > div > div:nth-child(2) > div');
+
+    if (hide_alias) {
+      hide_alias.style.display = 'none';
+    }
+
+  },
+
   changelog: function () {
 
     let hide_changelog = document.querySelector('#general > div.control-group-clear.ph-par-changelog');
@@ -69,12 +79,30 @@ const OcultarInputs = {
 }
 
 
+const Title = {
+
+  fullWidth: function () {
+
+    // como o alias foi removido, o titulo agora ocupa toda a largura da tela, então vamos forçar o titulo a ocupar toda a largura da tela para ficar mais bonito.
+
+    let divTitleControl = document.querySelector('#phAdminEdit > div > div > div > div.col-12');
+
+    divTitleControl.classList.remove('col-md-6');
+
+  }
+
+}
+
 const MountedOcultarInputsController = {
 
   run: function () {
 
     window.addEventListener('load', () => {
 
+
+      Title.fullWidth();
+
+      OcultarInputs.alias();
       OcultarInputs.changelog();
       OcultarInputs.features();
       OcultarInputs.notes();
