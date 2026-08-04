@@ -1,6 +1,5 @@
 "use strict"
 
-
 let btn_salvar = document.querySelector('#toolbar-apply > button');
 let btn_salvar_e_novo = document.querySelector('#toolbar-new > button');
 let btn_salvar_e_sair = document.querySelector('#toolbar-save > button');
@@ -60,7 +59,7 @@ const Timer = {
 
   show_countdown: function () {
     setInterval(() => {
-      document.querySelector('body > header > div.container-title > h1').innerHTML = `File :: ${TEMPO_RESTANTE}seg`;
+      document.querySelector('#header > div.header-inside > div.header-title.d-flex > div:nth-child(2) > div > h1').innerHTML = `File :: ${TEMPO_RESTANTE}seg`;
       TEMPO_RESTANTE--;
       if (TEMPO_RESTANTE < 0) TEMPO_RESTANTE = 0;
     }, 1000);
