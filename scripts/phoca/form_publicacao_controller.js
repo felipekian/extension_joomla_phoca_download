@@ -1,7 +1,8 @@
 "use strict"
 
+
 let title_input_phoca = document.querySelector('#jform_title');
-let category_input_phoca = document.querySelector('#jform_catid_chzn > a > span');
+//let category_input_phoca = document.querySelector('#jform_catid_chzn > a > span');
 let filename_input_phoca = document.querySelector('#jform_filename');
 
 
@@ -36,23 +37,67 @@ const UtilitariosFormPublicacao = {
 
   },
 
-
   setCategoria: function (categoria) {
+    const selectElement = document.getElementById('jform_catid');
+    if (!selectElement) return;
 
-    let category_input = document.querySelector('#jform_catid');
-    let options_category = [...category_input.options];
+    const targetText = categoria.trim();
 
-    for (let i = 0; i < options_category.length; i++) {
-      if (options_category[i].innerText == categoria) {
-        options_category[i].selected = true;
-        break;
+    // Método 1: Via instância Choices do Joomla ou elemento DOM
+    const choicesInstance = selectElement.choices ||
+      (selectElement.closest('.choices') && selectElement.closest('.choices').Choices);
+
+    if (choicesInstance) {
+      // Procura o valor correspondente ao texto no <select> original
+      const option = Array.from(selectElement.options).find(
+        opt => opt.text.trim() === targetText
+      );
+
+      if (option) {
+        choicesInstance.setChoiceByValue(option.value);
+        // Dispara o evento 'change' do Choices e do HTML
+        selectElement.dispatchEvent(new Event('change', { bubbles: true }));
+        selectElement.dispatchEvent(new CustomEvent('choice', { detail: { choice: option.value } }));
+        return;
       }
     }
 
-    category_input_phoca.innerHTML = categoria;
-    category_input_phoca.classList.add("result-selected");
-    category_input_phoca.classList.add("highlighted");
+    // Método 2: Manipulação direta de Eventos DOM (Simulação do Usuário)
+    // 1. Localiza o item no dropdown do Choices pelo texto
+    const dropdownOptions = document.querySelectorAll('#jform_catid ~ .choices__list--dropdown .choices__item--choice, .choices__list--dropdown .choices__item--choice');
 
+    let targetChoice = null;
+    dropdownOptions.forEach(opt => {
+      if (opt.textContent.trim() === targetText) {
+        targetChoice = opt;
+      }
+    });
+
+    if (targetChoice) {
+      // Simula a seleção do usuário
+      targetChoice.dispatchEvent(new MouseEvent('mousedown', { bubbles: true }));
+      targetChoice.click();
+      return;
+    }
+
+    // Método 3: Forçar valor via Option + Atualização Visual Manual no DOM do Choices
+    const option = Array.from(selectElement.options).find(opt => opt.text.trim() === targetText);
+    if (option) {
+      selectElement.value = option.value;
+
+      // Atualiza o texto exibido no container do Choices
+      const singleContainer = selectElement.parentElement.querySelector('.choices__list--single');
+      if (singleContainer) {
+        singleContainer.innerHTML = `<div class="choices__item choices__item--selectable" data-item="" data-id="1" data-value="${option.value}">${option.text}</div>`;
+      }
+
+      // Executa a função onchange nativa do Phoca Download (changeCatid)
+      if (typeof changeCatid === 'function') {
+        changeCatid();
+      } else {
+        selectElement.dispatchEvent(new Event('change', { bubbles: true }));
+      }
+    }
   },
 
 
