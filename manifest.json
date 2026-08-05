@@ -78,8 +78,7 @@
         "scripts/utilitarios/spinner_load.js",
         "scripts/joomla/joomla_lang_login.js",
         "scripts/joomla/joomla_shortcuts.js",
-        "scripts/joomla/add_btn_head_clear_cache.js",
-        "scripts/joomla/add_btn_head_phoca_download.js"
+        "scripts/joomla/sidebarLinkControl.js"
       ],
       "all_frames": true,
       "run_at": "document_end"
