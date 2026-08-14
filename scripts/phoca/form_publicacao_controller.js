@@ -905,6 +905,10 @@ const Sinteses = {
       this.complementar(title);
     }
 
+    else if (UtilitariosFormPublicacao.verificar_se_titulo_tem_match_esperado(title, 'Síntese do Primeiro Termo Aditivo')) {
+      this.primeiro_termo_aditivo(title);
+    }
+
   },
 
   sintese_propriamente_dita: function (title) {
@@ -962,6 +966,18 @@ const Sinteses = {
 
     let categoria = `:: CSL - :: Pregões - :: Resultados e Sínteses - :: Resultados e Sínteses ${ano}`;
     let filename = `csl/resultadosesinteses_${ano}/SINTESE DE ATA COMPLEMENTAR REGISTRO PRECOS-PERP-${numero_documento}-${ano}.pdf`;
+
+    UtilitariosFormPublicacao.setCategoria(categoria);
+    UtilitariosFormPublicacao.setFileName(filename);
+    UtilitariosFormPublicacao.abrirSelectFileNameURL(`csl/resultadosesinteses_${ano}`);
+  },
+
+  primeiro_termo_aditivo: function (title) {
+
+    const [numero_documento, ano] = UtilitariosFormPublicacao.get_numero_e_ano_do_documento(title);
+
+    let categoria = `:: CSL - :: Pregões - :: Resultados e Sínteses - :: Resultados e Sínteses ${ano}`;
+    let filename = `csl/resultadosesinteses_${ano}/SINTESE DO PRIMEIRO TERMO ADITIVO-PERP-${numero_documento}-${ano}.pdf`;
 
     UtilitariosFormPublicacao.setCategoria(categoria);
     UtilitariosFormPublicacao.setFileName(filename);
