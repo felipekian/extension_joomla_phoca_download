@@ -1108,7 +1108,7 @@ const Credenciamentos = {
 
   handle: function (title) {
 
-    if (UtilitariosFormPublicacao.verificar_se_titulo_tem_match_esperado(title, 'credenciamento público')) {
+    if (UtilitariosFormPublicacao.verificar_se_titulo_tem_match_esperado(title, 'credenciamento')) {
       this.credenciamento(title);
     }
 
@@ -1118,33 +1118,35 @@ const Credenciamentos = {
 
     const [numero_documento, ano] = UtilitariosFormPublicacao.get_numero_e_ano_do_documento(title);
 
+    let split_title = title.replace(' - ', ' ').trim().split(' ');
+
     let categoria = `:: CSL - :: Credenciamento - :: Credenciamento ${ano}`;
 
     UtilitariosFormPublicacao.setCategoria(categoria);
 
     if (split_title[1].toLowerCase() === 'aviso') {
-      let filename = `csl/credenciamento${ano}/aviso_credenciamento-${numero_documento}-${ano}.pdf`;
+      let filename = `csl/credenciamento_${ano}/aviso_credenciamento-${numero_documento}-${ano}.pdf`;
       UtilitariosFormPublicacao.setFileName(filename);
-      UtilitariosFormPublicacao.abrirSelectFileNameURL(`csl/credenciamento${ano}`);
+      UtilitariosFormPublicacao.abrirSelectFileNameURL(`csl/credenciamento_${ano}`);
     }
 
     if (split_title[1].toLowerCase() === 'edital') {
-      let filename = `csl/credenciamento${ano}/edital_credenciamento-${numero_documento}-${ano}.pdf`;
+      let filename = `csl/credenciamento_${ano}/edital_credenciamento-${numero_documento}-${ano}.pdf`;
       UtilitariosFormPublicacao.setFileName(filename);
     }
 
     if (split_title[1].toLowerCase() === 'minuta') {
-      let filename = `csl/credenciamento${ano}/minuta_credenciamento-${numero_documento}-${ano}.pdf`;
+      let filename = `csl/credenciamento_${ano}/minuta_credenciamento-${numero_documento}-${ano}.pdf`;
       UtilitariosFormPublicacao.setFileName(filename);
     }
 
     if (split_title[1].toLowerCase() === 'termo') {
-      let filename = `csl/credenciamento${ano}/termo_referencia_credenciamento-${numero_documento}-${ano}.pdf`;
+      let filename = `csl/credenciamento_${ano}/termo_referencia_credenciamento-${numero_documento}-${ano}.pdf`;
       UtilitariosFormPublicacao.setFileName(filename);
     }
 
     if (split_title[1].toLowerCase() === 'projeto') {
-      let filename = `csl/credenciamento${ano}/projeto_basico_credenciamento-${numero_documento}-${ano}.pdf`;
+      let filename = `csl/credenciamento_${ano}/projeto_basico_credenciamento-${numero_documento}-${ano}.pdf`;
       UtilitariosFormPublicacao.setFileName(filename);
     }
 
@@ -1171,6 +1173,8 @@ const Chamamentos = {
   chamamento: function (title) {
 
     const [numero_documento, ano] = UtilitariosFormPublicacao.get_numero_e_ano_do_documento(title);
+
+    let split_title = title.replace(' - ', ' ').trim().split(' ');
 
     let categoria = `:: CSL - :: Chamamento - :: Chamamento Público ${ano}`;
 
