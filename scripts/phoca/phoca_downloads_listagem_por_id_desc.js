@@ -11,6 +11,7 @@ const PhocaDownloadsListagemByIdDesc = {
 
     if (select_options_order.value.toLowerCase() != OPTION.toLowerCase()) {
 
+      document.querySelector('#adminForm').focus();
       select_options_order.value = OPTION;
       document.querySelector('#adminForm').submit();
 
