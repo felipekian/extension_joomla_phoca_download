@@ -89,19 +89,7 @@
       ],
       "js": [
         "scripts/utilitarios/spinner_load.js",
-        "scripts/sei/sei_controller.js",
-        "scripts/sei/sei_shortcuts.js"
-      ],
-      "all_frames": true,
-      "run_at": "document_end"
-    },
-    {
-      "matches": [
-        "*://sei.rr.gov.br/sei/controlador.php?acao=acompanhamento_*"
-      ],
-      "js": [
-        "scripts/sei/andamento_especial_csl.js",
-        "scripts/utilitarios/spinner_load.js"
+        "scripts/sei/sei_controller.js"
       ],
       "all_frames": true,
       "run_at": "document_end"
@@ -112,18 +100,6 @@
       ],
       "js": [
         "scripts/sei/datalist_modelos.js"
-      ],
-      "all_frames": true,
-      "run_at": "document_end"
-    },
-    {
-      "matches": [
-        "*://sip.rr.gov.br/sip/login.php?sigla_orgao_sistema=GRR&sigla_sistema=SEI&infra_url=L3NlaS8=",
-        "*://sip.rr.gov.br/sip/login.php*"
-      ],
-      "js": [
-        "scripts/sei/login.styles.js",
-        "scripts/utilitarios/spinner_load.js"
       ],
       "all_frames": true,
       "run_at": "document_end"

@@ -1,7 +1,7 @@
 "use strict"
 
 function setMessageReloadPage() {
-  let divInfraBarraSuperior = document.querySelector('#divInfraBarraSuperior');
+  let divInfraBarraSuperior = document.querySelector('#divInfraBarraSistema > h6.pl-3.mb-0.mx-0.d-none.d-md-block.infraCorBarraSuperior');
 
   if (divInfraBarraSuperior) {
     divInfraBarraSuperior.style.borderBottom = "2px solid #90EE90";
@@ -31,10 +31,10 @@ function formatValue(value) {
 
 window.addEventListener('load', () => {
 
-  let SECONDS = 60 * 2.5; /* 2 min e 30 s */
+  let SECONDS = 60 * 5; /* 5 min update screen */
   let COUNT = SECONDS;
   let TEXT = "";
-  let ELEMENTO = document.querySelector('#divInfraBarraSuperior > label');
+  let ELEMENTO = document.querySelector('#divInfraBarraSistema > h6.pl-3.mb-0.mx-0.d-none.d-md-block.infraCorBarraSuperior');
   if (ELEMENTO) TEXT = ELEMENTO.innerHTML;
   let URL_ATUAL = window.location.href;
   let RELOAD_ACTIVE_PAGE = URL_ATUAL.indexOf('https://sei.rr.gov.br/sei/controlador.php?acao=procedimento_controlar') !== -1;
