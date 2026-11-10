@@ -1,11 +1,15 @@
 "use strict"
 
 function setMessageReloadPage() {
+  //let divInfraBarraSuperior = document.querySelector('#divInfraBarraSistema > h6.pl-3.mb-0.mx-0.d-none.d-md-block.infraCorBarraSuperior');
   let divInfraBarraSuperior = document.querySelector('#divInfraBarraSistema > h6.pl-3.mb-0.mx-0.d-none.d-md-block.infraCorBarraSuperior');
-
+  
   if (divInfraBarraSuperior) {
     divInfraBarraSuperior.style.borderBottom = "2px solid #90EE90";
+    divInfraBarraSuperior.style.marginTop = "-5px";
+    document.querySelector('#divInfraBarraSistema > h6.pl-3.mb-0.mx-0.d-none.d-md-block.infraCorBarraSuperior').style.fontSize = "1.5rem";
   }
+
 }
 
 function getHoras() {
