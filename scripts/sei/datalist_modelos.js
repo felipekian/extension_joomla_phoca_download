@@ -1,5 +1,7 @@
 "use strict"
 
+var flag_public_radio = false;
+
 const meusModelos = [
   { id: "21171179", descricao: "Editais e Termos 2026" },
 
@@ -17,6 +19,18 @@ const meusModelos = [
 
 ];
 
+function publicDocumentRadioChecked(){
+  /* radio option public document */
+  let radioPublicOption = document.querySelector('#divOptPublico > div > label');
+
+  if(radioPublicOption && !flag_public_radio){
+    radioPublicOption.click();
+    document.querySelector('#btnInfraTopo').click();
+    flag_public_radio = true;
+  } 
+}
+
+
 function injetarDatalistControl() {
 
   /* clica no radio de selecionar modelo */
@@ -24,7 +38,7 @@ function injetarDatalistControl() {
 
   if (radioModelo) radioModelo.click();
 
-  const inputOriginal = document.querySelector('#txtProtocoloDocumentoTextoBase');
+  const inputOriginal = document.querySelector('#txtProtocoloDocumentoTextoBase'); 
 
   // Só prossegue se o input existir e ainda não tivermos injetado nosso controle
   if (inputOriginal && !inputOriginal.dataset.customControlAtivo) {
@@ -83,6 +97,7 @@ function injetarDatalistControl() {
 // 2. Configura o Observador para detectar mudanças dinâmicas
 const observerDatalistControl = new MutationObserver((mutations) => {
   injetarDatalistControl();
+  publicDocumentRadioChecked();
 });
 
 // Começa a observar o corpo da página e subelementos
@@ -93,3 +108,4 @@ observerDatalistControl.observe(document.body, {
 
 // Executa uma vez no início caso já tenha carregado
 injetarDatalistControl();
+publicDocumentRadioChecked();
