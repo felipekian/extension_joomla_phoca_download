@@ -19,18 +19,6 @@ const meusModelos = [
 
 ];
 
-function publicDocumentRadioChecked(){
-  /* radio option public document */
-  let radioPublicOption = document.querySelector('#divOptPublico > div > label');
-
-  if(radioPublicOption && !flag_public_radio){
-    radioPublicOption.click();
-    document.querySelector('#btnInfraTopo').click();
-    flag_public_radio = true;
-  } 
-}
-
-
 function injetarDatalistControl() {
 
   /* clica no radio de selecionar modelo */
@@ -73,8 +61,9 @@ function injetarDatalistControl() {
     novoInput.type = 'search'; // 'search' às vezes buga o datalist em alguns browsers
     novoInput.dataset.customControlAtivo = "true"; // Marca para o Observer não repetir
     novoInput.placeholder = 'Pesquise por nome ou ID...';
-    novoInput.style.width = '200px';
-
+    // novoInput.style.width = '100px';
+    
+    
     // 5. Bloquear que outros scripts do SEI capturem teclas neste novo input
     novoInput.addEventListener('keydown', (e) => e.stopPropagation(), true);
     novoInput.addEventListener('keypress', (e) => e.stopPropagation(), true);
@@ -92,6 +81,17 @@ function injetarDatalistControl() {
 
     console.log("Input resetado e Datalist injetado!");
   }
+}
+
+function publicDocumentRadioChecked(){
+  /* radio option public document */
+  let radioPublicOption = document.querySelector('#divOptPublico > div > label');
+
+  if(radioPublicOption && !flag_public_radio){
+    radioPublicOption.click();
+    document.querySelector('#btnInfraTopo').click();
+    flag_public_radio = true;
+  } 
 }
 
 // 2. Configura o Observador para detectar mudanças dinâmicas
