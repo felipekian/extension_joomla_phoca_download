@@ -99,7 +99,8 @@
     },
     {
       "matches": [
-        "*://sei.rr.gov.br/sei/controlador.php?acao=procedimento_controlar*"
+        "*://sei.rr.gov.br/sei/controlador.php?acao=procedimento_controlar*",
+        "*://sei.rr.gov.br/sei/controlador.php?acao=infra_trocar_unidade*"
       ],
       "js": [
         "scripts/utilitarios/spinner_load.js"
